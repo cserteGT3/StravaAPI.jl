@@ -39,14 +39,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_logged_in_athlete_starred_segments**
 > get_logged_in_athlete_starred_segments(_api::SegmentsApi; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummarySegment}, OpenAPI.Clients.ApiResponse <br/>
@@ -75,14 +75,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_segment_by_id**
 > get_segment_by_id(_api::SegmentsApi, id::Int64; _mediaType=nothing) -> DetailedSegment, OpenAPI.Clients.ApiResponse <br/>
@@ -105,14 +105,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **star_segment**
 > star_segment(_api::SegmentsApi, id::Int64, starred::Bool; _mediaType=nothing) -> DetailedSegment, OpenAPI.Clients.ApiResponse <br/>
@@ -136,12 +136,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 

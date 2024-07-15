@@ -28,12 +28,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 

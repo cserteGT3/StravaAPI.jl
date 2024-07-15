@@ -48,6 +48,6 @@ Name | Type | Description | Notes
 **weighted_average_watts** | **Int64** | Similar to Normalized Power. Rides with power meter data only | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 

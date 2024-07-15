@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **time** | **Int64** | The number of seconds spent in this zone | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 

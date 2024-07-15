@@ -39,14 +39,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_club_admins_by_id**
 > get_club_admins_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryAthlete}, OpenAPI.Clients.ApiResponse <br/>
@@ -76,14 +76,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_club_by_id**
 > get_club_by_id(_api::ClubsApi, id::Int64; _mediaType=nothing) -> DetailedClub, OpenAPI.Clients.ApiResponse <br/>
@@ -106,14 +106,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_club_members_by_id**
 > get_club_members_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{ClubAthlete}, OpenAPI.Clients.ApiResponse <br/>
@@ -143,14 +143,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_logged_in_athlete_clubs**
 > get_logged_in_athlete_clubs(_api::ClubsApi; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryClub}, OpenAPI.Clients.ApiResponse <br/>
@@ -179,12 +179,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 

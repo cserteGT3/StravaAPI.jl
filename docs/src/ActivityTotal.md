@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **achievement_count** | **Int64** | The total number of achievements of the considered activities. | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 

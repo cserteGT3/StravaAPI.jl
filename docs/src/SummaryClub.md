@@ -22,6 +22,6 @@ Name | Type | Description | Notes
 **url** | **String** | The club&#39;s vanity URL. | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 

@@ -48,14 +48,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_activity_by_id**
 > get_activity_by_id(_api::ActivitiesApi, id::Int64; include_all_efforts=nothing, _mediaType=nothing) -> DetailedActivity, OpenAPI.Clients.ApiResponse <br/>
@@ -84,14 +84,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_comments_by_activity_id**
 > get_comments_by_activity_id(_api::ActivitiesApi, id::Int64; page=nothing, per_page=nothing, page_size=nothing, after_cursor=nothing, _mediaType=nothing) -> Vector{Comment}, OpenAPI.Clients.ApiResponse <br/>
@@ -123,14 +123,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_kudoers_by_activity_id**
 > get_kudoers_by_activity_id(_api::ActivitiesApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryAthlete}, OpenAPI.Clients.ApiResponse <br/>
@@ -160,14 +160,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_laps_by_activity_id**
 > get_laps_by_activity_id(_api::ActivitiesApi, id::Int64; _mediaType=nothing) -> Vector{Lap}, OpenAPI.Clients.ApiResponse <br/>
@@ -190,14 +190,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_logged_in_athlete_activities**
 > get_logged_in_athlete_activities(_api::ActivitiesApi; before=nothing, after=nothing, page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryActivity}, OpenAPI.Clients.ApiResponse <br/>
@@ -228,14 +228,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_zones_by_activity_id**
 > get_zones_by_activity_id(_api::ActivitiesApi, id::Int64; _mediaType=nothing) -> Vector{ActivityZone}, OpenAPI.Clients.ApiResponse <br/>
@@ -258,14 +258,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **update_activity_by_id**
 > update_activity_by_id(_api::ActivitiesApi, id::Int64; body=nothing, _mediaType=nothing) -> DetailedActivity, OpenAPI.Clients.ApiResponse <br/>
@@ -294,12 +294,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 

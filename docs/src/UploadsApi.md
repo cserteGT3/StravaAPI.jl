@@ -40,14 +40,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: multipart/form-data
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_upload_by_id**
 > get_upload_by_id(_api::UploadsApi, upload_id::Int64; _mediaType=nothing) -> Upload, OpenAPI.Clients.ApiResponse <br/>
@@ -70,12 +70,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../../README.md#strava_oauth)
+[strava_oauth](./README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
+[[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 

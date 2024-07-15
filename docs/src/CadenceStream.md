@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **data** | **Vector{Int64}** | The sequence of cadence values for this stream, in rotations per minute | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 

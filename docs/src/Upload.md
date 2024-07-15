@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **activity_id** | **Int64** | The identifier of the activity this upload resulted into | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 

@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **data** | **Vector{Float32}** | The sequence of distance values for this stream, in meters | [optional] [default to nothing]
 
 
-[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
+[[Back to Model list]](./README.md#models) [[Back to API list]](./README.md#api-endpoints) [[Back to README]](./README.md)
 
 
