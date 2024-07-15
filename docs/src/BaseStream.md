@@ -9,6 +9,6 @@ Name | Type | Description | Notes
 **series_type** | **String** | The base series used in the case the stream was downsampled | [optional] [default to nothing]
 
 
-[[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
 
 

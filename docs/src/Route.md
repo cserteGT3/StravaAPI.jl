@@ -24,6 +24,6 @@ Name | Type | Description | Notes
 **waypoints** | [**Vector{Waypoint}**](Waypoint.md) | The custom waypoints along this route | [optional] [default to nothing]
 
 
-[[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
 
 

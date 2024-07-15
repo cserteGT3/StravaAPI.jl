@@ -31,14 +31,14 @@ Nothing
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **get_route_as_t_c_x**
 > get_route_as_t_c_x(_api::RoutesApi, id::Int64; _mediaType=nothing) -> Nothing, OpenAPI.Clients.ApiResponse <br/>
@@ -61,14 +61,14 @@ Nothing
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **get_route_by_id**
 > get_route_by_id(_api::RoutesApi, id::Int64; _mediaType=nothing) -> Route, OpenAPI.Clients.ApiResponse <br/>
@@ -91,14 +91,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **get_routes_by_athlete_id**
 > get_routes_by_athlete_id(_api::RoutesApi; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{Route}, OpenAPI.Clients.ApiResponse <br/>
@@ -127,12 +127,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 

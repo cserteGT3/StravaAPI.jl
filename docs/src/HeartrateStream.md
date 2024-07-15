@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **data** | **Vector{Int64}** | The sequence of heart rate values for this stream, in beats per minute | [optional] [default to nothing]
 
 
-[[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
 
 

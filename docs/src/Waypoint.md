@@ -12,6 +12,6 @@ Name | Type | Description | Notes
 **distance_into_route** | **Int64** | The number meters along the route that the waypoint is located | [optional] [default to nothing]
 
 
-[[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
 
 

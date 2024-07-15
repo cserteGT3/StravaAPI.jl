@@ -27,14 +27,14 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **get_logged_in_athlete_zones**
 > get_logged_in_athlete_zones(_api::AthletesApi; _mediaType=nothing) -> Zones, OpenAPI.Clients.ApiResponse <br/>
@@ -53,14 +53,14 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **get_stats**
 > get_stats(_api::AthletesApi, id::Int64; _mediaType=nothing) -> ActivityStats, OpenAPI.Clients.ApiResponse <br/>
@@ -83,14 +83,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **update_logged_in_athlete**
 > update_logged_in_athlete(_api::AthletesApi, weight::Float32; _mediaType=nothing) -> DetailedAthlete, OpenAPI.Clients.ApiResponse <br/>
@@ -113,12 +113,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 

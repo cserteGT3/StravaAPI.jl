@@ -37,14 +37,14 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 
 # **get_segment_effort_by_id**
 > get_segment_effort_by_id(_api::SegmentEffortsApi, id::Int64; _mediaType=nothing) -> DetailedSegmentEffort, OpenAPI.Clients.ApiResponse <br/>
@@ -67,12 +67,12 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[strava_oauth](../README.md#strava_oauth)
+[strava_oauth](../../README.md#strava_oauth)
 
 ### HTTP request headers
 
  - **Content-Type**: Not defined
  - **Accept**: application/json
 
-[[Back to top]](#) [[Back to API list]](../README.md#api-endpoints) [[Back to Model list]](../README.md#models) [[Back to README]](../README.md)
+[[Back to top]](#) [[Back to API list]](../../README.md#api-endpoints) [[Back to Model list]](../../README.md#models) [[Back to README]](../../README.md)
 

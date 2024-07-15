@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **effort_count** | **Int64** | Number of efforts by the authenticated athlete on this segment. | [optional] [default to nothing]
 
 
-[[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
 
 

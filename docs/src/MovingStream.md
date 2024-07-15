@@ -10,6 +10,6 @@ Name | Type | Description | Notes
 **data** | **Vector{Bool}** | The sequence of moving values for this stream, as boolean values | [optional] [default to nothing]
 
 
-[[Back to Model list]](../README.md#models) [[Back to API list]](../README.md#api-endpoints) [[Back to README]](../README.md)
+[[Back to Model list]](../../README.md#models) [[Back to API list]](../../README.md#api-endpoints) [[Back to README]](../../README.md)
 
 
