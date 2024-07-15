@@ -21,6 +21,15 @@ OpenAPI.generate(d;package_name = "StravaAPI", output_dir = "StravaAPI")
 OpenAPI.stop_openapi_generator()
 ```
 
+### Updating the package
+
+Not tested yet.
+
+1. Use the code to generate source code and documentation.
+2. Ignore changes in `Readme.md` (probably shoud delete the generated stuff).
+3. Move the generated documentation files from `docs` to `docs/src`.
+4. Replace `../README` with `../../README` in all files in `docs/src`.
+
 ## Generated Readme
 
 The [Swagger Playground](https://developers.strava.com/playground) is the easiest way to familiarize yourself with the Strava API by submitting HTTP requests and observing the responses before you write any client code. It will show what a response will look like with different endpoints depending on the authorization scope you receive from your athletes. To use the Playground, go to <https://www.strava.com/settings/api> and change your “Authorization Callback Domain” to developers.strava.com. Please note, we only support Swagger 2.0. There is a known issue where you can only select one scope at a time. For more information, please check the section “client code” at <https://developers.strava.com/docs>.
