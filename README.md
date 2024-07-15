@@ -43,99 +43,99 @@ Documentation is also embedded in Julia which can be used with a Julia specific 
 
 Class | Method
 ------------ | -------------
-*ActivitiesApi* | [**create_activity**](docs/ActivitiesApi.md#create_activity)<br/>**POST** /activities<br/>Create an Activity
-*ActivitiesApi* | [**get_activity_by_id**](docs/ActivitiesApi.md#get_activity_by_id)<br/>**GET** /activities/{id}<br/>Get Activity
-*ActivitiesApi* | [**get_comments_by_activity_id**](docs/ActivitiesApi.md#get_comments_by_activity_id)<br/>**GET** /activities/{id}/comments<br/>List Activity Comments
-*ActivitiesApi* | [**get_kudoers_by_activity_id**](docs/ActivitiesApi.md#get_kudoers_by_activity_id)<br/>**GET** /activities/{id}/kudos<br/>List Activity Kudoers
-*ActivitiesApi* | [**get_laps_by_activity_id**](docs/ActivitiesApi.md#get_laps_by_activity_id)<br/>**GET** /activities/{id}/laps<br/>List Activity Laps
-*ActivitiesApi* | [**get_logged_in_athlete_activities**](docs/ActivitiesApi.md#get_logged_in_athlete_activities)<br/>**GET** /athlete/activities<br/>List Athlete Activities
-*ActivitiesApi* | [**get_zones_by_activity_id**](docs/ActivitiesApi.md#get_zones_by_activity_id)<br/>**GET** /activities/{id}/zones<br/>Get Activity Zones
-*ActivitiesApi* | [**update_activity_by_id**](docs/ActivitiesApi.md#update_activity_by_id)<br/>**PUT** /activities/{id}<br/>Update Activity
-*AthletesApi* | [**get_logged_in_athlete**](docs/AthletesApi.md#get_logged_in_athlete)<br/>**GET** /athlete<br/>Get Authenticated Athlete
-*AthletesApi* | [**get_logged_in_athlete_zones**](docs/AthletesApi.md#get_logged_in_athlete_zones)<br/>**GET** /athlete/zones<br/>Get Zones
-*AthletesApi* | [**get_stats**](docs/AthletesApi.md#get_stats)<br/>**GET** /athletes/{id}/stats<br/>Get Athlete Stats
-*AthletesApi* | [**update_logged_in_athlete**](docs/AthletesApi.md#update_logged_in_athlete)<br/>**PUT** /athlete<br/>Update Athlete
-*ClubsApi* | [**get_club_activities_by_id**](docs/ClubsApi.md#get_club_activities_by_id)<br/>**GET** /clubs/{id}/activities<br/>List Club Activities
-*ClubsApi* | [**get_club_admins_by_id**](docs/ClubsApi.md#get_club_admins_by_id)<br/>**GET** /clubs/{id}/admins<br/>List Club Administrators
-*ClubsApi* | [**get_club_by_id**](docs/ClubsApi.md#get_club_by_id)<br/>**GET** /clubs/{id}<br/>Get Club
-*ClubsApi* | [**get_club_members_by_id**](docs/ClubsApi.md#get_club_members_by_id)<br/>**GET** /clubs/{id}/members<br/>List Club Members
-*ClubsApi* | [**get_logged_in_athlete_clubs**](docs/ClubsApi.md#get_logged_in_athlete_clubs)<br/>**GET** /athlete/clubs<br/>List Athlete Clubs
-*GearsApi* | [**get_gear_by_id**](docs/GearsApi.md#get_gear_by_id)<br/>**GET** /gear/{id}<br/>Get Equipment
-*RoutesApi* | [**get_route_as_g_p_x**](docs/RoutesApi.md#get_route_as_g_p_x)<br/>**GET** /routes/{id}/export_gpx<br/>Export Route GPX
-*RoutesApi* | [**get_route_as_t_c_x**](docs/RoutesApi.md#get_route_as_t_c_x)<br/>**GET** /routes/{id}/export_tcx<br/>Export Route TCX
-*RoutesApi* | [**get_route_by_id**](docs/RoutesApi.md#get_route_by_id)<br/>**GET** /routes/{id}<br/>Get Route
-*RoutesApi* | [**get_routes_by_athlete_id**](docs/RoutesApi.md#get_routes_by_athlete_id)<br/>**GET** /athletes/{id}/routes<br/>List Athlete Routes
-*SegmentEffortsApi* | [**get_efforts_by_segment_id**](docs/SegmentEffortsApi.md#get_efforts_by_segment_id)<br/>**GET** /segment_efforts<br/>List Segment Efforts
-*SegmentEffortsApi* | [**get_segment_effort_by_id**](docs/SegmentEffortsApi.md#get_segment_effort_by_id)<br/>**GET** /segment_efforts/{id}<br/>Get Segment Effort
-*SegmentsApi* | [**explore_segments**](docs/SegmentsApi.md#explore_segments)<br/>**GET** /segments/explore<br/>Explore segments
-*SegmentsApi* | [**get_logged_in_athlete_starred_segments**](docs/SegmentsApi.md#get_logged_in_athlete_starred_segments)<br/>**GET** /segments/starred<br/>List Starred Segments
-*SegmentsApi* | [**get_segment_by_id**](docs/SegmentsApi.md#get_segment_by_id)<br/>**GET** /segments/{id}<br/>Get Segment
-*SegmentsApi* | [**star_segment**](docs/SegmentsApi.md#star_segment)<br/>**PUT** /segments/{id}/starred<br/>Star Segment
-*StreamsApi* | [**get_activity_streams**](docs/StreamsApi.md#get_activity_streams)<br/>**GET** /activities/{id}/streams<br/>Get Activity Streams
-*StreamsApi* | [**get_route_streams**](docs/StreamsApi.md#get_route_streams)<br/>**GET** /routes/{id}/streams<br/>Get Route Streams
-*StreamsApi* | [**get_segment_effort_streams**](docs/StreamsApi.md#get_segment_effort_streams)<br/>**GET** /segment_efforts/{id}/streams<br/>Get Segment Effort Streams
-*StreamsApi* | [**get_segment_streams**](docs/StreamsApi.md#get_segment_streams)<br/>**GET** /segments/{id}/streams<br/>Get Segment Streams
-*UploadsApi* | [**create_upload**](docs/UploadsApi.md#create_upload)<br/>**POST** /uploads<br/>Upload Activity
-*UploadsApi* | [**get_upload_by_id**](docs/UploadsApi.md#get_upload_by_id)<br/>**GET** /uploads/{uploadId}<br/>Get Upload
+*ActivitiesApi* | [**create_activity**](docs/src/ActivitiesApi.md#create_activity)<br/>**POST** /activities<br/>Create an Activity
+*ActivitiesApi* | [**get_activity_by_id**](docs/src/ActivitiesApi.md#get_activity_by_id)<br/>**GET** /activities/{id}<br/>Get Activity
+*ActivitiesApi* | [**get_comments_by_activity_id**](docs/src/ActivitiesApi.md#get_comments_by_activity_id)<br/>**GET** /activities/{id}/comments<br/>List Activity Comments
+*ActivitiesApi* | [**get_kudoers_by_activity_id**](docs/src/ActivitiesApi.md#get_kudoers_by_activity_id)<br/>**GET** /activities/{id}/kudos<br/>List Activity Kudoers
+*ActivitiesApi* | [**get_laps_by_activity_id**](docs/src/ActivitiesApi.md#get_laps_by_activity_id)<br/>**GET** /activities/{id}/laps<br/>List Activity Laps
+*ActivitiesApi* | [**get_logged_in_athlete_activities**](docs/src/ActivitiesApi.md#get_logged_in_athlete_activities)<br/>**GET** /athlete/activities<br/>List Athlete Activities
+*ActivitiesApi* | [**get_zones_by_activity_id**](docs/src/ActivitiesApi.md#get_zones_by_activity_id)<br/>**GET** /activities/{id}/zones<br/>Get Activity Zones
+*ActivitiesApi* | [**update_activity_by_id**](docs/src/ActivitiesApi.md#update_activity_by_id)<br/>**PUT** /activities/{id}<br/>Update Activity
+*AthletesApi* | [**get_logged_in_athlete**](docs/src/AthletesApi.md#get_logged_in_athlete)<br/>**GET** /athlete<br/>Get Authenticated Athlete
+*AthletesApi* | [**get_logged_in_athlete_zones**](docs/src/AthletesApi.md#get_logged_in_athlete_zones)<br/>**GET** /athlete/zones<br/>Get Zones
+*AthletesApi* | [**get_stats**](docs/src/AthletesApi.md#get_stats)<br/>**GET** /athletes/{id}/stats<br/>Get Athlete Stats
+*AthletesApi* | [**update_logged_in_athlete**](docs/src/AthletesApi.md#update_logged_in_athlete)<br/>**PUT** /athlete<br/>Update Athlete
+*ClubsApi* | [**get_club_activities_by_id**](docs/src/ClubsApi.md#get_club_activities_by_id)<br/>**GET** /clubs/{id}/activities<br/>List Club Activities
+*ClubsApi* | [**get_club_admins_by_id**](docs/src/ClubsApi.md#get_club_admins_by_id)<br/>**GET** /clubs/{id}/admins<br/>List Club Administrators
+*ClubsApi* | [**get_club_by_id**](docs/src/ClubsApi.md#get_club_by_id)<br/>**GET** /clubs/{id}<br/>Get Club
+*ClubsApi* | [**get_club_members_by_id**](docs/src/ClubsApi.md#get_club_members_by_id)<br/>**GET** /clubs/{id}/members<br/>List Club Members
+*ClubsApi* | [**get_logged_in_athlete_clubs**](docs/src/ClubsApi.md#get_logged_in_athlete_clubs)<br/>**GET** /athlete/clubs<br/>List Athlete Clubs
+*GearsApi* | [**get_gear_by_id**](docs/src/GearsApi.md#get_gear_by_id)<br/>**GET** /gear/{id}<br/>Get Equipment
+*RoutesApi* | [**get_route_as_g_p_x**](docs/src/RoutesApi.md#get_route_as_g_p_x)<br/>**GET** /routes/{id}/export_gpx<br/>Export Route GPX
+*RoutesApi* | [**get_route_as_t_c_x**](docs/src/RoutesApi.md#get_route_as_t_c_x)<br/>**GET** /routes/{id}/export_tcx<br/>Export Route TCX
+*RoutesApi* | [**get_route_by_id**](docs/src/RoutesApi.md#get_route_by_id)<br/>**GET** /routes/{id}<br/>Get Route
+*RoutesApi* | [**get_routes_by_athlete_id**](docs/src/RoutesApi.md#get_routes_by_athlete_id)<br/>**GET** /athletes/{id}/routes<br/>List Athlete Routes
+*SegmentEffortsApi* | [**get_efforts_by_segment_id**](docs/src/SegmentEffortsApi.md#get_efforts_by_segment_id)<br/>**GET** /segment_efforts<br/>List Segment Efforts
+*SegmentEffortsApi* | [**get_segment_effort_by_id**](docs/src/SegmentEffortsApi.md#get_segment_effort_by_id)<br/>**GET** /segment_efforts/{id}<br/>Get Segment Effort
+*SegmentsApi* | [**explore_segments**](docs/src/SegmentsApi.md#explore_segments)<br/>**GET** /segments/explore<br/>Explore segments
+*SegmentsApi* | [**get_logged_in_athlete_starred_segments**](docs/src/SegmentsApi.md#get_logged_in_athlete_starred_segments)<br/>**GET** /segments/starred<br/>List Starred Segments
+*SegmentsApi* | [**get_segment_by_id**](docs/src/SegmentsApi.md#get_segment_by_id)<br/>**GET** /segments/{id}<br/>Get Segment
+*SegmentsApi* | [**star_segment**](docs/src/SegmentsApi.md#star_segment)<br/>**PUT** /segments/{id}/starred<br/>Star Segment
+*StreamsApi* | [**get_activity_streams**](docs/src/StreamsApi.md#get_activity_streams)<br/>**GET** /activities/{id}/streams<br/>Get Activity Streams
+*StreamsApi* | [**get_route_streams**](docs/src/StreamsApi.md#get_route_streams)<br/>**GET** /routes/{id}/streams<br/>Get Route Streams
+*StreamsApi* | [**get_segment_effort_streams**](docs/src/StreamsApi.md#get_segment_effort_streams)<br/>**GET** /segment_efforts/{id}/streams<br/>Get Segment Effort Streams
+*StreamsApi* | [**get_segment_streams**](docs/src/StreamsApi.md#get_segment_streams)<br/>**GET** /segments/{id}/streams<br/>Get Segment Streams
+*UploadsApi* | [**create_upload**](docs/src/UploadsApi.md#create_upload)<br/>**POST** /uploads<br/>Upload Activity
+*UploadsApi* | [**get_upload_by_id**](docs/src/UploadsApi.md#get_upload_by_id)<br/>**GET** /uploads/{uploadId}<br/>Get Upload
 
 
 ### Models
 
- - [ActivityStats](docs/ActivityStats.md)
- - [ActivityTotal](docs/ActivityTotal.md)
- - [ActivityType](docs/ActivityType.md)
- - [ActivityZone](docs/ActivityZone.md)
- - [AltitudeStream](docs/AltitudeStream.md)
- - [BaseStream](docs/BaseStream.md)
- - [CadenceStream](docs/CadenceStream.md)
- - [ClubActivity](docs/ClubActivity.md)
- - [ClubAthlete](docs/ClubAthlete.md)
- - [Comment](docs/Comment.md)
- - [DetailedActivity](docs/DetailedActivity.md)
- - [DetailedAthlete](docs/DetailedAthlete.md)
- - [DetailedClub](docs/DetailedClub.md)
- - [DetailedGear](docs/DetailedGear.md)
- - [DetailedSegment](docs/DetailedSegment.md)
- - [DetailedSegmentEffort](docs/DetailedSegmentEffort.md)
- - [DistanceStream](docs/DistanceStream.md)
- - [Error](docs/Error.md)
- - [ExplorerResponse](docs/ExplorerResponse.md)
- - [ExplorerSegment](docs/ExplorerSegment.md)
- - [Fault](docs/Fault.md)
- - [HeartRateZoneRanges](docs/HeartRateZoneRanges.md)
- - [HeartrateStream](docs/HeartrateStream.md)
- - [Lap](docs/Lap.md)
- - [LatLngStream](docs/LatLngStream.md)
- - [MetaActivity](docs/MetaActivity.md)
- - [MetaAthlete](docs/MetaAthlete.md)
- - [MetaClub](docs/MetaClub.md)
- - [MovingStream](docs/MovingStream.md)
- - [PhotosSummary](docs/PhotosSummary.md)
- - [PhotosSummaryPrimary](docs/PhotosSummaryPrimary.md)
- - [PolylineMap](docs/PolylineMap.md)
- - [PowerStream](docs/PowerStream.md)
- - [PowerZoneRanges](docs/PowerZoneRanges.md)
- - [Route](docs/Route.md)
- - [SmoothGradeStream](docs/SmoothGradeStream.md)
- - [SmoothVelocityStream](docs/SmoothVelocityStream.md)
- - [Split](docs/Split.md)
- - [SportType](docs/SportType.md)
- - [StreamSet](docs/StreamSet.md)
- - [SummaryActivity](docs/SummaryActivity.md)
- - [SummaryAthlete](docs/SummaryAthlete.md)
- - [SummaryClub](docs/SummaryClub.md)
- - [SummaryGear](docs/SummaryGear.md)
- - [SummaryPRSegmentEffort](docs/SummaryPRSegmentEffort.md)
- - [SummarySegment](docs/SummarySegment.md)
- - [SummarySegmentEffort](docs/SummarySegmentEffort.md)
- - [TemperatureStream](docs/TemperatureStream.md)
- - [TimeStream](docs/TimeStream.md)
- - [TimedZoneRange](docs/TimedZoneRange.md)
- - [UpdatableActivity](docs/UpdatableActivity.md)
- - [Upload](docs/Upload.md)
- - [Waypoint](docs/Waypoint.md)
- - [ZoneRange](docs/ZoneRange.md)
- - [Zones](docs/Zones.md)
+ - [ActivityStats](docs/src/ActivityStats.md)
+ - [ActivityTotal](docs/src/ActivityTotal.md)
+ - [ActivityType](docs/src/ActivityType.md)
+ - [ActivityZone](docs/src/ActivityZone.md)
+ - [AltitudeStream](docs/src/AltitudeStream.md)
+ - [BaseStream](docs/src/BaseStream.md)
+ - [CadenceStream](docs/src/CadenceStream.md)
+ - [ClubActivity](docs/src/ClubActivity.md)
+ - [ClubAthlete](docs/src/ClubAthlete.md)
+ - [Comment](docs/src/Comment.md)
+ - [DetailedActivity](docs/src/DetailedActivity.md)
+ - [DetailedAthlete](docs/src/DetailedAthlete.md)
+ - [DetailedClub](docs/src/DetailedClub.md)
+ - [DetailedGear](docs/src/DetailedGear.md)
+ - [DetailedSegment](docs/src/DetailedSegment.md)
+ - [DetailedSegmentEffort](docs/src/DetailedSegmentEffort.md)
+ - [DistanceStream](docs/src/DistanceStream.md)
+ - [Error](docs/src/Error.md)
+ - [ExplorerResponse](docs/src/ExplorerResponse.md)
+ - [ExplorerSegment](docs/src/ExplorerSegment.md)
+ - [Fault](docs/src/Fault.md)
+ - [HeartRateZoneRanges](docs/src/HeartRateZoneRanges.md)
+ - [HeartrateStream](docs/src/HeartrateStream.md)
+ - [Lap](docs/src/Lap.md)
+ - [LatLngStream](docs/src/LatLngStream.md)
+ - [MetaActivity](docs/src/MetaActivity.md)
+ - [MetaAthlete](docs/src/MetaAthlete.md)
+ - [MetaClub](docs/src/MetaClub.md)
+ - [MovingStream](docs/src/MovingStream.md)
+ - [PhotosSummary](docs/src/PhotosSummary.md)
+ - [PhotosSummaryPrimary](docs/src/PhotosSummaryPrimary.md)
+ - [PolylineMap](docs/src/PolylineMap.md)
+ - [PowerStream](docs/src/PowerStream.md)
+ - [PowerZoneRanges](docs/src/PowerZoneRanges.md)
+ - [Route](docs/src/Route.md)
+ - [SmoothGradeStream](docs/src/SmoothGradeStream.md)
+ - [SmoothVelocityStream](docs/src/SmoothVelocityStream.md)
+ - [Split](docs/src/Split.md)
+ - [SportType](docs/src/SportType.md)
+ - [StreamSet](docs/src/StreamSet.md)
+ - [SummaryActivity](docs/src/SummaryActivity.md)
+ - [SummaryAthlete](docs/src/SummaryAthlete.md)
+ - [SummaryClub](docs/src/SummaryClub.md)
+ - [SummaryGear](docs/src/SummaryGear.md)
+ - [SummaryPRSegmentEffort](docs/src/SummaryPRSegmentEffort.md)
+ - [SummarySegment](docs/src/SummarySegment.md)
+ - [SummarySegmentEffort](docs/src/SummarySegmentEffort.md)
+ - [TemperatureStream](docs/src/TemperatureStream.md)
+ - [TimeStream](docs/src/TimeStream.md)
+ - [TimedZoneRange](docs/src/TimedZoneRange.md)
+ - [UpdatableActivity](docs/src/UpdatableActivity.md)
+ - [Upload](docs/src/Upload.md)
+ - [Waypoint](docs/src/Waypoint.md)
+ - [ZoneRange](docs/src/ZoneRange.md)
+ - [Zones](docs/src/Zones.md)
 
 
 <a id="authorization"></a>
