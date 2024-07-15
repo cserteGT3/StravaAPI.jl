@@ -23,7 +23,7 @@ Returns the top 10 segments matching a specified query.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **SegmentsApi** | API context | 
-**bounds** | [**Vector{Float32}**](Float32.md)| The latitude and longitude for two points describing a rectangular boundary for the search: [southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude] | [default to nothing]
+**bounds** | **Vector{Float32}**| The latitude and longitude for two points describing a rectangular boundary for the search: [southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude] | [default to nothing]
 
 ### Optional Parameters
 

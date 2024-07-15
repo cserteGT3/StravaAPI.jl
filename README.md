@@ -30,6 +30,8 @@ Not tested yet.
 3. Replace `../README` with `./README` in all files in `docs/src`.
 4. Move the generated `README.md` file to `docs/src/README.md` and keep the original (hand written) Readme in root.
 5. In `docs/src/README.md`: replace `/docs/*` links with `./*`
+6. Replace `[**Vector{String}**](String.md)` with `**Vector{String}**`.
+7. Replace `[**Vector{Float32}**](Float32.md)` with `**Vector{Float32}**`.
 
 ## Generated Readme
 
