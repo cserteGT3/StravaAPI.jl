@@ -5,7 +5,7 @@ DocMeta.setdocmeta!(StravaAPI, :DocTestSetup, :(using StravaAPI); recursive=true
 
 docfiles = readdir("src")
 filter!(x->x == "index.md", docfiles)
-docpairs = [split(fname, ".") => joinpath("src", fname) for fname in docfiles]
+docpairs = [string(first(split(fname, ".")))=> joinpath("src", fname) for fname in docfiles]
 pushfirst!(docpairs, "Home" => "index.md")
 
 makedocs(;
