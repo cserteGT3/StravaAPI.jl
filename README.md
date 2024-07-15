@@ -18,6 +18,7 @@ r = HTTP.get("https://developers.strava.com/swagger/swagger.json");
 d = JSON.parse(String(r.body))
 OpenAPI.openapi_generator()
 OpenAPI.generate(d;package_name = "StravaAPI", output_dir = "StravaAPI")
+OpenAPI.stop_openapi_generator()
 ```
 
 ## Generated Readme
