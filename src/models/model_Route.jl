@@ -95,21 +95,39 @@ function check_required(o::Route)
 end
 
 function OpenAPI.validate_property(::Type{ Route }, name::Symbol, val)
+
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "Route", :format, val, "float")
     end
+
     if name === Symbol("elevation_gain")
         OpenAPI.validate_param(name, "Route", :format, val, "float")
     end
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "Route", :format, val, "int64")
     end
+
+
+
+
+
+
+
+
+
     if name === Symbol("created_at")
         OpenAPI.validate_param(name, "Route", :format, val, "date-time")
     end
+
     if name === Symbol("updated_at")
         OpenAPI.validate_param(name, "Route", :format, val, "date-time")
     end
+
+
+
     if name === Symbol("waypoints")
         OpenAPI.validate_param(name, "Route", :minItems, val, 0)
     end

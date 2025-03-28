@@ -39,10 +39,16 @@ function check_required(o::PowerStream)
 end
 
 function OpenAPI.validate_property(::Type{ PowerStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "PowerStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "PowerStream", :enum, val, ["distance", "time"])
     end
+
+
 end

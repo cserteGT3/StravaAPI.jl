@@ -31,4 +31,6 @@ function check_required(o::PhotosSummary)
 end
 
 function OpenAPI.validate_property(::Type{ PhotosSummary }, name::Symbol, val)
+
+
 end

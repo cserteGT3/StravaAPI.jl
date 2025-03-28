@@ -18,10 +18,10 @@ const _returntypes_get_efforts_by_segment_id_SegmentEffortsApi = Dict{Regex,Type
 
 function _oacinternal_get_efforts_by_segment_id(_api::SegmentEffortsApi, segment_id::Int64; start_date_local=nothing, end_date_local=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_efforts_by_segment_id_SegmentEffortsApi, "/segment_efforts", ["strava_oauth", ])
-    OpenAPI.Clients.set_param(_ctx.query, "segment_id", segment_id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "start_date_local", start_date_local)  # type ZonedDateTime
-    OpenAPI.Clients.set_param(_ctx.query, "end_date_local", end_date_local)  # type ZonedDateTime
-    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "segment_id", segment_id; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "start_date_local", start_date_local; style="", is_explode=false)  # type ZonedDateTime
+    OpenAPI.Clients.set_param(_ctx.query, "end_date_local", end_date_local; style="", is_explode=false)  # type ZonedDateTime
+    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page; style="", is_explode=false)  # type Int64
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx

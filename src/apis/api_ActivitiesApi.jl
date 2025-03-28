@@ -67,7 +67,7 @@ const _returntypes_get_activity_by_id_ActivitiesApi = Dict{Regex,Type}(
 function _oacinternal_get_activity_by_id(_api::ActivitiesApi, id::Int64; include_all_efforts=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_activity_by_id_ActivitiesApi, "/activities/{id}", ["strava_oauth", ])
     OpenAPI.Clients.set_param(_ctx.path, "id", id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "include_all_efforts", include_all_efforts)  # type Bool
+    OpenAPI.Clients.set_param(_ctx.query, "include_all_efforts", include_all_efforts; style="", is_explode=false)  # type Bool
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -101,10 +101,10 @@ const _returntypes_get_comments_by_activity_id_ActivitiesApi = Dict{Regex,Type}(
 function _oacinternal_get_comments_by_activity_id(_api::ActivitiesApi, id::Int64; page=nothing, per_page=nothing, page_size=nothing, after_cursor=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_comments_by_activity_id_ActivitiesApi, "/activities/{id}/comments", ["strava_oauth", ])
     OpenAPI.Clients.set_param(_ctx.path, "id", id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "page", page)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "page_size", page_size)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "after_cursor", after_cursor)  # type String
+    OpenAPI.Clients.set_param(_ctx.query, "page", page; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "page_size", page_size; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "after_cursor", after_cursor; style="", is_explode=false)  # type String
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -141,8 +141,8 @@ const _returntypes_get_kudoers_by_activity_id_ActivitiesApi = Dict{Regex,Type}(
 function _oacinternal_get_kudoers_by_activity_id(_api::ActivitiesApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_kudoers_by_activity_id_ActivitiesApi, "/activities/{id}/kudos", ["strava_oauth", ])
     OpenAPI.Clients.set_param(_ctx.path, "id", id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "page", page)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "page", page; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page; style="", is_explode=false)  # type Int64
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -208,10 +208,10 @@ const _returntypes_get_logged_in_athlete_activities_ActivitiesApi = Dict{Regex,T
 
 function _oacinternal_get_logged_in_athlete_activities(_api::ActivitiesApi; before=nothing, after=nothing, page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_logged_in_athlete_activities_ActivitiesApi, "/athlete/activities", ["strava_oauth", ])
-    OpenAPI.Clients.set_param(_ctx.query, "before", before)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "after", after)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "page", page)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "before", before; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "after", after; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "page", page; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page; style="", is_explode=false)  # type Int64
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx

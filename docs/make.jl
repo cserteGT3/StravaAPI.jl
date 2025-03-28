@@ -3,10 +3,10 @@ using Documenter
 
 DocMeta.setdocmeta!(StravaAPI, :DocTestSetup, :(using StravaAPI); recursive=true)
 
-docfiles = readdir("src")
-filter!(x->x == "index.md", docfiles)
-docpairs = [string(first(split(fname, ".")))=> joinpath("src", fname) for fname in docfiles]
-pushfirst!(docpairs, "Home" => "index.md")
+docfiles = readdir(joinpath(@__DIR__, "src"))
+filter!(x->x!="index.md", docfiles)
+filter!(x->x!="README.md", docfiles)
+docpairs = [string(first(split(fname, "."))) => fname for fname in docfiles]
 
 makedocs(;
     modules=[StravaAPI],
@@ -17,7 +17,9 @@ makedocs(;
         edit_link="main",
         assets=String[],
     ),
-    pages=docpairs,
+    pages=["Home" => "index.md",
+            "Readme" => "README.md",
+            "API" => docpairs],
 )
 
 deploydocs(;

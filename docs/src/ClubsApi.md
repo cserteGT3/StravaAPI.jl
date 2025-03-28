@@ -24,14 +24,14 @@ Retrieve recent activities from members of a specific club. The authenticated at
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ClubsApi** | API context | 
-**id** | **Int64**| The identifier of the club. | [default to nothing]
+**id** | **Int64** | The identifier of the club. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -61,14 +61,14 @@ Returns a list of the administrators of a given club.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ClubsApi** | API context | 
-**id** | **Int64**| The identifier of the club. | [default to nothing]
+**id** | **Int64** | The identifier of the club. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -98,7 +98,7 @@ Returns a given club using its identifier.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ClubsApi** | API context | 
-**id** | **Int64**| The identifier of the club. | [default to nothing]
+**id** | **Int64** | The identifier of the club. |
 
 ### Return type
 
@@ -128,14 +128,14 @@ Returns a list of the athletes who are members of a given club.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ClubsApi** | API context | 
-**id** | **Int64**| The identifier of the club. | [default to nothing]
+**id** | **Int64** | The identifier of the club. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -170,8 +170,8 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 

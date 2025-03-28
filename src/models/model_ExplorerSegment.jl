@@ -63,31 +63,42 @@ function check_required(o::ExplorerSegment)
 end
 
 function OpenAPI.validate_property(::Type{ ExplorerSegment }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "ExplorerSegment", :format, val, "int64")
     end
+
+
     if name === Symbol("climb_category")
         OpenAPI.validate_param(name, "ExplorerSegment", :maximum, val, 5, false)
         OpenAPI.validate_param(name, "ExplorerSegment", :minimum, val, 0, false)
     end
+
     if name === Symbol("climb_category_desc")
         OpenAPI.validate_param(name, "ExplorerSegment", :enum, val, ["NC", "4", "3", "2", "1", "HC"])
     end
+
+
     if name === Symbol("avg_grade")
         OpenAPI.validate_param(name, "ExplorerSegment", :format, val, "float")
     end
+
     if name === Symbol("start_latlng")
         OpenAPI.validate_param(name, "ExplorerSegment", :maxItems, val, 2)
         OpenAPI.validate_param(name, "ExplorerSegment", :minItems, val, 2)
     end
+
     if name === Symbol("end_latlng")
         OpenAPI.validate_param(name, "ExplorerSegment", :maxItems, val, 2)
         OpenAPI.validate_param(name, "ExplorerSegment", :minItems, val, 2)
     end
+
     if name === Symbol("elev_difference")
         OpenAPI.validate_param(name, "ExplorerSegment", :format, val, "float")
     end
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "ExplorerSegment", :format, val, "float")
     end
+
 end

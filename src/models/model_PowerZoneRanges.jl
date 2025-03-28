@@ -27,4 +27,5 @@ function check_required(o::PowerZoneRanges)
 end
 
 function OpenAPI.validate_property(::Type{ PowerZoneRanges }, name::Symbol, val)
+
 end

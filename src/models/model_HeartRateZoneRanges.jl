@@ -31,4 +31,6 @@ function check_required(o::HeartRateZoneRanges)
 end
 
 function OpenAPI.validate_property(::Type{ HeartRateZoneRanges }, name::Symbol, val)
+
+
 end

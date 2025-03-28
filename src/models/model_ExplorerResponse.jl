@@ -27,4 +27,5 @@ function check_required(o::ExplorerResponse)
 end
 
 function OpenAPI.validate_property(::Type{ ExplorerResponse }, name::Symbol, val)
+
 end

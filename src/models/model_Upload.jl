@@ -47,9 +47,15 @@ function check_required(o::Upload)
 end
 
 function OpenAPI.validate_property(::Type{ Upload }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "Upload", :format, val, "int64")
     end
+
+
+
+
+
     if name === Symbol("activity_id")
         OpenAPI.validate_param(name, "Upload", :format, val, "int64")
     end

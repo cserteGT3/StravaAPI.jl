@@ -23,7 +23,7 @@ Returns a GPX file of the route. Requires read_all scope for private routes.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **RoutesApi** | API context | 
-**id** | **Int64**| The identifier of the route. | [default to nothing]
+**id** | **Int64** | The identifier of the route. |
 
 ### Return type
 
@@ -53,7 +53,7 @@ Returns a TCX file of the route. Requires read_all scope for private routes.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **RoutesApi** | API context | 
-**id** | **Int64**| The identifier of the route. | [default to nothing]
+**id** | **Int64** | The identifier of the route. |
 
 ### Return type
 
@@ -83,7 +83,7 @@ Returns a route using its identifier. Requires read_all scope for private routes
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **RoutesApi** | API context | 
-**id** | **Int64**| The identifier of the route. | [default to nothing]
+**id** | **Int64** | The identifier of the route. |
 
 ### Return type
 
@@ -118,8 +118,8 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 

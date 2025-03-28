@@ -59,7 +59,16 @@ function check_required(o::DetailedGear)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedGear }, name::Symbol, val)
+
+
+
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "DetailedGear", :format, val, "float")
     end
+
+
+
+
 end

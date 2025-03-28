@@ -36,4 +36,7 @@ function check_required(o::TimedZoneRange)
 end
 
 function OpenAPI.validate_property(::Type{ TimedZoneRange }, name::Symbol, val)
+
+
+
 end

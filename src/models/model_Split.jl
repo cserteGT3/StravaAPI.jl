@@ -51,13 +51,20 @@ function check_required(o::Split)
 end
 
 function OpenAPI.validate_property(::Type{ Split }, name::Symbol, val)
+
     if name === Symbol("average_speed")
         OpenAPI.validate_param(name, "Split", :format, val, "float")
     end
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "Split", :format, val, "float")
     end
+
+
     if name === Symbol("elevation_difference")
         OpenAPI.validate_param(name, "Split", :format, val, "float")
     end
+
+
+
 end

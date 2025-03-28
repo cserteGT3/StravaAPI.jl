@@ -75,7 +75,7 @@ Returns the activity stats of an athlete. Only includes data from activities set
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **AthletesApi** | API context | 
-**id** | **Int64**| The identifier of the athlete. Must match the authenticated athlete. | [default to nothing]
+**id** | **Int64** | The identifier of the athlete. Must match the authenticated athlete. |
 
 ### Return type
 
@@ -105,7 +105,7 @@ Update the currently authenticated athlete. Requires profile:write scope.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **AthletesApi** | API context | 
-**weight** | **Float32**| The weight of the athlete in kilograms. | [default to nothing]
+**weight** | **Float32** | The weight of the athlete in kilograms. |
 
 ### Return type
 

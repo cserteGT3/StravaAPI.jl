@@ -27,20 +27,20 @@ Creates a manual activity for an athlete, requires activity:write scope.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**name** | **String**| The name of the activity. | [default to nothing]
-**sport_type** | **String**| Sport type of activity. For example - Run, MountainBikeRide, Ride, etc. | [default to nothing]
-**start_date_local** | **ZonedDateTime**| ISO 8601 formatted date time. | [default to nothing]
-**elapsed_time** | **Int64**| In seconds. | [default to nothing]
+**name** | **String** | The name of the activity. |
+**sport_type** | **String** | Sport type of activity. For example - Run, MountainBikeRide, Ride, etc. |
+**start_date_local** | **ZonedDateTime** | ISO 8601 formatted date time. |
+**elapsed_time** | **Int64** | In seconds. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String**| Type of activity. For example - Run, Ride etc. | [default to nothing]
- **description** | **String**| Description of the activity. | [default to nothing]
- **distance** | **Float32**| In meters. | [default to nothing]
- **trainer** | **Int64**| Set to 1 to mark as a trainer activity. | [default to nothing]
- **commute** | **Int64**| Set to 1 to mark as commute. | [default to nothing]
+ **type** | **String** | Type of activity. For example - Run, Ride etc. | [default to nothing]
+ **description** | **String** | Description of the activity. | [default to nothing]
+ **distance** | **Float32** | In meters. | [default to nothing]
+ **trainer** | **Int64** | Set to 1 to mark as a trainer activity. | [default to nothing]
+ **commute** | **Int64** | Set to 1 to mark as commute. | [default to nothing]
 
 ### Return type
 
@@ -70,13 +70,13 @@ Returns the given activity that is owned by the authenticated athlete. Requires 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
+**id** | **Int64** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include_all_efforts** | **Bool**| To include all segments efforts. | [default to nothing]
+ **include_all_efforts** | **Bool** | To include all segments efforts. | [default to nothing]
 
 ### Return type
 
@@ -106,16 +106,16 @@ Returns the comments on the given activity. Requires activity:read for Everyone 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
+**id** | **Int64** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Deprecated. Prefer to use after_cursor. | [default to nothing]
- **per_page** | **Int64**| Deprecated. Prefer to use page_size. | [default to 30]
- **page_size** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
- **after_cursor** | **String**| Cursor of the last item in the previous page of results, used to request the subsequent page of results.  When omitted, the first page of results is fetched. | [default to nothing]
+ **page** | **Int64** | Deprecated. Prefer to use after_cursor. | [default to nothing]
+ **per_page** | **Int64** | Deprecated. Prefer to use page_size. | [default to 30]
+ **page_size** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **after_cursor** | **String** | Cursor of the last item in the previous page of results, used to request the subsequent page of results.  When omitted, the first page of results is fetched. | [default to nothing]
 
 ### Return type
 
@@ -145,14 +145,14 @@ Returns the athletes who kudoed an activity identified by an identifier. Require
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
+**id** | **Int64** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -182,7 +182,7 @@ Returns the laps of an activity identified by an identifier. Requires activity:r
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
+**id** | **Int64** | The identifier of the activity. |
 
 ### Return type
 
@@ -217,10 +217,10 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **before** | **Int64**| An epoch timestamp to use for filtering activities that have taken place before a certain time. | [default to nothing]
- **after** | **Int64**| An epoch timestamp to use for filtering activities that have taken place after a certain time. | [default to nothing]
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **before** | **Int64** | An epoch timestamp to use for filtering activities that have taken place before a certain time. | [default to nothing]
+ **after** | **Int64** | An epoch timestamp to use for filtering activities that have taken place after a certain time. | [default to nothing]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -250,7 +250,7 @@ Summit Feature. Returns the zones of a given activity. Requires activity:read fo
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
+**id** | **Int64** | The identifier of the activity. |
 
 ### Return type
 
@@ -280,13 +280,13 @@ Updates the given activity that is owned by the authenticated athlete. Requires 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
+**id** | **Int64** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdatableActivity**](UpdatableActivity.md)|  | 
+ **body** | [**UpdatableActivity**](UpdatableActivity.md) |  | 
 
 ### Return type
 

@@ -59,10 +59,19 @@ function check_required(o::ClubActivity)
 end
 
 function OpenAPI.validate_property(::Type{ ClubActivity }, name::Symbol, val)
+
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "ClubActivity", :format, val, "float")
     end
+
+
+
     if name === Symbol("total_elevation_gain")
         OpenAPI.validate_param(name, "ClubActivity", :format, val, "float")
     end
+
+
+
 end

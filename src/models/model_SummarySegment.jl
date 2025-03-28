@@ -91,33 +91,51 @@ function check_required(o::SummarySegment)
 end
 
 function OpenAPI.validate_property(::Type{ SummarySegment }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "SummarySegment", :format, val, "int64")
     end
+
+
     if name === Symbol("activity_type")
         OpenAPI.validate_param(name, "SummarySegment", :enum, val, ["Ride", "Run"])
     end
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "SummarySegment", :format, val, "float")
     end
+
     if name === Symbol("average_grade")
         OpenAPI.validate_param(name, "SummarySegment", :format, val, "float")
     end
+
     if name === Symbol("maximum_grade")
         OpenAPI.validate_param(name, "SummarySegment", :format, val, "float")
     end
+
     if name === Symbol("elevation_high")
         OpenAPI.validate_param(name, "SummarySegment", :format, val, "float")
     end
+
     if name === Symbol("elevation_low")
         OpenAPI.validate_param(name, "SummarySegment", :format, val, "float")
     end
+
     if name === Symbol("start_latlng")
         OpenAPI.validate_param(name, "SummarySegment", :maxItems, val, 2)
         OpenAPI.validate_param(name, "SummarySegment", :minItems, val, 2)
     end
+
     if name === Symbol("end_latlng")
         OpenAPI.validate_param(name, "SummarySegment", :maxItems, val, 2)
         OpenAPI.validate_param(name, "SummarySegment", :minItems, val, 2)
     end
+
+
+
+
+
+
+
 end

@@ -35,4 +35,7 @@ function check_required(o::PolylineMap)
 end
 
 function OpenAPI.validate_property(::Type{ PolylineMap }, name::Symbol, val)
+
+
+
 end

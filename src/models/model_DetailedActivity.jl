@@ -235,54 +235,107 @@ function check_required(o::DetailedActivity)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedActivity }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "int64")
     end
+
+
     if name === Symbol("upload_id")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "int64")
     end
+
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
+
+
     if name === Symbol("total_elevation_gain")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
     if name === Symbol("elev_high")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
     if name === Symbol("elev_low")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
+
+
     if name === Symbol("start_date")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "date-time")
     end
+
     if name === Symbol("start_date_local")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "date-time")
     end
+
+
     if name === Symbol("start_latlng")
         OpenAPI.validate_param(name, "DetailedActivity", :maxItems, val, 2)
         OpenAPI.validate_param(name, "DetailedActivity", :minItems, val, 2)
     end
+
     if name === Symbol("end_latlng")
         OpenAPI.validate_param(name, "DetailedActivity", :maxItems, val, 2)
         OpenAPI.validate_param(name, "DetailedActivity", :minItems, val, 2)
     end
+
+
+
+
     if name === Symbol("athlete_count")
         OpenAPI.validate_param(name, "DetailedActivity", :minimum, val, 1, false)
     end
+
+
+
+
+
+
+
+
+
+
+
     if name === Symbol("average_speed")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
     if name === Symbol("max_speed")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
+
+
+
     if name === Symbol("kilojoules")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
     if name === Symbol("average_watts")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
+
+
+
+
+
+
     if name === Symbol("calories")
         OpenAPI.validate_param(name, "DetailedActivity", :format, val, "float")
     end
+
+
+
+
+
+
+
 end

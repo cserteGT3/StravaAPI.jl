@@ -31,4 +31,6 @@ function check_required(o::ZoneRange)
 end
 
 function OpenAPI.validate_property(::Type{ ZoneRange }, name::Symbol, val)
+
+
 end

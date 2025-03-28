@@ -18,7 +18,7 @@ const _returntypes_create_upload_UploadsApi = Dict{Regex,Type}(
 
 function _oacinternal_create_upload(_api::UploadsApi; file=nothing, name=nothing, description=nothing, trainer=nothing, commute=nothing, data_type=nothing, external_id=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "POST", _returntypes_create_upload_UploadsApi, "/uploads", ["strava_oauth", ])
-    OpenAPI.Clients.set_param(_ctx.file, "file", file)  # type Vector{UInt8}
+    OpenAPI.Clients.set_param(_ctx.file, "file", file)  # type String
     OpenAPI.Clients.set_param(_ctx.form, "name", name)  # type String
     OpenAPI.Clients.set_param(_ctx.form, "description", description)  # type String
     OpenAPI.Clients.set_param(_ctx.form, "trainer", trainer)  # type String

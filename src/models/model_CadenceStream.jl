@@ -39,10 +39,16 @@ function check_required(o::CadenceStream)
 end
 
 function OpenAPI.validate_property(::Type{ CadenceStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "CadenceStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "CadenceStream", :enum, val, ["distance", "time"])
     end
+
+
 end

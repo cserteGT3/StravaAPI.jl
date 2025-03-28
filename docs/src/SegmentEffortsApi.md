@@ -21,15 +21,15 @@ Returns a set of the authenticated athlete's segment efforts for a given segment
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **SegmentEffortsApi** | API context | 
-**segment_id** | **Int64**| The identifier of the segment. | [default to nothing]
+**segment_id** | **Int64** | The identifier of the segment. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **start_date_local** | **ZonedDateTime**| ISO 8601 formatted date time. | [default to nothing]
- **end_date_local** | **ZonedDateTime**| ISO 8601 formatted date time. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **start_date_local** | **ZonedDateTime** | ISO 8601 formatted date time. | [default to nothing]
+ **end_date_local** | **ZonedDateTime** | ISO 8601 formatted date time. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -59,7 +59,7 @@ Returns a segment effort from an activity that is owned by the authenticated ath
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **SegmentEffortsApi** | API context | 
-**id** | **Int64**| The identifier of the segment effort. | [default to nothing]
+**id** | **Int64** | The identifier of the segment effort. |
 
 ### Return type
 

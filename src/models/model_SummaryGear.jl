@@ -43,6 +43,11 @@ function check_required(o::SummaryGear)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryGear }, name::Symbol, val)
+
+
+
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "SummaryGear", :format, val, "float")
     end

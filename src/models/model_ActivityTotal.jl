@@ -48,10 +48,16 @@ function check_required(o::ActivityTotal)
 end
 
 function OpenAPI.validate_property(::Type{ ActivityTotal }, name::Symbol, val)
+
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "ActivityTotal", :format, val, "float")
     end
+
+
+
     if name === Symbol("elevation_gain")
         OpenAPI.validate_param(name, "ActivityTotal", :format, val, "float")
     end
+
 end

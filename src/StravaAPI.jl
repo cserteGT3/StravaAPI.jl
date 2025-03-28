@@ -10,6 +10,7 @@ using OpenAPI.Clients
 const API_VERSION = "3.0.0"
 
 include("modelincludes.jl")
+include("authentication.jl")
 
 include("apis/api_ActivitiesApi.jl")
 include("apis/api_AthletesApi.jl")
