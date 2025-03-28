@@ -90,6 +90,7 @@ function generatepackage()
     cp(joinpath(gendir, "docs.make.jl"), joinpath(docdir, "make.jl"))
     cp(joinpath(gendir, "docs.Project.toml"), joinpath(docdir, "Project.toml"))
     cp(joinpath(gendir, "docs.index.md"), joinpath(docdir, "src", "index.md"))
+    cp(joinpath(gendir, "docs.docstrings.md"), joinpath(docdir, "src", "docstrings.md"))
     @info "Copied templated documentation files to docs/"
 
     postprocess_docs(joinpath(docdir, "src"))

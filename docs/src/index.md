@@ -28,18 +28,3 @@ Docstrings goes here.
 
 The automatically generated documentation starting with the [Julia API client for StravaAPI](@ref) is included.
 You may ignore the automatically generated installation and authentication instructions.
-
-<!---
-```@meta
-CurrentModule = StravaAPI
-```
-
-Documentation for [StravaAPI](https://github.com/cserteGT3/StravaAPI.jl).
-
-```@index
-```
-
-```@autodocs
-Modules = [StravaAPI]
-```
---->
