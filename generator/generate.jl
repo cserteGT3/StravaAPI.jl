@@ -11,17 +11,6 @@ end
 using Pkg
 using HTTP, OpenAPI, JSON
 
-"""
-    inject_code(targetfile, code_to_extend, code_to_add)
-
-Replace `code_to_extend` with `code_to_extend*code_to_add` in source file `targetfile`.
-"""
-function inject_code(targetfile, code_to_extend, code_to_add)
-    fcontent = read(targetfile, String)
-    newcontent = replace(fcontent, code_to_extend => code_to_extend * "\n" * code_to_add)
-    write(targetfile, newcontent)
-end
-
 function postprocess_docs(docsfolder)
     #=
     # this is implemented
@@ -70,12 +59,6 @@ function generatepackage()
     end
     @info "Package code generated with OpenAPI, continuing with postprocessing."
 
-    # add authentication helper codes
-    incl_str = "include(\"authentication.jl\")"
-    inject_code(joinpath(devdir, "src", "StravaAPI.jl"), "include(\"modelincludes.jl\")", incl_str)
-    cp(joinpath(gendir, "src.authenticate.jl"), joinpath(devdir, "src", "authentication.jl"))
-    @info "Added authentication code to source."
-    
     cd(devdir)
     mv("README.md", joinpath(docdir, "README.md"); force=true)
     write("README.md", readme_file)
