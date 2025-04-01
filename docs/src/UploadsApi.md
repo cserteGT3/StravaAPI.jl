@@ -26,13 +26,13 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **file** | **String****String**| The uploaded file. | [default to nothing]
- **name** | **String**| The desired name of the resulting activity. | [default to nothing]
- **description** | **String**| The desired description of the resulting activity. | [default to nothing]
- **trainer** | **String**| Whether the resulting activity should be marked as having been performed on a trainer. | [default to nothing]
- **commute** | **String**| Whether the resulting activity should be tagged as a commute. | [default to nothing]
- **data_type** | **String**| The format of the uploaded file. | [default to nothing]
- **external_id** | **String**| The desired external identifier of the resulting activity. | [default to nothing]
+ **file** | **String** | The uploaded file. | 
+ **name** | **String** | The desired name of the resulting activity. | [default to nothing]
+ **description** | **String** | The desired description of the resulting activity. | [default to nothing]
+ **trainer** | **String** | Whether the resulting activity should be marked as having been performed on a trainer. | [default to nothing]
+ **commute** | **String** | Whether the resulting activity should be tagged as a commute. | [default to nothing]
+ **data_type** | **String** | The format of the uploaded file. | [default to nothing]
+ **external_id** | **String** | The desired external identifier of the resulting activity. | [default to nothing]
 
 ### Return type
 
@@ -62,7 +62,7 @@ Returns an upload for a given identifier. Requires activity:write scope.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **UploadsApi** | API context | 
-**upload_id** | **Int64**| The identifier of the upload. | [default to nothing]
+**upload_id** | **Int64** | The identifier of the upload. |
 
 ### Return type
 

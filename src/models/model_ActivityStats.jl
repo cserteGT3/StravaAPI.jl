@@ -68,10 +68,21 @@ function check_required(o::ActivityStats)
 end
 
 function OpenAPI.validate_property(::Type{ ActivityStats }, name::Symbol, val)
+
     if name === Symbol("biggest_ride_distance")
         OpenAPI.validate_param(name, "ActivityStats", :format, val, "double")
     end
+
     if name === Symbol("biggest_climb_elevation_gain")
         OpenAPI.validate_param(name, "ActivityStats", :format, val, "double")
     end
+
+
+
+
+
+
+
+
+
 end

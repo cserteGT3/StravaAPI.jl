@@ -47,4 +47,10 @@ function check_required(o::ClubAthlete)
 end
 
 function OpenAPI.validate_property(::Type{ ClubAthlete }, name::Symbol, val)
+
+
+
+
+
+
 end

@@ -35,7 +35,10 @@ function check_required(o::MetaClub)
 end
 
 function OpenAPI.validate_property(::Type{ MetaClub }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "MetaClub", :format, val, "int64")
     end
+
+
 end

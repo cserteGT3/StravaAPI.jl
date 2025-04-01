@@ -31,4 +31,6 @@ function check_required(o::Zones)
 end
 
 function OpenAPI.validate_property(::Type{ Zones }, name::Symbol, val)
+
+
 end

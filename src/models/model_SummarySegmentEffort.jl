@@ -51,19 +51,26 @@ function check_required(o::SummarySegmentEffort)
 end
 
 function OpenAPI.validate_property(::Type{ SummarySegmentEffort }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "SummarySegmentEffort", :format, val, "int64")
     end
+
     if name === Symbol("activity_id")
         OpenAPI.validate_param(name, "SummarySegmentEffort", :format, val, "int64")
     end
+
+
     if name === Symbol("start_date")
         OpenAPI.validate_param(name, "SummarySegmentEffort", :format, val, "date-time")
     end
+
     if name === Symbol("start_date_local")
         OpenAPI.validate_param(name, "SummarySegmentEffort", :format, val, "date-time")
     end
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "SummarySegmentEffort", :format, val, "float")
     end
+
 end

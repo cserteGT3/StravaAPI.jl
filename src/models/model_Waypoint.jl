@@ -47,15 +47,21 @@ function check_required(o::Waypoint)
 end
 
 function OpenAPI.validate_property(::Type{ Waypoint }, name::Symbol, val)
+
     if name === Symbol("latlng")
         OpenAPI.validate_param(name, "Waypoint", :maxItems, val, 2)
         OpenAPI.validate_param(name, "Waypoint", :minItems, val, 2)
     end
+
     if name === Symbol("target_latlng")
         OpenAPI.validate_param(name, "Waypoint", :maxItems, val, 2)
         OpenAPI.validate_param(name, "Waypoint", :minItems, val, 2)
     end
+
     if name === Symbol("categories")
         OpenAPI.validate_param(name, "Waypoint", :minItems, val, 0)
     end
+
+
+
 end

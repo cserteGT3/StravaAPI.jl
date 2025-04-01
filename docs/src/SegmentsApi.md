@@ -23,15 +23,15 @@ Returns the top 10 segments matching a specified query.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **SegmentsApi** | API context | 
-**bounds** | **Vector{Float32}**| The latitude and longitude for two points describing a rectangular boundary for the search: [southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude] | [default to nothing]
+**bounds** | **Vector{Float32}** | The latitude and longitude for two points describing a rectangular boundary for the search: [southwest corner latitutde, southwest corner longitude, northeast corner latitude, northeast corner longitude] |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **activity_type** | **String**| Desired activity type. | [default to nothing]
- **min_cat** | **Int64**| The minimum climbing category. | [default to nothing]
- **max_cat** | **Int64**| The maximum climbing category. | [default to nothing]
+ **activity_type** | **String** | Desired activity type. | [default to nothing]
+ **min_cat** | **Int64** | The minimum climbing category. | [default to nothing]
+ **max_cat** | **Int64** | The maximum climbing category. | [default to nothing]
 
 ### Return type
 
@@ -66,8 +66,8 @@ Name | Type | Description  | Notes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64**| Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64**| Number of items per page. Defaults to 30. | [default to 30]
+ **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
+ **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
@@ -97,7 +97,7 @@ Returns the specified segment. read_all scope required in order to retrieve athl
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **SegmentsApi** | API context | 
-**id** | **Int64**| The identifier of the segment. | [default to nothing]
+**id** | **Int64** | The identifier of the segment. |
 
 ### Return type
 
@@ -127,8 +127,8 @@ Stars/Unstars the given segment for the authenticated athlete. Requires profile:
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **SegmentsApi** | API context | 
-**id** | **Int64**| The identifier of the segment to star. | [default to nothing]
-**starred** | **Bool**| If true, star the segment; if false, unstar the segment. | [default to false]
+**id** | **Int64** | The identifier of the segment to star. |
+**starred** | **Bool** | If true, star the segment; if false, unstar the segment. |
 
 ### Return type
 

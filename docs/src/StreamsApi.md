@@ -23,9 +23,9 @@ Returns the given activity's streams. Requires activity:read scope. Requires act
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **StreamsApi** | API context | 
-**id** | **Int64**| The identifier of the activity. | [default to nothing]
-**keys** | **Vector{String}**| Desired stream types. | [default to nothing]
-**key_by_type** | **Bool**| Must be true. | [default to true]
+**id** | **Int64** | The identifier of the activity. |
+**keys** | **Vector{String}** | Desired stream types. |
+**key_by_type** | **Bool** | Must be true. |
 
 ### Return type
 
@@ -55,7 +55,7 @@ Returns the given route's streams. Requires read_all scope for private routes.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **StreamsApi** | API context | 
-**id** | **Int64**| The identifier of the route. | [default to nothing]
+**id** | **Int64** | The identifier of the route. |
 
 ### Return type
 
@@ -85,9 +85,9 @@ Returns a set of streams for a segment effort completed by the authenticated ath
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **StreamsApi** | API context | 
-**id** | **Int64**| The identifier of the segment effort. | [default to nothing]
-**keys** | **Vector{String}**| The types of streams to return. | [default to nothing]
-**key_by_type** | **Bool**| Must be true. | [default to true]
+**id** | **Int64** | The identifier of the segment effort. |
+**keys** | **Vector{String}** | The types of streams to return. |
+**key_by_type** | **Bool** | Must be true. |
 
 ### Return type
 
@@ -117,9 +117,9 @@ Returns the given segment's streams. Requires read_all scope for private segment
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **StreamsApi** | API context | 
-**id** | **Int64**| The identifier of the segment. | [default to nothing]
-**keys** | **Vector{String}**| The types of streams to return. | [default to nothing]
-**key_by_type** | **Bool**| Must be true. | [default to true]
+**id** | **Int64** | The identifier of the segment. |
+**keys** | **Vector{String}** | The types of streams to return. |
+**key_by_type** | **Bool** | Must be true. |
 
 ### Return type
 

@@ -39,10 +39,16 @@ function check_required(o::DistanceStream)
 end
 
 function OpenAPI.validate_property(::Type{ DistanceStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "DistanceStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "DistanceStream", :enum, val, ["distance", "time"])
     end
+
+
 end

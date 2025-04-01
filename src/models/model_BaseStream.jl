@@ -35,10 +35,15 @@ function check_required(o::BaseStream)
 end
 
 function OpenAPI.validate_property(::Type{ BaseStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "BaseStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "BaseStream", :enum, val, ["distance", "time"])
     end
+
 end

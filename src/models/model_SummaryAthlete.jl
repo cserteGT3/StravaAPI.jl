@@ -79,15 +79,30 @@ function check_required(o::SummaryAthlete)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryAthlete }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "SummaryAthlete", :format, val, "int64")
     end
+
+
+
+
+
+
+
+
+
     if name === Symbol("sex")
         OpenAPI.validate_param(name, "SummaryAthlete", :enum, val, ["M", "F"])
     end
+
+
+
+
     if name === Symbol("created_at")
         OpenAPI.validate_param(name, "SummaryAthlete", :format, val, "date-time")
     end
+
     if name === Symbol("updated_at")
         OpenAPI.validate_param(name, "SummaryAthlete", :format, val, "date-time")
     end

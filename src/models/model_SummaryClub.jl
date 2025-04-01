@@ -87,10 +87,27 @@ function check_required(o::SummaryClub)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryClub }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "SummaryClub", :format, val, "int64")
     end
+
+
+
+
+
+
     if name === Symbol("sport_type")
         OpenAPI.validate_param(name, "SummaryClub", :enum, val, ["cycling", "running", "triathlon", "other"])
     end
+
+
+
+
+
+
+
+
+
+
 end

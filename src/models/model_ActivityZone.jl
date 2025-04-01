@@ -51,7 +51,15 @@ function check_required(o::ActivityZone)
 end
 
 function OpenAPI.validate_property(::Type{ ActivityZone }, name::Symbol, val)
+
+
+
     if name === Symbol("type")
         OpenAPI.validate_param(name, "ActivityZone", :enum, val, ["heartrate", "power"])
     end
+
+
+
+
+
 end

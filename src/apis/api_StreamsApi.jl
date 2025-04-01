@@ -21,8 +21,8 @@ function _oacinternal_get_activity_streams(_api::StreamsApi, id::Int64, keys::Ve
 
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_activity_streams_StreamsApi, "/activities/{id}/streams", ["strava_oauth", ])
     OpenAPI.Clients.set_param(_ctx.path, "id", id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "keys", keys)  # type Vector{String}
-    OpenAPI.Clients.set_param(_ctx.query, "key_by_type", key_by_type)  # type Bool
+    OpenAPI.Clients.set_param(_ctx.query, "keys", keys; style="form", is_explode=false)  # type Vector{String}
+    OpenAPI.Clients.set_param(_ctx.query, "key_by_type", key_by_type; style="", is_explode=false)  # type Bool
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -91,8 +91,8 @@ function _oacinternal_get_segment_effort_streams(_api::StreamsApi, id::Int64, ke
 
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_segment_effort_streams_StreamsApi, "/segment_efforts/{id}/streams", ["strava_oauth", ])
     OpenAPI.Clients.set_param(_ctx.path, "id", id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "keys", keys)  # type Vector{String}
-    OpenAPI.Clients.set_param(_ctx.query, "key_by_type", key_by_type)  # type Bool
+    OpenAPI.Clients.set_param(_ctx.query, "keys", keys; style="form", is_explode=false)  # type Vector{String}
+    OpenAPI.Clients.set_param(_ctx.query, "key_by_type", key_by_type; style="", is_explode=false)  # type Bool
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -129,8 +129,8 @@ function _oacinternal_get_segment_streams(_api::StreamsApi, id::Int64, keys::Vec
 
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_segment_streams_StreamsApi, "/segments/{id}/streams", ["strava_oauth", ])
     OpenAPI.Clients.set_param(_ctx.path, "id", id)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "keys", keys)  # type Vector{String}
-    OpenAPI.Clients.set_param(_ctx.query, "key_by_type", key_by_type)  # type Bool
+    OpenAPI.Clients.set_param(_ctx.query, "keys", keys; style="form", is_explode=false)  # type Vector{String}
+    OpenAPI.Clients.set_param(_ctx.query, "key_by_type", key_by_type; style="", is_explode=false)  # type Bool
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx

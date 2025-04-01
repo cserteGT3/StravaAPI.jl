@@ -67,4 +67,15 @@ function check_required(o::StreamSet)
 end
 
 function OpenAPI.validate_property(::Type{ StreamSet }, name::Symbol, val)
+
+
+
+
+
+
+
+
+
+
+
 end

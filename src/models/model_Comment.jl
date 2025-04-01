@@ -43,12 +43,17 @@ function check_required(o::Comment)
 end
 
 function OpenAPI.validate_property(::Type{ Comment }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "Comment", :format, val, "int64")
     end
+
     if name === Symbol("activity_id")
         OpenAPI.validate_param(name, "Comment", :format, val, "int64")
     end
+
+
+
     if name === Symbol("created_at")
         OpenAPI.validate_param(name, "Comment", :format, val, "date-time")
     end

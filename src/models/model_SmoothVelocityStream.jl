@@ -39,10 +39,16 @@ function check_required(o::SmoothVelocityStream)
 end
 
 function OpenAPI.validate_property(::Type{ SmoothVelocityStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "SmoothVelocityStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "SmoothVelocityStream", :enum, val, ["distance", "time"])
     end
+
+
 end

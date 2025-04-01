@@ -111,22 +111,46 @@ function check_required(o::DetailedAthlete)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedAthlete }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "DetailedAthlete", :format, val, "int64")
     end
+
+
+
+
+
+
+
+
+
     if name === Symbol("sex")
         OpenAPI.validate_param(name, "DetailedAthlete", :enum, val, ["M", "F"])
     end
+
+
+
+
     if name === Symbol("created_at")
         OpenAPI.validate_param(name, "DetailedAthlete", :format, val, "date-time")
     end
+
     if name === Symbol("updated_at")
         OpenAPI.validate_param(name, "DetailedAthlete", :format, val, "date-time")
     end
+
+
+
     if name === Symbol("measurement_preference")
         OpenAPI.validate_param(name, "DetailedAthlete", :enum, val, ["feet", "meters"])
     end
+
+
+
     if name === Symbol("weight")
         OpenAPI.validate_param(name, "DetailedAthlete", :format, val, "float")
     end
+
+
+
 end

@@ -27,10 +27,10 @@ function _oacinternal_explore_segments(_api::SegmentsApi, bounds::Vector{Float32
     OpenAPI.validate_param("max_cat", "explore_segments", :minimum, max_cat, 0, false)
 
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_explore_segments_SegmentsApi, "/segments/explore", ["strava_oauth", ])
-    OpenAPI.Clients.set_param(_ctx.query, "bounds", bounds)  # type Vector{Float32}
-    OpenAPI.Clients.set_param(_ctx.query, "activity_type", activity_type)  # type String
-    OpenAPI.Clients.set_param(_ctx.query, "min_cat", min_cat)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "max_cat", max_cat)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "bounds", bounds; style="form", is_explode=false)  # type Vector{Float32}
+    OpenAPI.Clients.set_param(_ctx.query, "activity_type", activity_type; style="", is_explode=false)  # type String
+    OpenAPI.Clients.set_param(_ctx.query, "min_cat", min_cat; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "max_cat", max_cat; style="", is_explode=false)  # type Int64
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx
@@ -65,8 +65,8 @@ const _returntypes_get_logged_in_athlete_starred_segments_SegmentsApi = Dict{Reg
 
 function _oacinternal_get_logged_in_athlete_starred_segments(_api::SegmentsApi; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = OpenAPI.Clients.Ctx(_api.client, "GET", _returntypes_get_logged_in_athlete_starred_segments_SegmentsApi, "/segments/starred", ["strava_oauth", ])
-    OpenAPI.Clients.set_param(_ctx.query, "page", page)  # type Int64
-    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "page", page; style="", is_explode=false)  # type Int64
+    OpenAPI.Clients.set_param(_ctx.query, "per_page", per_page; style="", is_explode=false)  # type Int64
     OpenAPI.Clients.set_header_accept(_ctx, ["application/json", ])
     OpenAPI.Clients.set_header_content_type(_ctx, (_mediaType === nothing) ? [] : [_mediaType])
     return _ctx

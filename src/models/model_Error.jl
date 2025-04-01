@@ -35,4 +35,7 @@ function check_required(o::Error)
 end
 
 function OpenAPI.validate_property(::Type{ Error }, name::Symbol, val)
+
+
+
 end

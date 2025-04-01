@@ -39,10 +39,16 @@ function check_required(o::SmoothGradeStream)
 end
 
 function OpenAPI.validate_property(::Type{ SmoothGradeStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "SmoothGradeStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "SmoothGradeStream", :enum, val, ["distance", "time"])
     end
+
+
 end

@@ -95,27 +95,45 @@ function check_required(o::Lap)
 end
 
 function OpenAPI.validate_property(::Type{ Lap }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "Lap", :format, val, "int64")
     end
+
+
+
     if name === Symbol("average_cadence")
         OpenAPI.validate_param(name, "Lap", :format, val, "float")
     end
+
     if name === Symbol("average_speed")
         OpenAPI.validate_param(name, "Lap", :format, val, "float")
     end
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "Lap", :format, val, "float")
     end
+
+
+
+
+
     if name === Symbol("max_speed")
         OpenAPI.validate_param(name, "Lap", :format, val, "float")
     end
+
+
+
+
+
     if name === Symbol("start_date")
         OpenAPI.validate_param(name, "Lap", :format, val, "date-time")
     end
+
     if name === Symbol("start_date_local")
         OpenAPI.validate_param(name, "Lap", :format, val, "date-time")
     end
+
     if name === Symbol("total_elevation_gain")
         OpenAPI.validate_param(name, "Lap", :format, val, "float")
     end

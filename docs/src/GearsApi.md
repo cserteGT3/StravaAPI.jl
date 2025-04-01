@@ -20,7 +20,7 @@ Returns an equipment using its identifier.
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **GearsApi** | API context | 
-**id** | **String**| The identifier of the gear. | [default to nothing]
+**id** | **String** | The identifier of the gear. |
 
 ### Return type
 

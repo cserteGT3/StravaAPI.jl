@@ -27,6 +27,7 @@ function check_required(o::MetaAthlete)
 end
 
 function OpenAPI.validate_property(::Type{ MetaAthlete }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "MetaAthlete", :format, val, "int64")
     end

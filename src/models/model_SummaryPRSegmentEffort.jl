@@ -39,10 +39,14 @@ function check_required(o::SummaryPRSegmentEffort)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryPRSegmentEffort }, name::Symbol, val)
+
     if name === Symbol("pr_activity_id")
         OpenAPI.validate_param(name, "SummaryPRSegmentEffort", :format, val, "int64")
     end
+
+
     if name === Symbol("pr_date")
         OpenAPI.validate_param(name, "SummaryPRSegmentEffort", :format, val, "date-time")
     end
+
 end

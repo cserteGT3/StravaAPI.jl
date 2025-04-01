@@ -39,10 +39,16 @@ function check_required(o::LatLngStream)
 end
 
 function OpenAPI.validate_property(::Type{ LatLngStream }, name::Symbol, val)
+
+
     if name === Symbol("resolution")
         OpenAPI.validate_param(name, "LatLngStream", :enum, val, ["low", "medium", "high"])
     end
+
+
     if name === Symbol("series_type")
         OpenAPI.validate_param(name, "LatLngStream", :enum, val, ["distance", "time"])
     end
+
+
 end

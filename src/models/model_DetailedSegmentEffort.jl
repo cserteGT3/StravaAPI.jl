@@ -111,39 +111,61 @@ function check_required(o::DetailedSegmentEffort)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedSegmentEffort }, name::Symbol, val)
+
     if name === Symbol("id")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "int64")
     end
+
     if name === Symbol("activity_id")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "int64")
     end
+
+
     if name === Symbol("start_date")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "date-time")
     end
+
     if name === Symbol("start_date_local")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "date-time")
     end
+
     if name === Symbol("distance")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "float")
     end
+
+
+
+
+
+
+
+
     if name === Symbol("average_cadence")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "float")
     end
+
     if name === Symbol("average_watts")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "float")
     end
+
+
     if name === Symbol("average_heartrate")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "float")
     end
+
     if name === Symbol("max_heartrate")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :format, val, "float")
     end
+
+
     if name === Symbol("kom_rank")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :maximum, val, 10, false)
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :minimum, val, 1, false)
     end
+
     if name === Symbol("pr_rank")
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :maximum, val, 3, false)
         OpenAPI.validate_param(name, "DetailedSegmentEffort", :minimum, val, 1, false)
     end
+
 end
