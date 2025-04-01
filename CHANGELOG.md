@@ -16,6 +16,14 @@ Types of changes:
 
 ## [Unreleased]
 
+### Fixed
+
+- clarify that, one must install `OpenAPI.jl` to use the package
+
+### Added
+
+- contribution "guidelines"
+
 ## [1.0.0] - 2025-04-01
 
 ### Added
