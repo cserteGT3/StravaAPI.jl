@@ -1,4 +1,5 @@
 using Logging
+import Dates
 
 # check if docker runs
 if success(run(`docker ps`; wait = false))
@@ -27,6 +28,9 @@ function postprocess_docs(docsfolder)
         newf = replace(newf, "[**Vector{Float32}**](Float32.md)" => "**Vector{Float32}**")
         if f == "README.md"
             newf = replace(newf, "docs/" => "./")
+        elseif f == "index.md"
+            date_text = "Package code was generated at: `UTC $(Dates.now(Dates.UTC))`"
+            newf = replace(newf, "<INSERT_DATE>" => date_text)
         end
         write(joinpath(docsfolder, f), newf)
     end

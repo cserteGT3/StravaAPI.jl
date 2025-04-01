@@ -2,6 +2,8 @@
 
 This package interfaces you to Strava through its [API](https://developers.strava.com/).
 
+Package code was generated at: `UTC 2025-04-01T17:32:36.883`
+
 ## Installation
 
 Install the package via:

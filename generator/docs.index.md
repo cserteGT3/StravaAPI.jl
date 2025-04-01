@@ -2,6 +2,8 @@
 
 This package interfaces you to Strava through its [API](https://developers.strava.com/).
 
+<INSERT_DATE>
+
 ## Installation
 
 Install the package via:
