@@ -1,3 +1,6 @@
 [deps]
 Documenter = "e30172f5-a6a5-5a46-863b-614d45cd2de4"
 StravaAPI = "71058383-8132-461f-b29a-bb8012bb1004"
+
+[compat]
+Documenter = "1"

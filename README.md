@@ -6,14 +6,30 @@
 
 The code is generated with [OpenAPI.jl](https://github.com/JuliaComputing/OpenAPI.jl) and [PkgTemplates.jl](https://github.com/JuliaCI/PkgTemplates.jl).
 
+## Installation
+
 To use the package, just install it with
 
 ```julia
 ] add StravaAPI
 ```
 
-You'll need to authorize towards the Strava API server.
+## Usage example
+
+You'll need to authorize towards the Strava API server (not covered by this package).
 See the documentation [here](https://developers.strava.com/docs/getting-started/#oauth).
+
+With a valid `access_token`, you can get the logged in athlete:
+
+```julia
+using OpenAPI
+using OpenAPI.Clients
+import OpenAPI.Clients: Client, set_header
+client = Client("https://www.strava.com/api/v3")
+set_header(client, "Authorization", "Bearer $access_token")
+api = StravaAPI.AthletesApi(client)
+athlete, api_resp = get_logged_in_athlete(api)
+```
 
 ## Code to generate the package
 
