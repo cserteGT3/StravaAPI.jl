@@ -1,7 +1,7 @@
 name = "StravaAPI"
 uuid = "71058383-8132-461f-b29a-bb8012bb1004"
 authors = ["Tamás Cserteg <csertegt@gmail.com> and contributors"]
-version = "1.0.0"
+version = "1.0.1"
 
 [deps]
 Dates = "ade2ca70-3891-5945-98fb-dc099432e06a"
