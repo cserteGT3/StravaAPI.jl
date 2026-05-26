@@ -11,8 +11,8 @@ Method | HTTP request | Description
 
 
 # **get_route_as_g_p_x**
-> get_route_as_g_p_x(_api::RoutesApi, id::Int64; _mediaType=nothing) -> Nothing, OpenAPI.Clients.ApiResponse <br/>
-> get_route_as_g_p_x(_api::RoutesApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ Nothing }, OpenAPI.Clients.ApiResponse
+> `get_route_as_g_p_x`(_api::`RoutesApi`, `id`::`Int64`; _mediaType=nothing) -> `Nothing`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_route_as_g_p_x`(_api::`RoutesApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `Nothing` }, `OpenAPI.Clients.ApiResponse`
 
 Export Route GPX
 
@@ -22,12 +22,12 @@ Returns a GPX file of the route. Requires read_all scope for private routes.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **RoutesApi** | API context | 
-**id** | **Int64** | The identifier of the route. |
+ **_api** | **`RoutesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the route. |
 
 ### Return type
 
-Nothing
+`Nothing`
 
 ### Authorization
 
@@ -41,8 +41,8 @@ Nothing
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_route_as_t_c_x**
-> get_route_as_t_c_x(_api::RoutesApi, id::Int64; _mediaType=nothing) -> Nothing, OpenAPI.Clients.ApiResponse <br/>
-> get_route_as_t_c_x(_api::RoutesApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ Nothing }, OpenAPI.Clients.ApiResponse
+> `get_route_as_t_c_x`(_api::`RoutesApi`, `id`::`Int64`; _mediaType=nothing) -> `Nothing`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_route_as_t_c_x`(_api::`RoutesApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `Nothing` }, `OpenAPI.Clients.ApiResponse`
 
 Export Route TCX
 
@@ -52,12 +52,12 @@ Returns a TCX file of the route. Requires read_all scope for private routes.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **RoutesApi** | API context | 
-**id** | **Int64** | The identifier of the route. |
+ **_api** | **`RoutesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the route. |
 
 ### Return type
 
-Nothing
+`Nothing`
 
 ### Authorization
 
@@ -71,8 +71,8 @@ Nothing
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_route_by_id**
-> get_route_by_id(_api::RoutesApi, id::Int64; _mediaType=nothing) -> Route, OpenAPI.Clients.ApiResponse <br/>
-> get_route_by_id(_api::RoutesApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ Route }, OpenAPI.Clients.ApiResponse
+> `get_route_by_id`(_api::`RoutesApi`, `id`::`Int64`; _mediaType=nothing) -> `Route`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_route_by_id`(_api::`RoutesApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `Route` }, `OpenAPI.Clients.ApiResponse`
 
 Get Route
 
@@ -82,12 +82,12 @@ Returns a route using its identifier. Requires read_all scope for private routes
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **RoutesApi** | API context | 
-**id** | **Int64** | The identifier of the route. |
+ **_api** | **`RoutesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the route. |
 
 ### Return type
 
-[**Route**](Route.md)
+[**`Route`**](Route.md)
 
 ### Authorization
 
@@ -101,8 +101,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_routes_by_athlete_id**
-> get_routes_by_athlete_id(_api::RoutesApi; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{Route}, OpenAPI.Clients.ApiResponse <br/>
-> get_routes_by_athlete_id(_api::RoutesApi, response_stream::Channel; page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{Route} }, OpenAPI.Clients.ApiResponse
+> `get_routes_by_athlete_id`(_api::`RoutesApi`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{Route}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_routes_by_athlete_id`(_api::`RoutesApi`, response_stream::`Channel`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{Route}` }, `OpenAPI.Clients.ApiResponse`
 
 List Athlete Routes
 
@@ -112,18 +112,18 @@ Returns a list of the routes created by the authenticated athlete. Private route
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **RoutesApi** | API context | 
+ **_api** | **`RoutesApi`** | API context | 
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{Route}**](Route.md)
+[**`Vector{Route}`**](Route.md)
 
 ### Authorization
 

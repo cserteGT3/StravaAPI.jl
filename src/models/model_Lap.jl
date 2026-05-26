@@ -65,33 +65,38 @@ Base.@kwdef mutable struct Lap <: OpenAPI.APIModel
     total_elevation_gain::Union{Nothing, Float32} = nothing
 
     function Lap(id, activity, athlete, average_cadence, average_speed, distance, elapsed_time, start_index, end_index, lap_index, max_speed, moving_time, name, pace_zone, split, start_date, start_date_local, total_elevation_gain, )
-        OpenAPI.validate_property(Lap, Symbol("id"), id)
-        OpenAPI.validate_property(Lap, Symbol("activity"), activity)
-        OpenAPI.validate_property(Lap, Symbol("athlete"), athlete)
-        OpenAPI.validate_property(Lap, Symbol("average_cadence"), average_cadence)
-        OpenAPI.validate_property(Lap, Symbol("average_speed"), average_speed)
-        OpenAPI.validate_property(Lap, Symbol("distance"), distance)
-        OpenAPI.validate_property(Lap, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(Lap, Symbol("start_index"), start_index)
-        OpenAPI.validate_property(Lap, Symbol("end_index"), end_index)
-        OpenAPI.validate_property(Lap, Symbol("lap_index"), lap_index)
-        OpenAPI.validate_property(Lap, Symbol("max_speed"), max_speed)
-        OpenAPI.validate_property(Lap, Symbol("moving_time"), moving_time)
-        OpenAPI.validate_property(Lap, Symbol("name"), name)
-        OpenAPI.validate_property(Lap, Symbol("pace_zone"), pace_zone)
-        OpenAPI.validate_property(Lap, Symbol("split"), split)
-        OpenAPI.validate_property(Lap, Symbol("start_date"), start_date)
-        OpenAPI.validate_property(Lap, Symbol("start_date_local"), start_date_local)
-        OpenAPI.validate_property(Lap, Symbol("total_elevation_gain"), total_elevation_gain)
-        return new(id, activity, athlete, average_cadence, average_speed, distance, elapsed_time, start_index, end_index, lap_index, max_speed, moving_time, name, pace_zone, split, start_date, start_date_local, total_elevation_gain, )
+        o = new(id, activity, athlete, average_cadence, average_speed, distance, elapsed_time, start_index, end_index, lap_index, max_speed, moving_time, name, pace_zone, split, start_date, start_date_local, total_elevation_gain, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Lap
 
 const _property_types_Lap = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("activity")=>"MetaActivity", Symbol("athlete")=>"MetaAthlete", Symbol("average_cadence")=>"Float32", Symbol("average_speed")=>"Float32", Symbol("distance")=>"Float32", Symbol("elapsed_time")=>"Int64", Symbol("start_index")=>"Int64", Symbol("end_index")=>"Int64", Symbol("lap_index")=>"Int64", Symbol("max_speed")=>"Float32", Symbol("moving_time")=>"Int64", Symbol("name")=>"String", Symbol("pace_zone")=>"Int64", Symbol("split")=>"Int64", Symbol("start_date")=>"ZonedDateTime", Symbol("start_date_local")=>"ZonedDateTime", Symbol("total_elevation_gain")=>"Float32", )
 OpenAPI.property_type(::Type{ Lap }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Lap[name]))}
 
-function check_required(o::Lap)
+function OpenAPI.check_required(o::Lap)
     true
+end
+
+function OpenAPI.validate_properties(o::Lap)
+    OpenAPI.validate_property(Lap, Symbol("id"), o.id)
+    OpenAPI.validate_property(Lap, Symbol("activity"), o.activity)
+    OpenAPI.validate_property(Lap, Symbol("athlete"), o.athlete)
+    OpenAPI.validate_property(Lap, Symbol("average_cadence"), o.average_cadence)
+    OpenAPI.validate_property(Lap, Symbol("average_speed"), o.average_speed)
+    OpenAPI.validate_property(Lap, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(Lap, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(Lap, Symbol("start_index"), o.start_index)
+    OpenAPI.validate_property(Lap, Symbol("end_index"), o.end_index)
+    OpenAPI.validate_property(Lap, Symbol("lap_index"), o.lap_index)
+    OpenAPI.validate_property(Lap, Symbol("max_speed"), o.max_speed)
+    OpenAPI.validate_property(Lap, Symbol("moving_time"), o.moving_time)
+    OpenAPI.validate_property(Lap, Symbol("name"), o.name)
+    OpenAPI.validate_property(Lap, Symbol("pace_zone"), o.pace_zone)
+    OpenAPI.validate_property(Lap, Symbol("split"), o.split)
+    OpenAPI.validate_property(Lap, Symbol("start_date"), o.start_date)
+    OpenAPI.validate_property(Lap, Symbol("start_date_local"), o.start_date_local)
+    OpenAPI.validate_property(Lap, Symbol("total_elevation_gain"), o.total_elevation_gain)
 end
 
 function OpenAPI.validate_property(::Type{ Lap }, name::Symbol, val)
@@ -138,3 +143,4 @@ function OpenAPI.validate_property(::Type{ Lap }, name::Symbol, val)
         OpenAPI.validate_param(name, "Lap", :format, val, "float")
     end
 end
+

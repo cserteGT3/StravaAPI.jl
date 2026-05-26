@@ -20,18 +20,23 @@ Base.@kwdef mutable struct BaseStream <: OpenAPI.APIModel
     series_type::Union{Nothing, String} = nothing
 
     function BaseStream(original_size, resolution, series_type, )
-        OpenAPI.validate_property(BaseStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(BaseStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(BaseStream, Symbol("series_type"), series_type)
-        return new(original_size, resolution, series_type, )
+        o = new(original_size, resolution, series_type, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type BaseStream
 
 const _property_types_BaseStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", )
 OpenAPI.property_type(::Type{ BaseStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_BaseStream[name]))}
 
-function check_required(o::BaseStream)
+function OpenAPI.check_required(o::BaseStream)
     true
+end
+
+function OpenAPI.validate_properties(o::BaseStream)
+    OpenAPI.validate_property(BaseStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(BaseStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(BaseStream, Symbol("series_type"), o.series_type)
 end
 
 function OpenAPI.validate_property(::Type{ BaseStream }, name::Symbol, val)
@@ -47,3 +52,4 @@ function OpenAPI.validate_property(::Type{ BaseStream }, name::Symbol, val)
     end
 
 end
+

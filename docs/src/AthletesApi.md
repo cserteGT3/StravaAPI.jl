@@ -11,8 +11,8 @@ Method | HTTP request | Description
 
 
 # **get_logged_in_athlete**
-> get_logged_in_athlete(_api::AthletesApi; _mediaType=nothing) -> DetailedAthlete, OpenAPI.Clients.ApiResponse <br/>
-> get_logged_in_athlete(_api::AthletesApi, response_stream::Channel; _mediaType=nothing) -> Channel{ DetailedAthlete }, OpenAPI.Clients.ApiResponse
+> `get_logged_in_athlete`(_api::`AthletesApi`; _mediaType=nothing) -> `DetailedAthlete`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_logged_in_athlete`(_api::`AthletesApi`, response_stream::`Channel`; _mediaType=nothing) -> `Channel`{ `DetailedAthlete` }, `OpenAPI.Clients.ApiResponse`
 
 Get Authenticated Athlete
 
@@ -23,7 +23,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**DetailedAthlete**](DetailedAthlete.md)
+[**`DetailedAthlete`**](DetailedAthlete.md)
 
 ### Authorization
 
@@ -37,8 +37,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_logged_in_athlete_zones**
-> get_logged_in_athlete_zones(_api::AthletesApi; _mediaType=nothing) -> Zones, OpenAPI.Clients.ApiResponse <br/>
-> get_logged_in_athlete_zones(_api::AthletesApi, response_stream::Channel; _mediaType=nothing) -> Channel{ Zones }, OpenAPI.Clients.ApiResponse
+> `get_logged_in_athlete_zones`(_api::`AthletesApi`; _mediaType=nothing) -> `Zones`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_logged_in_athlete_zones`(_api::`AthletesApi`, response_stream::`Channel`; _mediaType=nothing) -> `Channel`{ `Zones` }, `OpenAPI.Clients.ApiResponse`
 
 Get Zones
 
@@ -49,7 +49,7 @@ This endpoint does not need any parameter.
 
 ### Return type
 
-[**Zones**](Zones.md)
+[**`Zones`**](Zones.md)
 
 ### Authorization
 
@@ -63,8 +63,8 @@ This endpoint does not need any parameter.
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_stats**
-> get_stats(_api::AthletesApi, id::Int64; _mediaType=nothing) -> ActivityStats, OpenAPI.Clients.ApiResponse <br/>
-> get_stats(_api::AthletesApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ ActivityStats }, OpenAPI.Clients.ApiResponse
+> `get_stats`(_api::`AthletesApi`, `id`::`Int64`; _mediaType=nothing) -> `ActivityStats`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_stats`(_api::`AthletesApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `ActivityStats` }, `OpenAPI.Clients.ApiResponse`
 
 Get Athlete Stats
 
@@ -74,12 +74,12 @@ Returns the activity stats of an athlete. Only includes data from activities set
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **AthletesApi** | API context | 
-**id** | **Int64** | The identifier of the athlete. Must match the authenticated athlete. |
+ **_api** | **`AthletesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the athlete. Must match the authenticated athlete. |
 
 ### Return type
 
-[**ActivityStats**](ActivityStats.md)
+[**`ActivityStats`**](ActivityStats.md)
 
 ### Authorization
 
@@ -93,8 +93,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **update_logged_in_athlete**
-> update_logged_in_athlete(_api::AthletesApi, weight::Float32; _mediaType=nothing) -> DetailedAthlete, OpenAPI.Clients.ApiResponse <br/>
-> update_logged_in_athlete(_api::AthletesApi, response_stream::Channel, weight::Float32; _mediaType=nothing) -> Channel{ DetailedAthlete }, OpenAPI.Clients.ApiResponse
+> `update_logged_in_athlete`(_api::`AthletesApi`, `weight`::`Float32`; _mediaType=nothing) -> `DetailedAthlete`, `OpenAPI.Clients.ApiResponse` <br/>
+> `update_logged_in_athlete`(_api::`AthletesApi`, response_stream::`Channel`, `weight`::`Float32`; _mediaType=nothing) -> `Channel`{ `DetailedAthlete` }, `OpenAPI.Clients.ApiResponse`
 
 Update Athlete
 
@@ -104,12 +104,12 @@ Update the currently authenticated athlete. Requires profile:write scope.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **AthletesApi** | API context | 
-**weight** | **Float32** | The weight of the athlete in kilograms. |
+ **_api** | **`AthletesApi`** | API context | 
+**`weight`** | **`Float32`** | The weight of the athlete in kilograms. |
 
 ### Return type
 
-[**DetailedAthlete**](DetailedAthlete.md)
+[**`DetailedAthlete`**](DetailedAthlete.md)
 
 ### Authorization
 

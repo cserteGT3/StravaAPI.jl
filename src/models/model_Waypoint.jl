@@ -18,7 +18,7 @@
     - categories::Vector{String} : Categories that the waypoint belongs to
     - title::String : A title for the waypoint
     - description::String : A description of the waypoint (optional)
-    - distance_into_route::Int64 : The number meters along the route that the waypoint is located
+    - distance_into_route::Float32 : The number meters along the route that the waypoint is located
 """
 Base.@kwdef mutable struct Waypoint <: OpenAPI.APIModel
     latlng::Union{Nothing, Vector{Float32}} = nothing
@@ -26,24 +26,29 @@ Base.@kwdef mutable struct Waypoint <: OpenAPI.APIModel
     categories::Union{Nothing, Vector{String}} = nothing
     title::Union{Nothing, String} = nothing
     description::Union{Nothing, String} = nothing
-    distance_into_route::Union{Nothing, Int64} = nothing
+    distance_into_route::Union{Nothing, Float32} = nothing
 
     function Waypoint(latlng, target_latlng, categories, title, description, distance_into_route, )
-        OpenAPI.validate_property(Waypoint, Symbol("latlng"), latlng)
-        OpenAPI.validate_property(Waypoint, Symbol("target_latlng"), target_latlng)
-        OpenAPI.validate_property(Waypoint, Symbol("categories"), categories)
-        OpenAPI.validate_property(Waypoint, Symbol("title"), title)
-        OpenAPI.validate_property(Waypoint, Symbol("description"), description)
-        OpenAPI.validate_property(Waypoint, Symbol("distance_into_route"), distance_into_route)
-        return new(latlng, target_latlng, categories, title, description, distance_into_route, )
+        o = new(latlng, target_latlng, categories, title, description, distance_into_route, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Waypoint
 
-const _property_types_Waypoint = Dict{Symbol,String}(Symbol("latlng")=>"Vector{Float32}", Symbol("target_latlng")=>"Vector{Float32}", Symbol("categories")=>"Vector{String}", Symbol("title")=>"String", Symbol("description")=>"String", Symbol("distance_into_route")=>"Int64", )
+const _property_types_Waypoint = Dict{Symbol,String}(Symbol("latlng")=>"Vector{Float32}", Symbol("target_latlng")=>"Vector{Float32}", Symbol("categories")=>"Vector{String}", Symbol("title")=>"String", Symbol("description")=>"String", Symbol("distance_into_route")=>"Float32", )
 OpenAPI.property_type(::Type{ Waypoint }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Waypoint[name]))}
 
-function check_required(o::Waypoint)
+function OpenAPI.check_required(o::Waypoint)
     true
+end
+
+function OpenAPI.validate_properties(o::Waypoint)
+    OpenAPI.validate_property(Waypoint, Symbol("latlng"), o.latlng)
+    OpenAPI.validate_property(Waypoint, Symbol("target_latlng"), o.target_latlng)
+    OpenAPI.validate_property(Waypoint, Symbol("categories"), o.categories)
+    OpenAPI.validate_property(Waypoint, Symbol("title"), o.title)
+    OpenAPI.validate_property(Waypoint, Symbol("description"), o.description)
+    OpenAPI.validate_property(Waypoint, Symbol("distance_into_route"), o.distance_into_route)
 end
 
 function OpenAPI.validate_property(::Type{ Waypoint }, name::Symbol, val)
@@ -64,4 +69,8 @@ function OpenAPI.validate_property(::Type{ Waypoint }, name::Symbol, val)
 
 
 
+    if name === Symbol("distance_into_route")
+        OpenAPI.validate_param(name, "Waypoint", :format, val, "float")
+    end
 end
+

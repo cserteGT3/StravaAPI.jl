@@ -7,3 +7,4 @@ if !isdefined(@__MODULE__, :ActivityType)
 else
     @warn("Skipping redefinition of ActivityType to String")
 end
+

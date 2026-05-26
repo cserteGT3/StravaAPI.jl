@@ -15,8 +15,8 @@ Method | HTTP request | Description
 
 
 # **create_activity**
-> create_activity(_api::ActivitiesApi, name::String, sport_type::String, start_date_local::ZonedDateTime, elapsed_time::Int64; type=nothing, description=nothing, distance=nothing, trainer=nothing, commute=nothing, _mediaType=nothing) -> DetailedActivity, OpenAPI.Clients.ApiResponse <br/>
-> create_activity(_api::ActivitiesApi, response_stream::Channel, name::String, sport_type::String, start_date_local::ZonedDateTime, elapsed_time::Int64; type=nothing, description=nothing, distance=nothing, trainer=nothing, commute=nothing, _mediaType=nothing) -> Channel{ DetailedActivity }, OpenAPI.Clients.ApiResponse
+> `create_activity`(_api::`ActivitiesApi`, `name`::`String`, `sport_type`::`String`, `start_date_local`::`ZonedDateTime`, `elapsed_time`::`Int64`; `type`=nothing, `description`=nothing, `distance`=nothing, `trainer`=nothing, `commute`=nothing, _mediaType=nothing) -> `DetailedActivity`, `OpenAPI.Clients.ApiResponse` <br/>
+> `create_activity`(_api::`ActivitiesApi`, response_stream::`Channel`, `name`::`String`, `sport_type`::`String`, `start_date_local`::`ZonedDateTime`, `elapsed_time`::`Int64`; `type`=nothing, `description`=nothing, `distance`=nothing, `trainer`=nothing, `commute`=nothing, _mediaType=nothing) -> `Channel`{ `DetailedActivity` }, `OpenAPI.Clients.ApiResponse`
 
 Create an Activity
 
@@ -26,25 +26,25 @@ Creates a manual activity for an athlete, requires activity:write scope.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**name** | **String** | The name of the activity. |
-**sport_type** | **String** | Sport type of activity. For example - Run, MountainBikeRide, Ride, etc. |
-**start_date_local** | **ZonedDateTime** | ISO 8601 formatted date time. |
-**elapsed_time** | **Int64** | In seconds. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`name`** | **`String`** | The name of the activity. |
+**`sport_type`** | **`String`** | Sport type of activity. For example - Run, MountainBikeRide, Ride, etc. |
+**`start_date_local`** | **`ZonedDateTime`** | ISO 8601 formatted date time. |
+**`elapsed_time`** | **`Int64`** | In seconds. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **type** | **String** | Type of activity. For example - Run, Ride etc. | [default to nothing]
- **description** | **String** | Description of the activity. | [default to nothing]
- **distance** | **Float32** | In meters. | [default to nothing]
- **trainer** | **Int64** | Set to 1 to mark as a trainer activity. | [default to nothing]
- **commute** | **Int64** | Set to 1 to mark as commute. | [default to nothing]
+ **`type`** | **`String`** | Type of activity. For example - Run, Ride etc. | [default to nothing]
+ **`description`** | **`String`** | Description of the activity. | [default to nothing]
+ **`distance`** | **`Float32`** | In meters. | [default to nothing]
+ **`trainer`** | **`Int64`** | Set to 1 to mark as a trainer activity. | [default to nothing]
+ **`commute`** | **`Int64`** | Set to 1 to mark as commute. | [default to nothing]
 
 ### Return type
 
-[**DetailedActivity**](DetailedActivity.md)
+[**`DetailedActivity`**](DetailedActivity.md)
 
 ### Authorization
 
@@ -58,29 +58,29 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_activity_by_id**
-> get_activity_by_id(_api::ActivitiesApi, id::Int64; include_all_efforts=nothing, _mediaType=nothing) -> DetailedActivity, OpenAPI.Clients.ApiResponse <br/>
-> get_activity_by_id(_api::ActivitiesApi, response_stream::Channel, id::Int64; include_all_efforts=nothing, _mediaType=nothing) -> Channel{ DetailedActivity }, OpenAPI.Clients.ApiResponse
+> `get_activity_by_id`(_api::`ActivitiesApi`, `id`::`Int64`; `include_all_efforts`=nothing, _mediaType=nothing) -> `DetailedActivity`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_activity_by_id`(_api::`ActivitiesApi`, response_stream::`Channel`, `id`::`Int64`; `include_all_efforts`=nothing, _mediaType=nothing) -> `Channel`{ `DetailedActivity` }, `OpenAPI.Clients.ApiResponse`
 
 Get Activity
 
-Returns the given activity that is owned by the authenticated athlete. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.
+Returns the given activity that is owned by the authenticated athlete. Requires activity:read for Everyone and Followers activities. Requires activity:read_all for Only Me activities.  We strongly encourage you to display the appropriate attribution that identifies Garmin as the data source and the device name in your application. Please see example below from VeloViewer (that provides an attribution for a Garmin Forerunner device).  ![Attribution](/images/device-attribution-image.png)
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **include_all_efforts** | **Bool** | To include all segments efforts. | [default to nothing]
+ **`include_all_efforts`** | **`Bool`** | To include all segments efforts. | [default to nothing]
 
 ### Return type
 
-[**DetailedActivity**](DetailedActivity.md)
+[**`DetailedActivity`**](DetailedActivity.md)
 
 ### Authorization
 
@@ -94,8 +94,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_comments_by_activity_id**
-> get_comments_by_activity_id(_api::ActivitiesApi, id::Int64; page=nothing, per_page=nothing, page_size=nothing, after_cursor=nothing, _mediaType=nothing) -> Vector{Comment}, OpenAPI.Clients.ApiResponse <br/>
-> get_comments_by_activity_id(_api::ActivitiesApi, response_stream::Channel, id::Int64; page=nothing, per_page=nothing, page_size=nothing, after_cursor=nothing, _mediaType=nothing) -> Channel{ Vector{Comment} }, OpenAPI.Clients.ApiResponse
+> `get_comments_by_activity_id`(_api::`ActivitiesApi`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, `page_size`=nothing, `after_cursor`=nothing, _mediaType=nothing) -> `Vector{Comment}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_comments_by_activity_id`(_api::`ActivitiesApi`, response_stream::`Channel`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, `page_size`=nothing, `after_cursor`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{Comment}` }, `OpenAPI.Clients.ApiResponse`
 
 List Activity Comments
 
@@ -105,21 +105,21 @@ Returns the comments on the given activity. Requires activity:read for Everyone 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Deprecated. Prefer to use after_cursor. | [default to nothing]
- **per_page** | **Int64** | Deprecated. Prefer to use page_size. | [default to 30]
- **page_size** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
- **after_cursor** | **String** | Cursor of the last item in the previous page of results, used to request the subsequent page of results.  When omitted, the first page of results is fetched. | [default to nothing]
+ **`page`** | **`Int64`** | Deprecated. Prefer to use after_cursor. | [default to nothing]
+ **`per_page`** | **`Int64`** | Deprecated. Prefer to use page_size. | [default to 30]
+ **`page_size`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
+ **`after_cursor`** | **`String`** | Cursor of the last item in the previous page of results, used to request the subsequent page of results.  When omitted, the first page of results is fetched. | [default to nothing]
 
 ### Return type
 
-[**Vector{Comment}**](Comment.md)
+[**`Vector{Comment}`**](Comment.md)
 
 ### Authorization
 
@@ -133,8 +133,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_kudoers_by_activity_id**
-> get_kudoers_by_activity_id(_api::ActivitiesApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryAthlete}, OpenAPI.Clients.ApiResponse <br/>
-> get_kudoers_by_activity_id(_api::ActivitiesApi, response_stream::Channel, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{SummaryAthlete} }, OpenAPI.Clients.ApiResponse
+> `get_kudoers_by_activity_id`(_api::`ActivitiesApi`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{SummaryAthlete}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_kudoers_by_activity_id`(_api::`ActivitiesApi`, response_stream::`Channel`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{SummaryAthlete}` }, `OpenAPI.Clients.ApiResponse`
 
 List Activity Kudoers
 
@@ -144,19 +144,19 @@ Returns the athletes who kudoed an activity identified by an identifier. Require
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{SummaryAthlete}**](SummaryAthlete.md)
+[**`Vector{SummaryAthlete}`**](SummaryAthlete.md)
 
 ### Authorization
 
@@ -170,8 +170,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_laps_by_activity_id**
-> get_laps_by_activity_id(_api::ActivitiesApi, id::Int64; _mediaType=nothing) -> Vector{Lap}, OpenAPI.Clients.ApiResponse <br/>
-> get_laps_by_activity_id(_api::ActivitiesApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ Vector{Lap} }, OpenAPI.Clients.ApiResponse
+> `get_laps_by_activity_id`(_api::`ActivitiesApi`, `id`::`Int64`; _mediaType=nothing) -> `Vector{Lap}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_laps_by_activity_id`(_api::`ActivitiesApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `Vector{Lap}` }, `OpenAPI.Clients.ApiResponse`
 
 List Activity Laps
 
@@ -181,12 +181,12 @@ Returns the laps of an activity identified by an identifier. Requires activity:r
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
 
 ### Return type
 
-[**Vector{Lap}**](Lap.md)
+[**`Vector{Lap}`**](Lap.md)
 
 ### Authorization
 
@@ -200,8 +200,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_logged_in_athlete_activities**
-> get_logged_in_athlete_activities(_api::ActivitiesApi; before=nothing, after=nothing, page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryActivity}, OpenAPI.Clients.ApiResponse <br/>
-> get_logged_in_athlete_activities(_api::ActivitiesApi, response_stream::Channel; before=nothing, after=nothing, page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{SummaryActivity} }, OpenAPI.Clients.ApiResponse
+> `get_logged_in_athlete_activities`(_api::`ActivitiesApi`; `before`=nothing, `after`=nothing, `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{SummaryActivity}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_logged_in_athlete_activities`(_api::`ActivitiesApi`, response_stream::`Channel`; `before`=nothing, `after`=nothing, `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{SummaryActivity}` }, `OpenAPI.Clients.ApiResponse`
 
 List Athlete Activities
 
@@ -211,20 +211,20 @@ Returns the activities of an athlete for a specific identifier. Requires activit
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
+ **_api** | **`ActivitiesApi`** | API context | 
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **before** | **Int64** | An epoch timestamp to use for filtering activities that have taken place before a certain time. | [default to nothing]
- **after** | **Int64** | An epoch timestamp to use for filtering activities that have taken place after a certain time. | [default to nothing]
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`before`** | **`Int64`** | An epoch timestamp to use for filtering activities that have taken place before a certain time. | [default to nothing]
+ **`after`** | **`Int64`** | An epoch timestamp to use for filtering activities that have taken place after a certain time. | [default to nothing]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{SummaryActivity}**](SummaryActivity.md)
+[**`Vector{SummaryActivity}`**](SummaryActivity.md)
 
 ### Authorization
 
@@ -238,8 +238,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_zones_by_activity_id**
-> get_zones_by_activity_id(_api::ActivitiesApi, id::Int64; _mediaType=nothing) -> Vector{ActivityZone}, OpenAPI.Clients.ApiResponse <br/>
-> get_zones_by_activity_id(_api::ActivitiesApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ Vector{ActivityZone} }, OpenAPI.Clients.ApiResponse
+> `get_zones_by_activity_id`(_api::`ActivitiesApi`, `id`::`Int64`; _mediaType=nothing) -> `Vector{ActivityZone}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_zones_by_activity_id`(_api::`ActivitiesApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `Vector{ActivityZone}` }, `OpenAPI.Clients.ApiResponse`
 
 Get Activity Zones
 
@@ -249,12 +249,12 @@ Summit Feature. Returns the zones of a given activity. Requires activity:read fo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
 
 ### Return type
 
-[**Vector{ActivityZone}**](ActivityZone.md)
+[**`Vector{ActivityZone}`**](ActivityZone.md)
 
 ### Authorization
 
@@ -268,8 +268,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **update_activity_by_id**
-> update_activity_by_id(_api::ActivitiesApi, id::Int64; body=nothing, _mediaType=nothing) -> DetailedActivity, OpenAPI.Clients.ApiResponse <br/>
-> update_activity_by_id(_api::ActivitiesApi, response_stream::Channel, id::Int64; body=nothing, _mediaType=nothing) -> Channel{ DetailedActivity }, OpenAPI.Clients.ApiResponse
+> `update_activity_by_id`(_api::`ActivitiesApi`, `id`::`Int64`; `body`=nothing, _mediaType=nothing) -> `DetailedActivity`, `OpenAPI.Clients.ApiResponse` <br/>
+> `update_activity_by_id`(_api::`ActivitiesApi`, response_stream::`Channel`, `id`::`Int64`; `body`=nothing, _mediaType=nothing) -> `Channel`{ `DetailedActivity` }, `OpenAPI.Clients.ApiResponse`
 
 Update Activity
 
@@ -279,18 +279,18 @@ Updates the given activity that is owned by the authenticated athlete. Requires 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ActivitiesApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
+ **_api** | **`ActivitiesApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **body** | [**UpdatableActivity**](UpdatableActivity.md) |  | 
+ **`body`** | [**`UpdatableActivity`**](UpdatableActivity.md) |  | 
 
 ### Return type
 
-[**DetailedActivity**](DetailedActivity.md)
+[**`DetailedActivity`**](DetailedActivity.md)
 
 ### Authorization
 

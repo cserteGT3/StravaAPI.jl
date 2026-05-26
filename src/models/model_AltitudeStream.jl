@@ -23,19 +23,24 @@ Base.@kwdef mutable struct AltitudeStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Float32}} = nothing
 
     function AltitudeStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(AltitudeStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(AltitudeStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(AltitudeStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(AltitudeStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type AltitudeStream
 
 const _property_types_AltitudeStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Float32}", )
 OpenAPI.property_type(::Type{ AltitudeStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_AltitudeStream[name]))}
 
-function check_required(o::AltitudeStream)
+function OpenAPI.check_required(o::AltitudeStream)
     true
+end
+
+function OpenAPI.validate_properties(o::AltitudeStream)
+    OpenAPI.validate_property(AltitudeStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(AltitudeStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(AltitudeStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(AltitudeStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ AltitudeStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ AltitudeStream }, name::Symbol, val)
 
 
 end
+

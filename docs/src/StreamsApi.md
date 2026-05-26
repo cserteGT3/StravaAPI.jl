@@ -11,8 +11,8 @@ Method | HTTP request | Description
 
 
 # **get_activity_streams**
-> get_activity_streams(_api::StreamsApi, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing) -> StreamSet, OpenAPI.Clients.ApiResponse <br/>
-> get_activity_streams(_api::StreamsApi, response_stream::Channel, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing) -> Channel{ StreamSet }, OpenAPI.Clients.ApiResponse
+> `get_activity_streams`(_api::`StreamsApi`, `id`::`Int64`, `keys`::`Vector{String}`, `key_by_type`::`Bool`; _mediaType=nothing) -> `StreamSet`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_activity_streams`(_api::`StreamsApi`, response_stream::`Channel`, `id`::`Int64`, `keys`::`Vector{String}`, `key_by_type`::`Bool`; _mediaType=nothing) -> `Channel`{ `StreamSet` }, `OpenAPI.Clients.ApiResponse`
 
 Get Activity Streams
 
@@ -22,14 +22,14 @@ Returns the given activity's streams. Requires activity:read scope. Requires act
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **StreamsApi** | API context | 
-**id** | **Int64** | The identifier of the activity. |
-**keys** | **Vector{String}** | Desired stream types. |
-**key_by_type** | **Bool** | Must be true. |
+ **_api** | **`StreamsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the activity. |
+**`keys`** | [**`Vector{String}`**](String.md) | Desired stream types. |
+**`key_by_type`** | **`Bool`** | Must be true. |
 
 ### Return type
 
-[**StreamSet**](StreamSet.md)
+[**`StreamSet`**](StreamSet.md)
 
 ### Authorization
 
@@ -43,8 +43,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_route_streams**
-> get_route_streams(_api::StreamsApi, id::Int64; _mediaType=nothing) -> StreamSet, OpenAPI.Clients.ApiResponse <br/>
-> get_route_streams(_api::StreamsApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ StreamSet }, OpenAPI.Clients.ApiResponse
+> `get_route_streams`(_api::`StreamsApi`, `id`::`Int64`; _mediaType=nothing) -> `StreamSet`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_route_streams`(_api::`StreamsApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `StreamSet` }, `OpenAPI.Clients.ApiResponse`
 
 Get Route Streams
 
@@ -54,12 +54,12 @@ Returns the given route's streams. Requires read_all scope for private routes.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **StreamsApi** | API context | 
-**id** | **Int64** | The identifier of the route. |
+ **_api** | **`StreamsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the route. |
 
 ### Return type
 
-[**StreamSet**](StreamSet.md)
+[**`StreamSet`**](StreamSet.md)
 
 ### Authorization
 
@@ -73,8 +73,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_segment_effort_streams**
-> get_segment_effort_streams(_api::StreamsApi, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing) -> StreamSet, OpenAPI.Clients.ApiResponse <br/>
-> get_segment_effort_streams(_api::StreamsApi, response_stream::Channel, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing) -> Channel{ StreamSet }, OpenAPI.Clients.ApiResponse
+> `get_segment_effort_streams`(_api::`StreamsApi`, `id`::`Int64`, `keys`::`Vector{String}`, `key_by_type`::`Bool`; _mediaType=nothing) -> `StreamSet`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_segment_effort_streams`(_api::`StreamsApi`, response_stream::`Channel`, `id`::`Int64`, `keys`::`Vector{String}`, `key_by_type`::`Bool`; _mediaType=nothing) -> `Channel`{ `StreamSet` }, `OpenAPI.Clients.ApiResponse`
 
 Get Segment Effort Streams
 
@@ -84,14 +84,14 @@ Returns a set of streams for a segment effort completed by the authenticated ath
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **StreamsApi** | API context | 
-**id** | **Int64** | The identifier of the segment effort. |
-**keys** | **Vector{String}** | The types of streams to return. |
-**key_by_type** | **Bool** | Must be true. |
+ **_api** | **`StreamsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the segment effort. |
+**`keys`** | [**`Vector{String}`**](String.md) | The types of streams to return. |
+**`key_by_type`** | **`Bool`** | Must be true. |
 
 ### Return type
 
-[**StreamSet**](StreamSet.md)
+[**`StreamSet`**](StreamSet.md)
 
 ### Authorization
 
@@ -105,8 +105,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_segment_streams**
-> get_segment_streams(_api::StreamsApi, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing) -> StreamSet, OpenAPI.Clients.ApiResponse <br/>
-> get_segment_streams(_api::StreamsApi, response_stream::Channel, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing) -> Channel{ StreamSet }, OpenAPI.Clients.ApiResponse
+> `get_segment_streams`(_api::`StreamsApi`, `id`::`Int64`, `keys`::`Vector{String}`, `key_by_type`::`Bool`; _mediaType=nothing) -> `StreamSet`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_segment_streams`(_api::`StreamsApi`, response_stream::`Channel`, `id`::`Int64`, `keys`::`Vector{String}`, `key_by_type`::`Bool`; _mediaType=nothing) -> `Channel`{ `StreamSet` }, `OpenAPI.Clients.ApiResponse`
 
 Get Segment Streams
 
@@ -116,14 +116,14 @@ Returns the given segment's streams. Requires read_all scope for private segment
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **StreamsApi** | API context | 
-**id** | **Int64** | The identifier of the segment. |
-**keys** | **Vector{String}** | The types of streams to return. |
-**key_by_type** | **Bool** | Must be true. |
+ **_api** | **`StreamsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the segment. |
+**`keys`** | [**`Vector{String}`**](String.md) | The types of streams to return. |
+**`key_by_type`** | **`Bool`** | Must be true. |
 
 ### Return type
 
-[**StreamSet**](StreamSet.md)
+[**`StreamSet`**](StreamSet.md)
 
 ### Authorization
 

@@ -35,23 +35,28 @@ Base.@kwdef mutable struct UpdatableActivity <: OpenAPI.APIModel
     gear_id::Union{Nothing, String} = nothing
 
     function UpdatableActivity(commute, trainer, hide_from_home, description, name, type, sport_type, gear_id, )
-        OpenAPI.validate_property(UpdatableActivity, Symbol("commute"), commute)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("trainer"), trainer)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("hide_from_home"), hide_from_home)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("description"), description)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("name"), name)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("type"), type)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("sport_type"), sport_type)
-        OpenAPI.validate_property(UpdatableActivity, Symbol("gear_id"), gear_id)
-        return new(commute, trainer, hide_from_home, description, name, type, sport_type, gear_id, )
+        o = new(commute, trainer, hide_from_home, description, name, type, sport_type, gear_id, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type UpdatableActivity
 
 const _property_types_UpdatableActivity = Dict{Symbol,String}(Symbol("commute")=>"Bool", Symbol("trainer")=>"Bool", Symbol("hide_from_home")=>"Bool", Symbol("description")=>"String", Symbol("name")=>"String", Symbol("type")=>"ActivityType", Symbol("sport_type")=>"SportType", Symbol("gear_id")=>"String", )
 OpenAPI.property_type(::Type{ UpdatableActivity }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_UpdatableActivity[name]))}
 
-function check_required(o::UpdatableActivity)
+function OpenAPI.check_required(o::UpdatableActivity)
     true
+end
+
+function OpenAPI.validate_properties(o::UpdatableActivity)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("commute"), o.commute)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("trainer"), o.trainer)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("hide_from_home"), o.hide_from_home)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("description"), o.description)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("name"), o.name)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("type"), o.type)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("sport_type"), o.sport_type)
+    OpenAPI.validate_property(UpdatableActivity, Symbol("gear_id"), o.gear_id)
 end
 
 function OpenAPI.validate_property(::Type{ UpdatableActivity }, name::Symbol, val)
@@ -64,3 +69,4 @@ function OpenAPI.validate_property(::Type{ UpdatableActivity }, name::Symbol, va
 
 
 end
+

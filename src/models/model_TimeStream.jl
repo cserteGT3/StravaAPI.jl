@@ -23,19 +23,24 @@ Base.@kwdef mutable struct TimeStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Int64}} = nothing
 
     function TimeStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(TimeStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(TimeStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(TimeStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(TimeStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type TimeStream
 
 const _property_types_TimeStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Int64}", )
 OpenAPI.property_type(::Type{ TimeStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_TimeStream[name]))}
 
-function check_required(o::TimeStream)
+function OpenAPI.check_required(o::TimeStream)
     true
+end
+
+function OpenAPI.validate_properties(o::TimeStream)
+    OpenAPI.validate_property(TimeStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(TimeStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(TimeStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(TimeStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ TimeStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ TimeStream }, name::Symbol, val)
 
 
 end
+

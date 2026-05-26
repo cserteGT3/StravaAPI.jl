@@ -26,20 +26,25 @@ Base.@kwdef mutable struct Comment <: OpenAPI.APIModel
     created_at::Union{Nothing, ZonedDateTime} = nothing
 
     function Comment(id, activity_id, text, athlete, created_at, )
-        OpenAPI.validate_property(Comment, Symbol("id"), id)
-        OpenAPI.validate_property(Comment, Symbol("activity_id"), activity_id)
-        OpenAPI.validate_property(Comment, Symbol("text"), text)
-        OpenAPI.validate_property(Comment, Symbol("athlete"), athlete)
-        OpenAPI.validate_property(Comment, Symbol("created_at"), created_at)
-        return new(id, activity_id, text, athlete, created_at, )
+        o = new(id, activity_id, text, athlete, created_at, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Comment
 
 const _property_types_Comment = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("activity_id")=>"Int64", Symbol("text")=>"String", Symbol("athlete")=>"SummaryAthlete", Symbol("created_at")=>"ZonedDateTime", )
 OpenAPI.property_type(::Type{ Comment }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Comment[name]))}
 
-function check_required(o::Comment)
+function OpenAPI.check_required(o::Comment)
     true
+end
+
+function OpenAPI.validate_properties(o::Comment)
+    OpenAPI.validate_property(Comment, Symbol("id"), o.id)
+    OpenAPI.validate_property(Comment, Symbol("activity_id"), o.activity_id)
+    OpenAPI.validate_property(Comment, Symbol("text"), o.text)
+    OpenAPI.validate_property(Comment, Symbol("athlete"), o.athlete)
+    OpenAPI.validate_property(Comment, Symbol("created_at"), o.created_at)
 end
 
 function OpenAPI.validate_property(::Type{ Comment }, name::Symbol, val)
@@ -58,3 +63,4 @@ function OpenAPI.validate_property(::Type{ Comment }, name::Symbol, val)
         OpenAPI.validate_param(name, "Comment", :format, val, "date-time")
     end
 end
+

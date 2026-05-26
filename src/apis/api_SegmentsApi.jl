@@ -41,12 +41,12 @@ end
 Returns the top 10 segments matching a specified query.
 
 Params:
-- bounds::Vector{Float32} (required)
-- activity_type::String
-- min_cat::Int64
-- max_cat::Int64
+- `bounds`::`Vector{Float32}` (required)
+- `activity_type`::`String`
+- `min_cat`::`Int64`
+- `max_cat`::`Int64`
 
-Return: ExplorerResponse, OpenAPI.Clients.ApiResponse
+Return: `ExplorerResponse`, `OpenAPI.Clients.ApiResponse`
 """
 function explore_segments(_api::SegmentsApi, bounds::Vector{Float32}; activity_type=nothing, min_cat=nothing, max_cat=nothing, _mediaType=nothing)
     _ctx = _oacinternal_explore_segments(_api, bounds; activity_type=activity_type, min_cat=min_cat, max_cat=max_cat, _mediaType=_mediaType)
@@ -77,10 +77,10 @@ end
 List of the authenticated athlete's starred segments. Private segments are filtered out unless requested by a token with read_all scope.
 
 Params:
-- page::Int64
-- per_page::Int64
+- `page`::`Int64`
+- `per_page`::`Int64`
 
-Return: Vector{SummarySegment}, OpenAPI.Clients.ApiResponse
+Return: `Vector{SummarySegment}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_logged_in_athlete_starred_segments(_api::SegmentsApi; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_logged_in_athlete_starred_segments(_api; page=page, per_page=per_page, _mediaType=_mediaType)
@@ -110,9 +110,9 @@ end
 Returns the specified segment. read_all scope required in order to retrieve athlete-specific segment information, or to retrieve private segments.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: DetailedSegment, OpenAPI.Clients.ApiResponse
+Return: `DetailedSegment`, `OpenAPI.Clients.ApiResponse`
 """
 function get_segment_by_id(_api::SegmentsApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_segment_by_id(_api, id; _mediaType=_mediaType)
@@ -143,10 +143,10 @@ end
 Stars/Unstars the given segment for the authenticated athlete. Requires profile:write scope.
 
 Params:
-- id::Int64 (required)
-- starred::Bool (required)
+- `id`::`Int64` (required)
+- `starred`::`Bool` (required)
 
-Return: DetailedSegment, OpenAPI.Clients.ApiResponse
+Return: `DetailedSegment`, `OpenAPI.Clients.ApiResponse`
 """
 function star_segment(_api::SegmentsApi, id::Int64, starred::Bool; _mediaType=nothing)
     _ctx = _oacinternal_star_segment(_api, id, starred; _mediaType=_mediaType)

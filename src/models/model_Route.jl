@@ -65,33 +65,38 @@ Base.@kwdef mutable struct Route <: OpenAPI.APIModel
     waypoints::Union{Nothing, Vector} = nothing # spec type: Union{ Nothing, Vector{Waypoint} }
 
     function Route(athlete, description, distance, elevation_gain, id, id_str, map, name, private, starred, timestamp, type, sub_type, created_at, updated_at, estimated_moving_time, segments, waypoints, )
-        OpenAPI.validate_property(Route, Symbol("athlete"), athlete)
-        OpenAPI.validate_property(Route, Symbol("description"), description)
-        OpenAPI.validate_property(Route, Symbol("distance"), distance)
-        OpenAPI.validate_property(Route, Symbol("elevation_gain"), elevation_gain)
-        OpenAPI.validate_property(Route, Symbol("id"), id)
-        OpenAPI.validate_property(Route, Symbol("id_str"), id_str)
-        OpenAPI.validate_property(Route, Symbol("map"), map)
-        OpenAPI.validate_property(Route, Symbol("name"), name)
-        OpenAPI.validate_property(Route, Symbol("private"), private)
-        OpenAPI.validate_property(Route, Symbol("starred"), starred)
-        OpenAPI.validate_property(Route, Symbol("timestamp"), timestamp)
-        OpenAPI.validate_property(Route, Symbol("type"), type)
-        OpenAPI.validate_property(Route, Symbol("sub_type"), sub_type)
-        OpenAPI.validate_property(Route, Symbol("created_at"), created_at)
-        OpenAPI.validate_property(Route, Symbol("updated_at"), updated_at)
-        OpenAPI.validate_property(Route, Symbol("estimated_moving_time"), estimated_moving_time)
-        OpenAPI.validate_property(Route, Symbol("segments"), segments)
-        OpenAPI.validate_property(Route, Symbol("waypoints"), waypoints)
-        return new(athlete, description, distance, elevation_gain, id, id_str, map, name, private, starred, timestamp, type, sub_type, created_at, updated_at, estimated_moving_time, segments, waypoints, )
+        o = new(athlete, description, distance, elevation_gain, id, id_str, map, name, private, starred, timestamp, type, sub_type, created_at, updated_at, estimated_moving_time, segments, waypoints, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Route
 
 const _property_types_Route = Dict{Symbol,String}(Symbol("athlete")=>"SummaryAthlete", Symbol("description")=>"String", Symbol("distance")=>"Float32", Symbol("elevation_gain")=>"Float32", Symbol("id")=>"Int64", Symbol("id_str")=>"String", Symbol("map")=>"PolylineMap", Symbol("name")=>"String", Symbol("private")=>"Bool", Symbol("starred")=>"Bool", Symbol("timestamp")=>"Int64", Symbol("type")=>"Int64", Symbol("sub_type")=>"Int64", Symbol("created_at")=>"ZonedDateTime", Symbol("updated_at")=>"ZonedDateTime", Symbol("estimated_moving_time")=>"Int64", Symbol("segments")=>"Vector{SummarySegment}", Symbol("waypoints")=>"Vector{Waypoint}", )
 OpenAPI.property_type(::Type{ Route }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Route[name]))}
 
-function check_required(o::Route)
+function OpenAPI.check_required(o::Route)
     true
+end
+
+function OpenAPI.validate_properties(o::Route)
+    OpenAPI.validate_property(Route, Symbol("athlete"), o.athlete)
+    OpenAPI.validate_property(Route, Symbol("description"), o.description)
+    OpenAPI.validate_property(Route, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(Route, Symbol("elevation_gain"), o.elevation_gain)
+    OpenAPI.validate_property(Route, Symbol("id"), o.id)
+    OpenAPI.validate_property(Route, Symbol("id_str"), o.id_str)
+    OpenAPI.validate_property(Route, Symbol("map"), o.map)
+    OpenAPI.validate_property(Route, Symbol("name"), o.name)
+    OpenAPI.validate_property(Route, Symbol("private"), o.private)
+    OpenAPI.validate_property(Route, Symbol("starred"), o.starred)
+    OpenAPI.validate_property(Route, Symbol("timestamp"), o.timestamp)
+    OpenAPI.validate_property(Route, Symbol("type"), o.type)
+    OpenAPI.validate_property(Route, Symbol("sub_type"), o.sub_type)
+    OpenAPI.validate_property(Route, Symbol("created_at"), o.created_at)
+    OpenAPI.validate_property(Route, Symbol("updated_at"), o.updated_at)
+    OpenAPI.validate_property(Route, Symbol("estimated_moving_time"), o.estimated_moving_time)
+    OpenAPI.validate_property(Route, Symbol("segments"), o.segments)
+    OpenAPI.validate_property(Route, Symbol("waypoints"), o.waypoints)
 end
 
 function OpenAPI.validate_property(::Type{ Route }, name::Symbol, val)
@@ -132,3 +137,4 @@ function OpenAPI.validate_property(::Type{ Route }, name::Symbol, val)
         OpenAPI.validate_param(name, "Route", :minItems, val, 0)
     end
 end
+

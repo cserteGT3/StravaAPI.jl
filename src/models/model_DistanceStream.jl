@@ -23,19 +23,24 @@ Base.@kwdef mutable struct DistanceStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Float32}} = nothing
 
     function DistanceStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(DistanceStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(DistanceStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(DistanceStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(DistanceStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type DistanceStream
 
 const _property_types_DistanceStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Float32}", )
 OpenAPI.property_type(::Type{ DistanceStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_DistanceStream[name]))}
 
-function check_required(o::DistanceStream)
+function OpenAPI.check_required(o::DistanceStream)
     true
+end
+
+function OpenAPI.validate_properties(o::DistanceStream)
+    OpenAPI.validate_property(DistanceStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(DistanceStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(DistanceStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(DistanceStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ DistanceStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ DistanceStream }, name::Symbol, val)
 
 
 end
+

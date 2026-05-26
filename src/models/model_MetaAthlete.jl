@@ -14,16 +14,21 @@ Base.@kwdef mutable struct MetaAthlete <: OpenAPI.APIModel
     id::Union{Nothing, Int64} = nothing
 
     function MetaAthlete(id, )
-        OpenAPI.validate_property(MetaAthlete, Symbol("id"), id)
-        return new(id, )
+        o = new(id, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type MetaAthlete
 
 const _property_types_MetaAthlete = Dict{Symbol,String}(Symbol("id")=>"Int64", )
 OpenAPI.property_type(::Type{ MetaAthlete }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_MetaAthlete[name]))}
 
-function check_required(o::MetaAthlete)
+function OpenAPI.check_required(o::MetaAthlete)
     true
+end
+
+function OpenAPI.validate_properties(o::MetaAthlete)
+    OpenAPI.validate_property(MetaAthlete, Symbol("id"), o.id)
 end
 
 function OpenAPI.validate_property(::Type{ MetaAthlete }, name::Symbol, val)
@@ -32,3 +37,4 @@ function OpenAPI.validate_property(::Type{ MetaAthlete }, name::Symbol, val)
         OpenAPI.validate_param(name, "MetaAthlete", :format, val, "int64")
     end
 end
+

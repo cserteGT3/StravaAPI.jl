@@ -17,20 +17,26 @@ Base.@kwdef mutable struct PhotosSummary <: OpenAPI.APIModel
     primary = nothing # spec type: Union{ Nothing, PhotosSummaryPrimary }
 
     function PhotosSummary(count, primary, )
-        OpenAPI.validate_property(PhotosSummary, Symbol("count"), count)
-        OpenAPI.validate_property(PhotosSummary, Symbol("primary"), primary)
-        return new(count, primary, )
+        o = new(count, primary, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type PhotosSummary
 
 const _property_types_PhotosSummary = Dict{Symbol,String}(Symbol("count")=>"Int64", Symbol("primary")=>"PhotosSummaryPrimary", )
 OpenAPI.property_type(::Type{ PhotosSummary }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_PhotosSummary[name]))}
 
-function check_required(o::PhotosSummary)
+function OpenAPI.check_required(o::PhotosSummary)
     true
+end
+
+function OpenAPI.validate_properties(o::PhotosSummary)
+    OpenAPI.validate_property(PhotosSummary, Symbol("count"), o.count)
+    OpenAPI.validate_property(PhotosSummary, Symbol("primary"), o.primary)
 end
 
 function OpenAPI.validate_property(::Type{ PhotosSummary }, name::Symbol, val)
 
 
 end
+

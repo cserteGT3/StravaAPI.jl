@@ -33,11 +33,11 @@ end
 Returns the given activity's streams. Requires activity:read scope. Requires activity:read_all scope for Only Me activities.
 
 Params:
-- id::Int64 (required)
-- keys::Vector{String} (required)
-- key_by_type::Bool (required)
+- `id`::`Int64` (required)
+- `keys`::`Vector{String}` (required)
+- `key_by_type`::`Bool` (required)
 
-Return: StreamSet, OpenAPI.Clients.ApiResponse
+Return: `StreamSet`, `OpenAPI.Clients.ApiResponse`
 """
 function get_activity_streams(_api::StreamsApi, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing)
     _ctx = _oacinternal_get_activity_streams(_api, id, keys, key_by_type; _mediaType=_mediaType)
@@ -67,9 +67,9 @@ end
 Returns the given route's streams. Requires read_all scope for private routes.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: StreamSet, OpenAPI.Clients.ApiResponse
+Return: `StreamSet`, `OpenAPI.Clients.ApiResponse`
 """
 function get_route_streams(_api::StreamsApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_route_streams(_api, id; _mediaType=_mediaType)
@@ -103,11 +103,11 @@ end
 Returns a set of streams for a segment effort completed by the authenticated athlete. Requires read_all scope.
 
 Params:
-- id::Int64 (required)
-- keys::Vector{String} (required)
-- key_by_type::Bool (required)
+- `id`::`Int64` (required)
+- `keys`::`Vector{String}` (required)
+- `key_by_type`::`Bool` (required)
 
-Return: StreamSet, OpenAPI.Clients.ApiResponse
+Return: `StreamSet`, `OpenAPI.Clients.ApiResponse`
 """
 function get_segment_effort_streams(_api::StreamsApi, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing)
     _ctx = _oacinternal_get_segment_effort_streams(_api, id, keys, key_by_type; _mediaType=_mediaType)
@@ -141,11 +141,11 @@ end
 Returns the given segment's streams. Requires read_all scope for private segments.
 
 Params:
-- id::Int64 (required)
-- keys::Vector{String} (required)
-- key_by_type::Bool (required)
+- `id`::`Int64` (required)
+- `keys`::`Vector{String}` (required)
+- `key_by_type`::`Bool` (required)
 
-Return: StreamSet, OpenAPI.Clients.ApiResponse
+Return: `StreamSet`, `OpenAPI.Clients.ApiResponse`
 """
 function get_segment_streams(_api::StreamsApi, id::Int64, keys::Vector{String}, key_by_type::Bool; _mediaType=nothing)
     _ctx = _oacinternal_get_segment_streams(_api, id, keys, key_by_type; _mediaType=_mediaType)

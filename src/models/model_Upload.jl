@@ -29,21 +29,26 @@ Base.@kwdef mutable struct Upload <: OpenAPI.APIModel
     activity_id::Union{Nothing, Int64} = nothing
 
     function Upload(id, id_str, external_id, error, status, activity_id, )
-        OpenAPI.validate_property(Upload, Symbol("id"), id)
-        OpenAPI.validate_property(Upload, Symbol("id_str"), id_str)
-        OpenAPI.validate_property(Upload, Symbol("external_id"), external_id)
-        OpenAPI.validate_property(Upload, Symbol("error"), error)
-        OpenAPI.validate_property(Upload, Symbol("status"), status)
-        OpenAPI.validate_property(Upload, Symbol("activity_id"), activity_id)
-        return new(id, id_str, external_id, error, status, activity_id, )
+        o = new(id, id_str, external_id, error, status, activity_id, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Upload
 
 const _property_types_Upload = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("id_str")=>"String", Symbol("external_id")=>"String", Symbol("error")=>"String", Symbol("status")=>"String", Symbol("activity_id")=>"Int64", )
 OpenAPI.property_type(::Type{ Upload }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Upload[name]))}
 
-function check_required(o::Upload)
+function OpenAPI.check_required(o::Upload)
     true
+end
+
+function OpenAPI.validate_properties(o::Upload)
+    OpenAPI.validate_property(Upload, Symbol("id"), o.id)
+    OpenAPI.validate_property(Upload, Symbol("id_str"), o.id_str)
+    OpenAPI.validate_property(Upload, Symbol("external_id"), o.external_id)
+    OpenAPI.validate_property(Upload, Symbol("error"), o.error)
+    OpenAPI.validate_property(Upload, Symbol("status"), o.status)
+    OpenAPI.validate_property(Upload, Symbol("activity_id"), o.activity_id)
 end
 
 function OpenAPI.validate_property(::Type{ Upload }, name::Symbol, val)
@@ -60,3 +65,4 @@ function OpenAPI.validate_property(::Type{ Upload }, name::Symbol, val)
         OpenAPI.validate_param(name, "Upload", :format, val, "int64")
     end
 end
+

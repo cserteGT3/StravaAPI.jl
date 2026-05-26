@@ -38,24 +38,29 @@ Base.@kwdef mutable struct ClubActivity <: OpenAPI.APIModel
     workout_type::Union{Nothing, Int64} = nothing
 
     function ClubActivity(athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, type, sport_type, workout_type, )
-        OpenAPI.validate_property(ClubActivity, Symbol("athlete"), athlete)
-        OpenAPI.validate_property(ClubActivity, Symbol("name"), name)
-        OpenAPI.validate_property(ClubActivity, Symbol("distance"), distance)
-        OpenAPI.validate_property(ClubActivity, Symbol("moving_time"), moving_time)
-        OpenAPI.validate_property(ClubActivity, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(ClubActivity, Symbol("total_elevation_gain"), total_elevation_gain)
-        OpenAPI.validate_property(ClubActivity, Symbol("type"), type)
-        OpenAPI.validate_property(ClubActivity, Symbol("sport_type"), sport_type)
-        OpenAPI.validate_property(ClubActivity, Symbol("workout_type"), workout_type)
-        return new(athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, type, sport_type, workout_type, )
+        o = new(athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, type, sport_type, workout_type, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ClubActivity
 
 const _property_types_ClubActivity = Dict{Symbol,String}(Symbol("athlete")=>"MetaAthlete", Symbol("name")=>"String", Symbol("distance")=>"Float32", Symbol("moving_time")=>"Int64", Symbol("elapsed_time")=>"Int64", Symbol("total_elevation_gain")=>"Float32", Symbol("type")=>"ActivityType", Symbol("sport_type")=>"SportType", Symbol("workout_type")=>"Int64", )
 OpenAPI.property_type(::Type{ ClubActivity }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ClubActivity[name]))}
 
-function check_required(o::ClubActivity)
+function OpenAPI.check_required(o::ClubActivity)
     true
+end
+
+function OpenAPI.validate_properties(o::ClubActivity)
+    OpenAPI.validate_property(ClubActivity, Symbol("athlete"), o.athlete)
+    OpenAPI.validate_property(ClubActivity, Symbol("name"), o.name)
+    OpenAPI.validate_property(ClubActivity, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(ClubActivity, Symbol("moving_time"), o.moving_time)
+    OpenAPI.validate_property(ClubActivity, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(ClubActivity, Symbol("total_elevation_gain"), o.total_elevation_gain)
+    OpenAPI.validate_property(ClubActivity, Symbol("type"), o.type)
+    OpenAPI.validate_property(ClubActivity, Symbol("sport_type"), o.sport_type)
+    OpenAPI.validate_property(ClubActivity, Symbol("workout_type"), o.workout_type)
 end
 
 function OpenAPI.validate_property(::Type{ ClubActivity }, name::Symbol, val)
@@ -75,3 +80,4 @@ function OpenAPI.validate_property(::Type{ ClubActivity }, name::Symbol, val)
 
 
 end
+

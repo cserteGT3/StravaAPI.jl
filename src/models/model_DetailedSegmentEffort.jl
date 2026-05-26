@@ -77,37 +77,42 @@ Base.@kwdef mutable struct DetailedSegmentEffort <: OpenAPI.APIModel
     hidden::Union{Nothing, Bool} = nothing
 
     function DetailedSegmentEffort(id, activity_id, elapsed_time, start_date, start_date_local, distance, is_kom, name, activity, athlete, moving_time, start_index, end_index, average_cadence, average_watts, device_watts, average_heartrate, max_heartrate, segment, kom_rank, pr_rank, hidden, )
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("id"), id)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("activity_id"), activity_id)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("start_date"), start_date)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("start_date_local"), start_date_local)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("distance"), distance)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("is_kom"), is_kom)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("name"), name)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("activity"), activity)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("athlete"), athlete)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("moving_time"), moving_time)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("start_index"), start_index)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("end_index"), end_index)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("average_cadence"), average_cadence)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("average_watts"), average_watts)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("device_watts"), device_watts)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("average_heartrate"), average_heartrate)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("max_heartrate"), max_heartrate)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("segment"), segment)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("kom_rank"), kom_rank)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("pr_rank"), pr_rank)
-        OpenAPI.validate_property(DetailedSegmentEffort, Symbol("hidden"), hidden)
-        return new(id, activity_id, elapsed_time, start_date, start_date_local, distance, is_kom, name, activity, athlete, moving_time, start_index, end_index, average_cadence, average_watts, device_watts, average_heartrate, max_heartrate, segment, kom_rank, pr_rank, hidden, )
+        o = new(id, activity_id, elapsed_time, start_date, start_date_local, distance, is_kom, name, activity, athlete, moving_time, start_index, end_index, average_cadence, average_watts, device_watts, average_heartrate, max_heartrate, segment, kom_rank, pr_rank, hidden, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type DetailedSegmentEffort
 
 const _property_types_DetailedSegmentEffort = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("activity_id")=>"Int64", Symbol("elapsed_time")=>"Int64", Symbol("start_date")=>"ZonedDateTime", Symbol("start_date_local")=>"ZonedDateTime", Symbol("distance")=>"Float32", Symbol("is_kom")=>"Bool", Symbol("name")=>"String", Symbol("activity")=>"MetaActivity", Symbol("athlete")=>"MetaAthlete", Symbol("moving_time")=>"Int64", Symbol("start_index")=>"Int64", Symbol("end_index")=>"Int64", Symbol("average_cadence")=>"Float32", Symbol("average_watts")=>"Float32", Symbol("device_watts")=>"Bool", Symbol("average_heartrate")=>"Float32", Symbol("max_heartrate")=>"Float32", Symbol("segment")=>"SummarySegment", Symbol("kom_rank")=>"Int64", Symbol("pr_rank")=>"Int64", Symbol("hidden")=>"Bool", )
 OpenAPI.property_type(::Type{ DetailedSegmentEffort }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_DetailedSegmentEffort[name]))}
 
-function check_required(o::DetailedSegmentEffort)
+function OpenAPI.check_required(o::DetailedSegmentEffort)
     true
+end
+
+function OpenAPI.validate_properties(o::DetailedSegmentEffort)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("id"), o.id)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("activity_id"), o.activity_id)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("start_date"), o.start_date)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("start_date_local"), o.start_date_local)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("is_kom"), o.is_kom)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("name"), o.name)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("activity"), o.activity)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("athlete"), o.athlete)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("moving_time"), o.moving_time)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("start_index"), o.start_index)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("end_index"), o.end_index)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("average_cadence"), o.average_cadence)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("average_watts"), o.average_watts)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("device_watts"), o.device_watts)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("average_heartrate"), o.average_heartrate)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("max_heartrate"), o.max_heartrate)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("segment"), o.segment)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("kom_rank"), o.kom_rank)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("pr_rank"), o.pr_rank)
+    OpenAPI.validate_property(DetailedSegmentEffort, Symbol("hidden"), o.hidden)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedSegmentEffort }, name::Symbol, val)
@@ -169,3 +174,4 @@ function OpenAPI.validate_property(::Type{ DetailedSegmentEffort }, name::Symbol
     end
 
 end
+

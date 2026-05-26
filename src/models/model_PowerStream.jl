@@ -23,19 +23,24 @@ Base.@kwdef mutable struct PowerStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Int64}} = nothing
 
     function PowerStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(PowerStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(PowerStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(PowerStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(PowerStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type PowerStream
 
 const _property_types_PowerStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Int64}", )
 OpenAPI.property_type(::Type{ PowerStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_PowerStream[name]))}
 
-function check_required(o::PowerStream)
+function OpenAPI.check_required(o::PowerStream)
     true
+end
+
+function OpenAPI.validate_properties(o::PowerStream)
+    OpenAPI.validate_property(PowerStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(PowerStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(PowerStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(PowerStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ PowerStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ PowerStream }, name::Symbol, val)
 
 
 end
+

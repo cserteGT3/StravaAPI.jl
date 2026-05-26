@@ -23,19 +23,24 @@ Base.@kwdef mutable struct LatLngStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Vector}} = nothing
 
     function LatLngStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(LatLngStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(LatLngStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(LatLngStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(LatLngStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type LatLngStream
 
 const _property_types_LatLngStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Vector}", )
 OpenAPI.property_type(::Type{ LatLngStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_LatLngStream[name]))}
 
-function check_required(o::LatLngStream)
+function OpenAPI.check_required(o::LatLngStream)
     true
+end
+
+function OpenAPI.validate_properties(o::LatLngStream)
+    OpenAPI.validate_property(LatLngStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(LatLngStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(LatLngStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(LatLngStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ LatLngStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ LatLngStream }, name::Symbol, val)
 
 
 end
+

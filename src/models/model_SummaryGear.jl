@@ -26,20 +26,25 @@ Base.@kwdef mutable struct SummaryGear <: OpenAPI.APIModel
     distance::Union{Nothing, Float32} = nothing
 
     function SummaryGear(id, resource_state, primary, name, distance, )
-        OpenAPI.validate_property(SummaryGear, Symbol("id"), id)
-        OpenAPI.validate_property(SummaryGear, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(SummaryGear, Symbol("primary"), primary)
-        OpenAPI.validate_property(SummaryGear, Symbol("name"), name)
-        OpenAPI.validate_property(SummaryGear, Symbol("distance"), distance)
-        return new(id, resource_state, primary, name, distance, )
+        o = new(id, resource_state, primary, name, distance, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummaryGear
 
 const _property_types_SummaryGear = Dict{Symbol,String}(Symbol("id")=>"String", Symbol("resource_state")=>"Int64", Symbol("primary")=>"Bool", Symbol("name")=>"String", Symbol("distance")=>"Float32", )
 OpenAPI.property_type(::Type{ SummaryGear }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummaryGear[name]))}
 
-function check_required(o::SummaryGear)
+function OpenAPI.check_required(o::SummaryGear)
     true
+end
+
+function OpenAPI.validate_properties(o::SummaryGear)
+    OpenAPI.validate_property(SummaryGear, Symbol("id"), o.id)
+    OpenAPI.validate_property(SummaryGear, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(SummaryGear, Symbol("primary"), o.primary)
+    OpenAPI.validate_property(SummaryGear, Symbol("name"), o.name)
+    OpenAPI.validate_property(SummaryGear, Symbol("distance"), o.distance)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryGear }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ SummaryGear }, name::Symbol, val)
         OpenAPI.validate_param(name, "SummaryGear", :format, val, "float")
     end
 end
+

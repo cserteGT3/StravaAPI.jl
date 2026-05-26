@@ -23,19 +23,24 @@ Base.@kwdef mutable struct MovingStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Bool}} = nothing
 
     function MovingStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(MovingStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(MovingStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(MovingStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(MovingStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type MovingStream
 
 const _property_types_MovingStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Bool}", )
 OpenAPI.property_type(::Type{ MovingStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_MovingStream[name]))}
 
-function check_required(o::MovingStream)
+function OpenAPI.check_required(o::MovingStream)
     true
+end
+
+function OpenAPI.validate_properties(o::MovingStream)
+    OpenAPI.validate_property(MovingStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(MovingStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(MovingStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(MovingStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ MovingStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ MovingStream }, name::Symbol, val)
 
 
 end
+

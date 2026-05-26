@@ -8,8 +8,8 @@ Method | HTTP request | Description
 
 
 # **get_gear_by_id**
-> get_gear_by_id(_api::GearsApi, id::String; _mediaType=nothing) -> DetailedGear, OpenAPI.Clients.ApiResponse <br/>
-> get_gear_by_id(_api::GearsApi, response_stream::Channel, id::String; _mediaType=nothing) -> Channel{ DetailedGear }, OpenAPI.Clients.ApiResponse
+> `get_gear_by_id`(_api::`GearsApi`, `id`::`String`; _mediaType=nothing) -> `DetailedGear`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_gear_by_id`(_api::`GearsApi`, response_stream::`Channel`, `id`::`String`; _mediaType=nothing) -> `Channel`{ `DetailedGear` }, `OpenAPI.Clients.ApiResponse`
 
 Get Equipment
 
@@ -19,12 +19,12 @@ Returns an equipment using its identifier.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **GearsApi** | API context | 
-**id** | **String** | The identifier of the gear. |
+ **_api** | **`GearsApi`** | API context | 
+**`id`** | **`String`** | The identifier of the gear. |
 
 ### Return type
 
-[**DetailedGear**](DetailedGear.md)
+[**`DetailedGear`**](DetailedGear.md)
 
 ### Authorization
 

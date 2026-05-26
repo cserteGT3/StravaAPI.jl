@@ -32,12 +32,12 @@ end
 Returns a set of the authenticated athlete's segment efforts for a given segment.  Requires subscription.
 
 Params:
-- segment_id::Int64 (required)
-- start_date_local::ZonedDateTime
-- end_date_local::ZonedDateTime
-- per_page::Int64
+- `segment_id`::`Int64` (required)
+- `start_date_local`::`ZonedDateTime`
+- `end_date_local`::`ZonedDateTime`
+- `per_page`::`Int64`
 
-Return: Vector{DetailedSegmentEffort}, OpenAPI.Clients.ApiResponse
+Return: `Vector{DetailedSegmentEffort}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_efforts_by_segment_id(_api::SegmentEffortsApi, segment_id::Int64; start_date_local=nothing, end_date_local=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_efforts_by_segment_id(_api, segment_id; start_date_local=start_date_local, end_date_local=end_date_local, per_page=per_page, _mediaType=_mediaType)
@@ -67,9 +67,9 @@ end
 Returns a segment effort from an activity that is owned by the authenticated athlete. Requires subscription.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: DetailedSegmentEffort, OpenAPI.Clients.ApiResponse
+Return: `DetailedSegmentEffort`, `OpenAPI.Clients.ApiResponse`
 """
 function get_segment_effort_by_id(_api::SegmentEffortsApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_segment_effort_by_id(_api, id; _mediaType=_mediaType)

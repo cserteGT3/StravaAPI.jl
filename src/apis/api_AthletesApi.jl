@@ -29,7 +29,7 @@ Returns the currently authenticated athlete. Tokens with profile:read_all scope 
 
 Params:
 
-Return: DetailedAthlete, OpenAPI.Clients.ApiResponse
+Return: `DetailedAthlete`, `OpenAPI.Clients.ApiResponse`
 """
 function get_logged_in_athlete(_api::AthletesApi; _mediaType=nothing)
     _ctx = _oacinternal_get_logged_in_athlete(_api; _mediaType=_mediaType)
@@ -59,7 +59,7 @@ Returns the the authenticated athlete's heart rate and power zones. Requires pro
 
 Params:
 
-Return: Zones, OpenAPI.Clients.ApiResponse
+Return: `Zones`, `OpenAPI.Clients.ApiResponse`
 """
 function get_logged_in_athlete_zones(_api::AthletesApi; _mediaType=nothing)
     _ctx = _oacinternal_get_logged_in_athlete_zones(_api; _mediaType=_mediaType)
@@ -89,9 +89,9 @@ end
 Returns the activity stats of an athlete. Only includes data from activities set to Everyone visibilty.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: ActivityStats, OpenAPI.Clients.ApiResponse
+Return: `ActivityStats`, `OpenAPI.Clients.ApiResponse`
 """
 function get_stats(_api::AthletesApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_stats(_api, id; _mediaType=_mediaType)
@@ -121,9 +121,9 @@ end
 Update the currently authenticated athlete. Requires profile:write scope.
 
 Params:
-- weight::Float32 (required)
+- `weight`::`Float32` (required)
 
-Return: DetailedAthlete, OpenAPI.Clients.ApiResponse
+Return: `DetailedAthlete`, `OpenAPI.Clients.ApiResponse`
 """
 function update_logged_in_athlete(_api::AthletesApi, weight::Float32; _mediaType=nothing)
     _ctx = _oacinternal_update_logged_in_athlete(_api, weight; _mediaType=_mediaType)

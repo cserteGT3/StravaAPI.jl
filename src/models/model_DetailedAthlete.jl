@@ -77,37 +77,42 @@ Base.@kwdef mutable struct DetailedAthlete <: OpenAPI.APIModel
     shoes::Union{Nothing, Vector} = nothing # spec type: Union{ Nothing, Vector{SummaryGear} }
 
     function DetailedAthlete(id, resource_state, firstname, lastname, profile_medium, profile, city, state, country, sex, premium, summit, created_at, updated_at, follower_count, friend_count, measurement_preference, ftp, weight, clubs, bikes, shoes, )
-        OpenAPI.validate_property(DetailedAthlete, Symbol("id"), id)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("firstname"), firstname)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("lastname"), lastname)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("profile_medium"), profile_medium)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("profile"), profile)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("city"), city)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("state"), state)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("country"), country)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("sex"), sex)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("premium"), premium)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("summit"), summit)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("created_at"), created_at)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("updated_at"), updated_at)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("follower_count"), follower_count)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("friend_count"), friend_count)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("measurement_preference"), measurement_preference)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("ftp"), ftp)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("weight"), weight)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("clubs"), clubs)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("bikes"), bikes)
-        OpenAPI.validate_property(DetailedAthlete, Symbol("shoes"), shoes)
-        return new(id, resource_state, firstname, lastname, profile_medium, profile, city, state, country, sex, premium, summit, created_at, updated_at, follower_count, friend_count, measurement_preference, ftp, weight, clubs, bikes, shoes, )
+        o = new(id, resource_state, firstname, lastname, profile_medium, profile, city, state, country, sex, premium, summit, created_at, updated_at, follower_count, friend_count, measurement_preference, ftp, weight, clubs, bikes, shoes, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type DetailedAthlete
 
 const _property_types_DetailedAthlete = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("resource_state")=>"Int64", Symbol("firstname")=>"String", Symbol("lastname")=>"String", Symbol("profile_medium")=>"String", Symbol("profile")=>"String", Symbol("city")=>"String", Symbol("state")=>"String", Symbol("country")=>"String", Symbol("sex")=>"String", Symbol("premium")=>"Bool", Symbol("summit")=>"Bool", Symbol("created_at")=>"ZonedDateTime", Symbol("updated_at")=>"ZonedDateTime", Symbol("follower_count")=>"Int64", Symbol("friend_count")=>"Int64", Symbol("measurement_preference")=>"String", Symbol("ftp")=>"Int64", Symbol("weight")=>"Float32", Symbol("clubs")=>"Vector{SummaryClub}", Symbol("bikes")=>"Vector{SummaryGear}", Symbol("shoes")=>"Vector{SummaryGear}", )
 OpenAPI.property_type(::Type{ DetailedAthlete }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_DetailedAthlete[name]))}
 
-function check_required(o::DetailedAthlete)
+function OpenAPI.check_required(o::DetailedAthlete)
     true
+end
+
+function OpenAPI.validate_properties(o::DetailedAthlete)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("id"), o.id)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("firstname"), o.firstname)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("lastname"), o.lastname)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("profile_medium"), o.profile_medium)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("profile"), o.profile)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("city"), o.city)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("state"), o.state)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("country"), o.country)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("sex"), o.sex)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("premium"), o.premium)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("summit"), o.summit)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("created_at"), o.created_at)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("updated_at"), o.updated_at)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("follower_count"), o.follower_count)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("friend_count"), o.friend_count)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("measurement_preference"), o.measurement_preference)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("ftp"), o.ftp)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("weight"), o.weight)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("clubs"), o.clubs)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("bikes"), o.bikes)
+    OpenAPI.validate_property(DetailedAthlete, Symbol("shoes"), o.shoes)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedAthlete }, name::Symbol, val)
@@ -154,3 +159,4 @@ function OpenAPI.validate_property(::Type{ DetailedAthlete }, name::Symbol, val)
 
 
 end
+

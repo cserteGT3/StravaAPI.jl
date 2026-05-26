@@ -12,8 +12,8 @@ Method | HTTP request | Description
 
 
 # **get_club_activities_by_id**
-> get_club_activities_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{ClubActivity}, OpenAPI.Clients.ApiResponse <br/>
-> get_club_activities_by_id(_api::ClubsApi, response_stream::Channel, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{ClubActivity} }, OpenAPI.Clients.ApiResponse
+> `get_club_activities_by_id`(_api::`ClubsApi`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{ClubActivity}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_club_activities_by_id`(_api::`ClubsApi`, response_stream::`Channel`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{ClubActivity}` }, `OpenAPI.Clients.ApiResponse`
 
 List Club Activities
 
@@ -23,19 +23,19 @@ Retrieve recent activities from members of a specific club. The authenticated at
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ClubsApi** | API context | 
-**id** | **Int64** | The identifier of the club. |
+ **_api** | **`ClubsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the club. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{ClubActivity}**](ClubActivity.md)
+[**`Vector{ClubActivity}`**](ClubActivity.md)
 
 ### Authorization
 
@@ -49,8 +49,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_club_admins_by_id**
-> get_club_admins_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryAthlete}, OpenAPI.Clients.ApiResponse <br/>
-> get_club_admins_by_id(_api::ClubsApi, response_stream::Channel, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{SummaryAthlete} }, OpenAPI.Clients.ApiResponse
+> `get_club_admins_by_id`(_api::`ClubsApi`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{SummaryAthlete}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_club_admins_by_id`(_api::`ClubsApi`, response_stream::`Channel`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{SummaryAthlete}` }, `OpenAPI.Clients.ApiResponse`
 
 List Club Administrators
 
@@ -60,19 +60,19 @@ Returns a list of the administrators of a given club.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ClubsApi** | API context | 
-**id** | **Int64** | The identifier of the club. |
+ **_api** | **`ClubsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the club. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{SummaryAthlete}**](SummaryAthlete.md)
+[**`Vector{SummaryAthlete}`**](SummaryAthlete.md)
 
 ### Authorization
 
@@ -86,23 +86,23 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_club_by_id**
-> get_club_by_id(_api::ClubsApi, id::Int64; _mediaType=nothing) -> DetailedClub, OpenAPI.Clients.ApiResponse <br/>
-> get_club_by_id(_api::ClubsApi, response_stream::Channel, id::Int64; _mediaType=nothing) -> Channel{ DetailedClub }, OpenAPI.Clients.ApiResponse
+> `get_club_by_id`(_api::`ClubsApi`, `id`::`Int64`; _mediaType=nothing) -> `DetailedClub`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_club_by_id`(_api::`ClubsApi`, response_stream::`Channel`, `id`::`Int64`; _mediaType=nothing) -> `Channel`{ `DetailedClub` }, `OpenAPI.Clients.ApiResponse`
 
 Get Club
 
-Returns a given club using its identifier.
+Returns a given a club using its identifier.
 
 ### Required Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ClubsApi** | API context | 
-**id** | **Int64** | The identifier of the club. |
+ **_api** | **`ClubsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the club. |
 
 ### Return type
 
-[**DetailedClub**](DetailedClub.md)
+[**`DetailedClub`**](DetailedClub.md)
 
 ### Authorization
 
@@ -116,8 +116,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_club_members_by_id**
-> get_club_members_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{ClubAthlete}, OpenAPI.Clients.ApiResponse <br/>
-> get_club_members_by_id(_api::ClubsApi, response_stream::Channel, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{ClubAthlete} }, OpenAPI.Clients.ApiResponse
+> `get_club_members_by_id`(_api::`ClubsApi`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{ClubAthlete}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_club_members_by_id`(_api::`ClubsApi`, response_stream::`Channel`, `id`::`Int64`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{ClubAthlete}` }, `OpenAPI.Clients.ApiResponse`
 
 List Club Members
 
@@ -127,19 +127,19 @@ Returns a list of the athletes who are members of a given club.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ClubsApi** | API context | 
-**id** | **Int64** | The identifier of the club. |
+ **_api** | **`ClubsApi`** | API context | 
+**`id`** | **`Int64`** | The identifier of the club. |
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{ClubAthlete}**](ClubAthlete.md)
+[**`Vector{ClubAthlete}`**](ClubAthlete.md)
 
 ### Authorization
 
@@ -153,8 +153,8 @@ Name | Type | Description  | Notes
 [[Back to top]](#) [[Back to API list]](./README.md#api-endpoints) [[Back to Model list]](./README.md#models) [[Back to README]](./README.md)
 
 # **get_logged_in_athlete_clubs**
-> get_logged_in_athlete_clubs(_api::ClubsApi; page=nothing, per_page=nothing, _mediaType=nothing) -> Vector{SummaryClub}, OpenAPI.Clients.ApiResponse <br/>
-> get_logged_in_athlete_clubs(_api::ClubsApi, response_stream::Channel; page=nothing, per_page=nothing, _mediaType=nothing) -> Channel{ Vector{SummaryClub} }, OpenAPI.Clients.ApiResponse
+> `get_logged_in_athlete_clubs`(_api::`ClubsApi`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Vector{SummaryClub}`, `OpenAPI.Clients.ApiResponse` <br/>
+> `get_logged_in_athlete_clubs`(_api::`ClubsApi`, response_stream::`Channel`; `page`=nothing, `per_page`=nothing, _mediaType=nothing) -> `Channel`{ `Vector{SummaryClub}` }, `OpenAPI.Clients.ApiResponse`
 
 List Athlete Clubs
 
@@ -164,18 +164,18 @@ Returns a list of the clubs whose membership includes the authenticated athlete.
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **_api** | **ClubsApi** | API context | 
+ **_api** | **`ClubsApi`** | API context | 
 
 ### Optional Parameters
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **page** | **Int64** | Page number. Defaults to 1. | [default to nothing]
- **per_page** | **Int64** | Number of items per page. Defaults to 30. | [default to 30]
+ **`page`** | **`Int64`** | Page number. Defaults to 1. | [default to nothing]
+ **`per_page`** | **`Int64`** | Number of items per page. Defaults to 30. | [default to 30]
 
 ### Return type
 
-[**Vector{SummaryClub}**](SummaryClub.md)
+[**`Vector{SummaryClub}`**](SummaryClub.md)
 
 ### Authorization
 

@@ -45,26 +45,31 @@ Base.@kwdef mutable struct ActivityStats <: OpenAPI.APIModel
     all_swim_totals = nothing # spec type: Union{ Nothing, ActivityTotal }
 
     function ActivityStats(biggest_ride_distance, biggest_climb_elevation_gain, recent_ride_totals, recent_run_totals, recent_swim_totals, ytd_ride_totals, ytd_run_totals, ytd_swim_totals, all_ride_totals, all_run_totals, all_swim_totals, )
-        OpenAPI.validate_property(ActivityStats, Symbol("biggest_ride_distance"), biggest_ride_distance)
-        OpenAPI.validate_property(ActivityStats, Symbol("biggest_climb_elevation_gain"), biggest_climb_elevation_gain)
-        OpenAPI.validate_property(ActivityStats, Symbol("recent_ride_totals"), recent_ride_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("recent_run_totals"), recent_run_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("recent_swim_totals"), recent_swim_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("ytd_ride_totals"), ytd_ride_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("ytd_run_totals"), ytd_run_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("ytd_swim_totals"), ytd_swim_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("all_ride_totals"), all_ride_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("all_run_totals"), all_run_totals)
-        OpenAPI.validate_property(ActivityStats, Symbol("all_swim_totals"), all_swim_totals)
-        return new(biggest_ride_distance, biggest_climb_elevation_gain, recent_ride_totals, recent_run_totals, recent_swim_totals, ytd_ride_totals, ytd_run_totals, ytd_swim_totals, all_ride_totals, all_run_totals, all_swim_totals, )
+        o = new(biggest_ride_distance, biggest_climb_elevation_gain, recent_ride_totals, recent_run_totals, recent_swim_totals, ytd_ride_totals, ytd_run_totals, ytd_swim_totals, all_ride_totals, all_run_totals, all_swim_totals, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ActivityStats
 
 const _property_types_ActivityStats = Dict{Symbol,String}(Symbol("biggest_ride_distance")=>"Float64", Symbol("biggest_climb_elevation_gain")=>"Float64", Symbol("recent_ride_totals")=>"ActivityTotal", Symbol("recent_run_totals")=>"ActivityTotal", Symbol("recent_swim_totals")=>"ActivityTotal", Symbol("ytd_ride_totals")=>"ActivityTotal", Symbol("ytd_run_totals")=>"ActivityTotal", Symbol("ytd_swim_totals")=>"ActivityTotal", Symbol("all_ride_totals")=>"ActivityTotal", Symbol("all_run_totals")=>"ActivityTotal", Symbol("all_swim_totals")=>"ActivityTotal", )
 OpenAPI.property_type(::Type{ ActivityStats }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ActivityStats[name]))}
 
-function check_required(o::ActivityStats)
+function OpenAPI.check_required(o::ActivityStats)
     true
+end
+
+function OpenAPI.validate_properties(o::ActivityStats)
+    OpenAPI.validate_property(ActivityStats, Symbol("biggest_ride_distance"), o.biggest_ride_distance)
+    OpenAPI.validate_property(ActivityStats, Symbol("biggest_climb_elevation_gain"), o.biggest_climb_elevation_gain)
+    OpenAPI.validate_property(ActivityStats, Symbol("recent_ride_totals"), o.recent_ride_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("recent_run_totals"), o.recent_run_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("recent_swim_totals"), o.recent_swim_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("ytd_ride_totals"), o.ytd_ride_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("ytd_run_totals"), o.ytd_run_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("ytd_swim_totals"), o.ytd_swim_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("all_ride_totals"), o.all_ride_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("all_run_totals"), o.all_run_totals)
+    OpenAPI.validate_property(ActivityStats, Symbol("all_swim_totals"), o.all_swim_totals)
 end
 
 function OpenAPI.validate_property(::Type{ ActivityStats }, name::Symbol, val)
@@ -86,3 +91,4 @@ function OpenAPI.validate_property(::Type{ ActivityStats }, name::Symbol, val)
 
 
 end
+

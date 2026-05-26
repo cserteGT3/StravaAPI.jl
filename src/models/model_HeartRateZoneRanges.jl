@@ -17,20 +17,26 @@ Base.@kwdef mutable struct HeartRateZoneRanges <: OpenAPI.APIModel
     zones::Union{Nothing, Vector} = nothing # spec type: Union{ Nothing, Vector{ZoneRange} }
 
     function HeartRateZoneRanges(custom_zones, zones, )
-        OpenAPI.validate_property(HeartRateZoneRanges, Symbol("custom_zones"), custom_zones)
-        OpenAPI.validate_property(HeartRateZoneRanges, Symbol("zones"), zones)
-        return new(custom_zones, zones, )
+        o = new(custom_zones, zones, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type HeartRateZoneRanges
 
 const _property_types_HeartRateZoneRanges = Dict{Symbol,String}(Symbol("custom_zones")=>"Bool", Symbol("zones")=>"Vector{ZoneRange}", )
 OpenAPI.property_type(::Type{ HeartRateZoneRanges }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_HeartRateZoneRanges[name]))}
 
-function check_required(o::HeartRateZoneRanges)
+function OpenAPI.check_required(o::HeartRateZoneRanges)
     true
+end
+
+function OpenAPI.validate_properties(o::HeartRateZoneRanges)
+    OpenAPI.validate_property(HeartRateZoneRanges, Symbol("custom_zones"), o.custom_zones)
+    OpenAPI.validate_property(HeartRateZoneRanges, Symbol("zones"), o.zones)
 end
 
 function OpenAPI.validate_property(::Type{ HeartRateZoneRanges }, name::Symbol, val)
 
 
 end
+

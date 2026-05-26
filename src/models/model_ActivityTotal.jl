@@ -30,21 +30,26 @@ Base.@kwdef mutable struct ActivityTotal <: OpenAPI.APIModel
     achievement_count::Union{Nothing, Int64} = nothing
 
     function ActivityTotal(count, distance, moving_time, elapsed_time, elevation_gain, achievement_count, )
-        OpenAPI.validate_property(ActivityTotal, Symbol("count"), count)
-        OpenAPI.validate_property(ActivityTotal, Symbol("distance"), distance)
-        OpenAPI.validate_property(ActivityTotal, Symbol("moving_time"), moving_time)
-        OpenAPI.validate_property(ActivityTotal, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(ActivityTotal, Symbol("elevation_gain"), elevation_gain)
-        OpenAPI.validate_property(ActivityTotal, Symbol("achievement_count"), achievement_count)
-        return new(count, distance, moving_time, elapsed_time, elevation_gain, achievement_count, )
+        o = new(count, distance, moving_time, elapsed_time, elevation_gain, achievement_count, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ActivityTotal
 
 const _property_types_ActivityTotal = Dict{Symbol,String}(Symbol("count")=>"Int64", Symbol("distance")=>"Float32", Symbol("moving_time")=>"Int64", Symbol("elapsed_time")=>"Int64", Symbol("elevation_gain")=>"Float32", Symbol("achievement_count")=>"Int64", )
 OpenAPI.property_type(::Type{ ActivityTotal }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ActivityTotal[name]))}
 
-function check_required(o::ActivityTotal)
+function OpenAPI.check_required(o::ActivityTotal)
     true
+end
+
+function OpenAPI.validate_properties(o::ActivityTotal)
+    OpenAPI.validate_property(ActivityTotal, Symbol("count"), o.count)
+    OpenAPI.validate_property(ActivityTotal, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(ActivityTotal, Symbol("moving_time"), o.moving_time)
+    OpenAPI.validate_property(ActivityTotal, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(ActivityTotal, Symbol("elevation_gain"), o.elevation_gain)
+    OpenAPI.validate_property(ActivityTotal, Symbol("achievement_count"), o.achievement_count)
 end
 
 function OpenAPI.validate_property(::Type{ ActivityTotal }, name::Symbol, val)
@@ -61,3 +66,4 @@ function OpenAPI.validate_property(::Type{ ActivityTotal }, name::Symbol, val)
     end
 
 end
+

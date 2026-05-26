@@ -41,25 +41,30 @@ Base.@kwdef mutable struct ExplorerSegment <: OpenAPI.APIModel
     points::Union{Nothing, String} = nothing
 
     function ExplorerSegment(id, name, climb_category, climb_category_desc, avg_grade, start_latlng, end_latlng, elev_difference, distance, points, )
-        OpenAPI.validate_property(ExplorerSegment, Symbol("id"), id)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("name"), name)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("climb_category"), climb_category)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("climb_category_desc"), climb_category_desc)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("avg_grade"), avg_grade)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("start_latlng"), start_latlng)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("end_latlng"), end_latlng)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("elev_difference"), elev_difference)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("distance"), distance)
-        OpenAPI.validate_property(ExplorerSegment, Symbol("points"), points)
-        return new(id, name, climb_category, climb_category_desc, avg_grade, start_latlng, end_latlng, elev_difference, distance, points, )
+        o = new(id, name, climb_category, climb_category_desc, avg_grade, start_latlng, end_latlng, elev_difference, distance, points, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ExplorerSegment
 
 const _property_types_ExplorerSegment = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("name")=>"String", Symbol("climb_category")=>"Int64", Symbol("climb_category_desc")=>"String", Symbol("avg_grade")=>"Float32", Symbol("start_latlng")=>"Vector{Float32}", Symbol("end_latlng")=>"Vector{Float32}", Symbol("elev_difference")=>"Float32", Symbol("distance")=>"Float32", Symbol("points")=>"String", )
 OpenAPI.property_type(::Type{ ExplorerSegment }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ExplorerSegment[name]))}
 
-function check_required(o::ExplorerSegment)
+function OpenAPI.check_required(o::ExplorerSegment)
     true
+end
+
+function OpenAPI.validate_properties(o::ExplorerSegment)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("id"), o.id)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("name"), o.name)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("climb_category"), o.climb_category)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("climb_category_desc"), o.climb_category_desc)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("avg_grade"), o.avg_grade)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("start_latlng"), o.start_latlng)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("end_latlng"), o.end_latlng)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("elev_difference"), o.elev_difference)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(ExplorerSegment, Symbol("points"), o.points)
 end
 
 function OpenAPI.validate_property(::Type{ ExplorerSegment }, name::Symbol, val)
@@ -102,3 +107,4 @@ function OpenAPI.validate_property(::Type{ ExplorerSegment }, name::Symbol, val)
     end
 
 end
+

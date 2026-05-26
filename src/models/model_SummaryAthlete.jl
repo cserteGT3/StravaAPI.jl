@@ -53,29 +53,34 @@ Base.@kwdef mutable struct SummaryAthlete <: OpenAPI.APIModel
     updated_at::Union{Nothing, ZonedDateTime} = nothing
 
     function SummaryAthlete(id, resource_state, firstname, lastname, profile_medium, profile, city, state, country, sex, premium, summit, created_at, updated_at, )
-        OpenAPI.validate_property(SummaryAthlete, Symbol("id"), id)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("firstname"), firstname)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("lastname"), lastname)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("profile_medium"), profile_medium)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("profile"), profile)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("city"), city)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("state"), state)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("country"), country)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("sex"), sex)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("premium"), premium)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("summit"), summit)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("created_at"), created_at)
-        OpenAPI.validate_property(SummaryAthlete, Symbol("updated_at"), updated_at)
-        return new(id, resource_state, firstname, lastname, profile_medium, profile, city, state, country, sex, premium, summit, created_at, updated_at, )
+        o = new(id, resource_state, firstname, lastname, profile_medium, profile, city, state, country, sex, premium, summit, created_at, updated_at, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummaryAthlete
 
 const _property_types_SummaryAthlete = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("resource_state")=>"Int64", Symbol("firstname")=>"String", Symbol("lastname")=>"String", Symbol("profile_medium")=>"String", Symbol("profile")=>"String", Symbol("city")=>"String", Symbol("state")=>"String", Symbol("country")=>"String", Symbol("sex")=>"String", Symbol("premium")=>"Bool", Symbol("summit")=>"Bool", Symbol("created_at")=>"ZonedDateTime", Symbol("updated_at")=>"ZonedDateTime", )
 OpenAPI.property_type(::Type{ SummaryAthlete }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummaryAthlete[name]))}
 
-function check_required(o::SummaryAthlete)
+function OpenAPI.check_required(o::SummaryAthlete)
     true
+end
+
+function OpenAPI.validate_properties(o::SummaryAthlete)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("id"), o.id)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("firstname"), o.firstname)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("lastname"), o.lastname)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("profile_medium"), o.profile_medium)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("profile"), o.profile)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("city"), o.city)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("state"), o.state)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("country"), o.country)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("sex"), o.sex)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("premium"), o.premium)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("summit"), o.summit)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("created_at"), o.created_at)
+    OpenAPI.validate_property(SummaryAthlete, Symbol("updated_at"), o.updated_at)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryAthlete }, name::Symbol, val)
@@ -107,3 +112,4 @@ function OpenAPI.validate_property(::Type{ SummaryAthlete }, name::Symbol, val)
         OpenAPI.validate_param(name, "SummaryAthlete", :format, val, "date-time")
     end
 end
+

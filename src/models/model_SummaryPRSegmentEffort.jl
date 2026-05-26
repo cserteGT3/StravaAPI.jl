@@ -23,19 +23,24 @@ Base.@kwdef mutable struct SummaryPRSegmentEffort <: OpenAPI.APIModel
     effort_count::Union{Nothing, Int64} = nothing
 
     function SummaryPRSegmentEffort(pr_activity_id, pr_elapsed_time, pr_date, effort_count, )
-        OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("pr_activity_id"), pr_activity_id)
-        OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("pr_elapsed_time"), pr_elapsed_time)
-        OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("pr_date"), pr_date)
-        OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("effort_count"), effort_count)
-        return new(pr_activity_id, pr_elapsed_time, pr_date, effort_count, )
+        o = new(pr_activity_id, pr_elapsed_time, pr_date, effort_count, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummaryPRSegmentEffort
 
 const _property_types_SummaryPRSegmentEffort = Dict{Symbol,String}(Symbol("pr_activity_id")=>"Int64", Symbol("pr_elapsed_time")=>"Int64", Symbol("pr_date")=>"ZonedDateTime", Symbol("effort_count")=>"Int64", )
 OpenAPI.property_type(::Type{ SummaryPRSegmentEffort }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummaryPRSegmentEffort[name]))}
 
-function check_required(o::SummaryPRSegmentEffort)
+function OpenAPI.check_required(o::SummaryPRSegmentEffort)
     true
+end
+
+function OpenAPI.validate_properties(o::SummaryPRSegmentEffort)
+    OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("pr_activity_id"), o.pr_activity_id)
+    OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("pr_elapsed_time"), o.pr_elapsed_time)
+    OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("pr_date"), o.pr_date)
+    OpenAPI.validate_property(SummaryPRSegmentEffort, Symbol("effort_count"), o.effort_count)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryPRSegmentEffort }, name::Symbol, val)
@@ -50,3 +55,4 @@ function OpenAPI.validate_property(::Type{ SummaryPRSegmentEffort }, name::Symbo
     end
 
 end
+

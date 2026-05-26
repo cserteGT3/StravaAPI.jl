@@ -18,20 +18,26 @@ Base.@kwdef mutable struct Fault <: OpenAPI.APIModel
     message::Union{Nothing, String} = nothing
 
     function Fault(errors, message, )
-        OpenAPI.validate_property(Fault, Symbol("errors"), errors)
-        OpenAPI.validate_property(Fault, Symbol("message"), message)
-        return new(errors, message, )
+        o = new(errors, message, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Fault
 
 const _property_types_Fault = Dict{Symbol,String}(Symbol("errors")=>"Vector{Error}", Symbol("message")=>"String", )
 OpenAPI.property_type(::Type{ Fault }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Fault[name]))}
 
-function check_required(o::Fault)
+function OpenAPI.check_required(o::Fault)
     true
+end
+
+function OpenAPI.validate_properties(o::Fault)
+    OpenAPI.validate_property(Fault, Symbol("errors"), o.errors)
+    OpenAPI.validate_property(Fault, Symbol("message"), o.message)
 end
 
 function OpenAPI.validate_property(::Type{ Fault }, name::Symbol, val)
 
 
 end
+
