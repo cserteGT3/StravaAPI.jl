@@ -24,7 +24,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **`StreamsApi`** | API context | 
 **`id`** | **`Int64`** | The identifier of the activity. |
-**`keys`** | [**`Vector{String}`**](String.md) | Desired stream types. |
+**`keys`** | **`Vector{String}`** | Desired stream types. |
 **`key_by_type`** | **`Bool`** | Must be true. |
 
 ### Return type
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **`StreamsApi`** | API context | 
 **`id`** | **`Int64`** | The identifier of the segment effort. |
-**`keys`** | [**`Vector{String}`**](String.md) | The types of streams to return. |
+**`keys`** | **`Vector{String}`** | The types of streams to return. |
 **`key_by_type`** | **`Bool`** | Must be true. |
 
 ### Return type
@@ -118,7 +118,7 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **_api** | **`StreamsApi`** | API context | 
 **`id`** | **`Int64`** | The identifier of the segment. |
-**`keys`** | [**`Vector{String}`**](String.md) | The types of streams to return. |
+**`keys`** | **`Vector{String}`** | The types of streams to return. |
 **`key_by_type`** | **`Bool`** | Must be true. |
 
 ### Return type
