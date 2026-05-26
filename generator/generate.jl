@@ -23,7 +23,7 @@ function postprocess_docs(docsfolder)
     =#
     for (path, dirs, files) in walkdir(docsfolder)
         for file in files
-            splitext(file)[2] !=  ".md" && continue
+            splitext(file)[2] != ".md" && continue
             f = joinpath(path, file)
             oldf = read(f, String)
             newf = replace(oldf, "../README" => "./README")
@@ -49,7 +49,7 @@ function postprocess_src(srcfolder)
     =#
     for (path, dirs, files) in walkdir(srcfolder)
         for file in files
-            splitext(file)[2] !=  ".jl" && continue
+            splitext(file)[2] != ".jl" && continue
             f = joinpath(path, file)
             oldf = read(f, String)
             newf = replace(oldf, "/images/device-attribution-image.png" => "images/device-attribution-image.png")
