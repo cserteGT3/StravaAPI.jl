@@ -1,6 +1,6 @@
 name = "StravaAPI"
 uuid = "71058383-8132-461f-b29a-bb8012bb1004"
-authors = ["Tamás Cserteg <csertegt@gmail.com> and contributors"]
+authors = ["Tamás Cserteg <csertegt@protonmail.com> and contributors"]
 version = "1.0.1"
 
 [deps]

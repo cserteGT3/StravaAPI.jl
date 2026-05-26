@@ -11,7 +11,7 @@ docpairs = [string(first(split(fname, "."))) => fname for fname in docfiles]
 
 makedocs(;
     modules=[StravaAPI],
-    authors="Tamás Cserteg <csertegt@gmail.com> and contributors",
+    authors="Tamás Cserteg <csertegt@protonmail.com> and contributors",
     sitename="StravaAPI.jl",
     format=Documenter.HTML(;
         canonical="https://cserteGT3.github.io/StravaAPI.jl",
