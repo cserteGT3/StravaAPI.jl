@@ -7,6 +7,7 @@ docfiles = readdir(joinpath(@__DIR__, "src"))
 filter!(x->x!="index.md", docfiles)
 filter!(x->x!="README.md", docfiles)
 filter!(x->x!="docstrings.md", docfiles)
+filter!(x->splitext(x)[2] == ".md", docfiles)
 docpairs = [string(first(split(fname, "."))) => fname for fname in docfiles]
 
 makedocs(;
