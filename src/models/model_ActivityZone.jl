@@ -32,22 +32,27 @@ Base.@kwdef mutable struct ActivityZone <: OpenAPI.APIModel
     max::Union{Nothing, Int64} = nothing
 
     function ActivityZone(score, distribution_buckets, type, sensor_based, points, custom_zones, max, )
-        OpenAPI.validate_property(ActivityZone, Symbol("score"), score)
-        OpenAPI.validate_property(ActivityZone, Symbol("distribution_buckets"), distribution_buckets)
-        OpenAPI.validate_property(ActivityZone, Symbol("type"), type)
-        OpenAPI.validate_property(ActivityZone, Symbol("sensor_based"), sensor_based)
-        OpenAPI.validate_property(ActivityZone, Symbol("points"), points)
-        OpenAPI.validate_property(ActivityZone, Symbol("custom_zones"), custom_zones)
-        OpenAPI.validate_property(ActivityZone, Symbol("max"), max)
-        return new(score, distribution_buckets, type, sensor_based, points, custom_zones, max, )
+        o = new(score, distribution_buckets, type, sensor_based, points, custom_zones, max, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ActivityZone
 
 const _property_types_ActivityZone = Dict{Symbol,String}(Symbol("score")=>"Int64", Symbol("distribution_buckets")=>"Vector{TimedZoneRange}", Symbol("type")=>"String", Symbol("sensor_based")=>"Bool", Symbol("points")=>"Int64", Symbol("custom_zones")=>"Bool", Symbol("max")=>"Int64", )
 OpenAPI.property_type(::Type{ ActivityZone }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ActivityZone[name]))}
 
-function check_required(o::ActivityZone)
+function OpenAPI.check_required(o::ActivityZone)
     true
+end
+
+function OpenAPI.validate_properties(o::ActivityZone)
+    OpenAPI.validate_property(ActivityZone, Symbol("score"), o.score)
+    OpenAPI.validate_property(ActivityZone, Symbol("distribution_buckets"), o.distribution_buckets)
+    OpenAPI.validate_property(ActivityZone, Symbol("type"), o.type)
+    OpenAPI.validate_property(ActivityZone, Symbol("sensor_based"), o.sensor_based)
+    OpenAPI.validate_property(ActivityZone, Symbol("points"), o.points)
+    OpenAPI.validate_property(ActivityZone, Symbol("custom_zones"), o.custom_zones)
+    OpenAPI.validate_property(ActivityZone, Symbol("max"), o.max)
 end
 
 function OpenAPI.validate_property(::Type{ ActivityZone }, name::Symbol, val)
@@ -63,3 +68,4 @@ function OpenAPI.validate_property(::Type{ ActivityZone }, name::Symbol, val)
 
 
 end
+

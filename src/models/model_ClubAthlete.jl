@@ -29,21 +29,26 @@ Base.@kwdef mutable struct ClubAthlete <: OpenAPI.APIModel
     owner::Union{Nothing, Bool} = nothing
 
     function ClubAthlete(resource_state, firstname, lastname, member, admin, owner, )
-        OpenAPI.validate_property(ClubAthlete, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(ClubAthlete, Symbol("firstname"), firstname)
-        OpenAPI.validate_property(ClubAthlete, Symbol("lastname"), lastname)
-        OpenAPI.validate_property(ClubAthlete, Symbol("member"), member)
-        OpenAPI.validate_property(ClubAthlete, Symbol("admin"), admin)
-        OpenAPI.validate_property(ClubAthlete, Symbol("owner"), owner)
-        return new(resource_state, firstname, lastname, member, admin, owner, )
+        o = new(resource_state, firstname, lastname, member, admin, owner, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ClubAthlete
 
 const _property_types_ClubAthlete = Dict{Symbol,String}(Symbol("resource_state")=>"Int64", Symbol("firstname")=>"String", Symbol("lastname")=>"String", Symbol("member")=>"String", Symbol("admin")=>"Bool", Symbol("owner")=>"Bool", )
 OpenAPI.property_type(::Type{ ClubAthlete }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ClubAthlete[name]))}
 
-function check_required(o::ClubAthlete)
+function OpenAPI.check_required(o::ClubAthlete)
     true
+end
+
+function OpenAPI.validate_properties(o::ClubAthlete)
+    OpenAPI.validate_property(ClubAthlete, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(ClubAthlete, Symbol("firstname"), o.firstname)
+    OpenAPI.validate_property(ClubAthlete, Symbol("lastname"), o.lastname)
+    OpenAPI.validate_property(ClubAthlete, Symbol("member"), o.member)
+    OpenAPI.validate_property(ClubAthlete, Symbol("admin"), o.admin)
+    OpenAPI.validate_property(ClubAthlete, Symbol("owner"), o.owner)
 end
 
 function OpenAPI.validate_property(::Type{ ClubAthlete }, name::Symbol, val)
@@ -54,3 +59,4 @@ function OpenAPI.validate_property(::Type{ ClubAthlete }, name::Symbol, val)
 
 
 end
+

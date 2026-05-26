@@ -23,19 +23,24 @@ Base.@kwdef mutable struct SmoothGradeStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Float32}} = nothing
 
     function SmoothGradeStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(SmoothGradeStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(SmoothGradeStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(SmoothGradeStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(SmoothGradeStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SmoothGradeStream
 
 const _property_types_SmoothGradeStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Float32}", )
 OpenAPI.property_type(::Type{ SmoothGradeStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SmoothGradeStream[name]))}
 
-function check_required(o::SmoothGradeStream)
+function OpenAPI.check_required(o::SmoothGradeStream)
     true
+end
+
+function OpenAPI.validate_properties(o::SmoothGradeStream)
+    OpenAPI.validate_property(SmoothGradeStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(SmoothGradeStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(SmoothGradeStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(SmoothGradeStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ SmoothGradeStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ SmoothGradeStream }, name::Symbol, va
 
 
 end
+

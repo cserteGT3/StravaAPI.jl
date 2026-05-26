@@ -31,11 +31,11 @@ end
 Retrieve recent activities from members of a specific club. The authenticated athlete must belong to the requested club in order to hit this endpoint. Pagination is supported. Athlete profile visibility is respected for all activities.
 
 Params:
-- id::Int64 (required)
-- page::Int64
-- per_page::Int64
+- `id`::`Int64` (required)
+- `page`::`Int64`
+- `per_page`::`Int64`
 
-Return: Vector{ClubActivity}, OpenAPI.Clients.ApiResponse
+Return: `Vector{ClubActivity}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_club_activities_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_club_activities_by_id(_api, id; page=page, per_page=per_page, _mediaType=_mediaType)
@@ -67,11 +67,11 @@ end
 Returns a list of the administrators of a given club.
 
 Params:
-- id::Int64 (required)
-- page::Int64
-- per_page::Int64
+- `id`::`Int64` (required)
+- `page`::`Int64`
+- `per_page`::`Int64`
 
-Return: Vector{SummaryAthlete}, OpenAPI.Clients.ApiResponse
+Return: `Vector{SummaryAthlete}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_club_admins_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_club_admins_by_id(_api, id; page=page, per_page=per_page, _mediaType=_mediaType)
@@ -98,12 +98,12 @@ end
 
 @doc raw"""Get Club
 
-Returns a given club using its identifier.
+Returns a given a club using its identifier.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: DetailedClub, OpenAPI.Clients.ApiResponse
+Return: `DetailedClub`, `OpenAPI.Clients.ApiResponse`
 """
 function get_club_by_id(_api::ClubsApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_club_by_id(_api, id; _mediaType=_mediaType)
@@ -135,11 +135,11 @@ end
 Returns a list of the athletes who are members of a given club.
 
 Params:
-- id::Int64 (required)
-- page::Int64
-- per_page::Int64
+- `id`::`Int64` (required)
+- `page`::`Int64`
+- `per_page`::`Int64`
 
-Return: Vector{ClubAthlete}, OpenAPI.Clients.ApiResponse
+Return: `Vector{ClubAthlete}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_club_members_by_id(_api::ClubsApi, id::Int64; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_club_members_by_id(_api, id; page=page, per_page=per_page, _mediaType=_mediaType)
@@ -170,10 +170,10 @@ end
 Returns a list of the clubs whose membership includes the authenticated athlete.
 
 Params:
-- page::Int64
-- per_page::Int64
+- `page`::`Int64`
+- `per_page`::`Int64`
 
-Return: Vector{SummaryClub}, OpenAPI.Clients.ApiResponse
+Return: `Vector{SummaryClub}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_logged_in_athlete_clubs(_api::ClubsApi; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_logged_in_athlete_clubs(_api; page=page, per_page=per_page, _mediaType=_mediaType)

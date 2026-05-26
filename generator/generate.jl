@@ -16,25 +16,48 @@ function postprocess_docs(docsfolder)
     #=
     # this is implemented
         3. Replace `../README` with `./README` in all files in `docs/src`.
-        5. In `docs/src/README.md`: replace `docs/*` links with `./*`
-        6. Replace `[**Vector{String}**](String.md)` with `**Vector{String}**`.
-        7. Replace `[**Vector{Float32}**](Float32.md)` with `**Vector{Float32}**`.
+        6. Replace `[**`Vector{String}`**](String.md)` with `**`Vector{String}`**`.
+        7. Replace `[**`Vector{Float32}`**]](Float32.md)` with `**`Vector{Float32}`**`.
+        8. Replace `/images/device-attribution-image.png` with `images/device-attribution-image.png`.
+        9. Replace `docs/` links with `./`.
     =#
-    docfiles = readdir(docsfolder)
-    for f in docfiles
-        oldf = read(joinpath(docsfolder, f), String)
-        newf = replace(oldf, "../README" => "./README")
-        newf = replace(newf, "[**Vector{String}**](String.md)" => "**Vector{String}**")
-        newf = replace(newf, "[**Vector{Float32}**](Float32.md)" => "**Vector{Float32}**")
-        if f == "README.md"
-            newf = replace(newf, "docs/" => "./")
-        elseif f == "index.md"
-            date_text = "Package code was generated at: `UTC $(Dates.now(Dates.UTC))`"
-            newf = replace(newf, "<INSERT_DATE>" => date_text)
+    for (path, dirs, files) in walkdir(docsfolder)
+        for file in files
+            splitext(file)[2] != ".md" && continue
+            f = joinpath(path, file)
+            oldf = read(f, String)
+            newf = replace(oldf, "../README" => "./README")
+            newf = replace(newf, "[**`Vector{String}`**](String.md)" => "**`Vector{String}`**")
+            newf = replace(newf, "[**`Vector{Float32}`**](Float32.md)" => "**`Vector{Float32}`**")
+            newf = replace(newf, "/images/device-attribution-image.png" => "images/device-attribution-image.png")
+            newf = replace(newf, "(docs/" => "(./")
+            if file == "index.md"
+                date_text = "Package code was generated at: `UTC $(Dates.now(Dates.UTC))`"
+                newf = replace(newf, "<INSERT_DATE>" => date_text)
+            end
+            write(f, newf)
         end
-        write(joinpath(docsfolder, f), newf)
     end
 
+    return docsfolder
+end
+
+function postprocess_src(srcfolder)
+    #=
+    # this is implemented
+        8. Replace `/images/device-attribution-image.png` with `images/device-attribution-image.png`.
+    =#
+    for (path, dirs, files) in walkdir(srcfolder)
+        for file in files
+            splitext(file)[2] != ".jl" && continue
+            f = joinpath(path, file)
+            oldf = read(f, String)
+            newf = replace(oldf, "/images/device-attribution-image.png" => "images/device-attribution-image.png")
+            write(f, newf)
+        end
+    end
+
+    return srcfolder
 end
 
 function generatepackage()
@@ -47,15 +70,15 @@ function generatepackage()
     readme_file = read(joinpath(devdir, "README.md"), String)
 
     try
-        r = HTTP.get("https://developers.strava.com/swagger/swagger.json");
-        d = JSON.parse(String(r.body))
+        r = HTTP.get("https://developers.strava.com/swagger/swagger.json")
+        d = JSON.parse(String(r.body), dicttype = Dict{String, Any})
         @info "Downloaded and parsed API definition."
 
         OpenAPI.openapi_generator()
         @info "Started OpenAPI container, waiting little bit..."
         sleep(5) # sleeping, cause it helped a few times
-        OpenAPI.generate(d;package_name = "StravaAPI", output_dir = devdir)
-        OpenAPI.stop_openapi_generator()    
+        OpenAPI.generate(d; package_name = "StravaAPI", output_dir = devdir)
+        OpenAPI.stop_openapi_generator()
     catch e
         @error "Something failed horribly. Exiting..."
         println(e)
@@ -64,13 +87,13 @@ function generatepackage()
     @info "Package code generated with OpenAPI, continuing with postprocessing."
 
     cd(devdir)
-    mv("README.md", joinpath(docdir, "README.md"); force=true)
+    mv("README.md", joinpath(docdir, "README.md"); force = true)
     write("README.md", readme_file)
     @info "Moved generated readme to docs/"
 
     # move all md files docs -> docs/src
     docfiles = readdir(docdir)
-    mkdir(joinpath(docdir, "src"))
+    mkpath(joinpath(docdir, "src", "images"))
     mv.(joinpath.(docdir, docfiles), joinpath.(docdir, "src", docfiles))
     @info "Moved generated doc files to docs/src"
 
@@ -78,17 +101,21 @@ function generatepackage()
     cp(joinpath(gendir, "docs.Project.toml"), joinpath(docdir, "Project.toml"))
     cp(joinpath(gendir, "docs.index.md"), joinpath(docdir, "src", "index.md"))
     cp(joinpath(gendir, "docs.docstrings.md"), joinpath(docdir, "src", "docstrings.md"))
+    cp(joinpath(gendir, "device-attribution-image.png"), joinpath(docdir, "src", "images", "device-attribution-image.png"))
     @info "Copied templated documentation files to docs/"
 
     postprocess_docs(joinpath(docdir, "src"))
     @info "Postprocessed autogenerated documentation."
+
+    postprocess_src(joinpath(devdir, "src"))
+    @info "Postprocessed autogenerated source files for replacing some docstrings."
 
     aproj = Base.active_project()
     Pkg.activate(docdir)
     Pkg.develop("StravaAPI")
     Pkg.activate(aproj)
     @info "Developed StravaAPI in docs project environment for local build."
-    
+    return nothing
 end
 
 generatepackage()

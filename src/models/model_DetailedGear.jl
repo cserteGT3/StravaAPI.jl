@@ -38,24 +38,29 @@ Base.@kwdef mutable struct DetailedGear <: OpenAPI.APIModel
     description::Union{Nothing, String} = nothing
 
     function DetailedGear(id, resource_state, primary, name, distance, brand_name, model_name, frame_type, description, )
-        OpenAPI.validate_property(DetailedGear, Symbol("id"), id)
-        OpenAPI.validate_property(DetailedGear, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(DetailedGear, Symbol("primary"), primary)
-        OpenAPI.validate_property(DetailedGear, Symbol("name"), name)
-        OpenAPI.validate_property(DetailedGear, Symbol("distance"), distance)
-        OpenAPI.validate_property(DetailedGear, Symbol("brand_name"), brand_name)
-        OpenAPI.validate_property(DetailedGear, Symbol("model_name"), model_name)
-        OpenAPI.validate_property(DetailedGear, Symbol("frame_type"), frame_type)
-        OpenAPI.validate_property(DetailedGear, Symbol("description"), description)
-        return new(id, resource_state, primary, name, distance, brand_name, model_name, frame_type, description, )
+        o = new(id, resource_state, primary, name, distance, brand_name, model_name, frame_type, description, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type DetailedGear
 
 const _property_types_DetailedGear = Dict{Symbol,String}(Symbol("id")=>"String", Symbol("resource_state")=>"Int64", Symbol("primary")=>"Bool", Symbol("name")=>"String", Symbol("distance")=>"Float32", Symbol("brand_name")=>"String", Symbol("model_name")=>"String", Symbol("frame_type")=>"Int64", Symbol("description")=>"String", )
 OpenAPI.property_type(::Type{ DetailedGear }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_DetailedGear[name]))}
 
-function check_required(o::DetailedGear)
+function OpenAPI.check_required(o::DetailedGear)
     true
+end
+
+function OpenAPI.validate_properties(o::DetailedGear)
+    OpenAPI.validate_property(DetailedGear, Symbol("id"), o.id)
+    OpenAPI.validate_property(DetailedGear, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(DetailedGear, Symbol("primary"), o.primary)
+    OpenAPI.validate_property(DetailedGear, Symbol("name"), o.name)
+    OpenAPI.validate_property(DetailedGear, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(DetailedGear, Symbol("brand_name"), o.brand_name)
+    OpenAPI.validate_property(DetailedGear, Symbol("model_name"), o.model_name)
+    OpenAPI.validate_property(DetailedGear, Symbol("frame_type"), o.frame_type)
+    OpenAPI.validate_property(DetailedGear, Symbol("description"), o.description)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedGear }, name::Symbol, val)
@@ -72,3 +77,4 @@ function OpenAPI.validate_property(::Type{ DetailedGear }, name::Symbol, val)
 
 
 end
+

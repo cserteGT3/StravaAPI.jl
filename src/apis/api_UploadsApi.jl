@@ -35,15 +35,15 @@ end
 Uploads a new data file to create an activity from. Requires activity:write scope.
 
 Params:
-- file::String
-- name::String
-- description::String
-- trainer::String
-- commute::String
-- data_type::String
-- external_id::String
+- `file`::`String`
+- `name`::`String`
+- `description`::`String`
+- `trainer`::`String`
+- `commute`::`String`
+- `data_type`::`String`
+- `external_id`::`String`
 
-Return: Upload, OpenAPI.Clients.ApiResponse
+Return: `Upload`, `OpenAPI.Clients.ApiResponse`
 """
 function create_upload(_api::UploadsApi; file=nothing, name=nothing, description=nothing, trainer=nothing, commute=nothing, data_type=nothing, external_id=nothing, _mediaType=nothing)
     _ctx = _oacinternal_create_upload(_api; file=file, name=name, description=description, trainer=trainer, commute=commute, data_type=data_type, external_id=external_id, _mediaType=_mediaType)
@@ -73,9 +73,9 @@ end
 Returns an upload for a given identifier. Requires activity:write scope.
 
 Params:
-- upload_id::Int64 (required)
+- `upload_id`::`Int64` (required)
 
-Return: Upload, OpenAPI.Clients.ApiResponse
+Return: `Upload`, `OpenAPI.Clients.ApiResponse`
 """
 function get_upload_by_id(_api::UploadsApi, upload_id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_upload_by_id(_api, upload_id; _mediaType=_mediaType)

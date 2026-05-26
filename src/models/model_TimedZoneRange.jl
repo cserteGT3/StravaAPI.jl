@@ -21,18 +21,23 @@ Base.@kwdef mutable struct TimedZoneRange <: OpenAPI.APIModel
     time::Union{Nothing, Int64} = nothing
 
     function TimedZoneRange(min, max, time, )
-        OpenAPI.validate_property(TimedZoneRange, Symbol("min"), min)
-        OpenAPI.validate_property(TimedZoneRange, Symbol("max"), max)
-        OpenAPI.validate_property(TimedZoneRange, Symbol("time"), time)
-        return new(min, max, time, )
+        o = new(min, max, time, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type TimedZoneRange
 
 const _property_types_TimedZoneRange = Dict{Symbol,String}(Symbol("min")=>"Int64", Symbol("max")=>"Int64", Symbol("time")=>"Int64", )
 OpenAPI.property_type(::Type{ TimedZoneRange }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_TimedZoneRange[name]))}
 
-function check_required(o::TimedZoneRange)
+function OpenAPI.check_required(o::TimedZoneRange)
     true
+end
+
+function OpenAPI.validate_properties(o::TimedZoneRange)
+    OpenAPI.validate_property(TimedZoneRange, Symbol("min"), o.min)
+    OpenAPI.validate_property(TimedZoneRange, Symbol("max"), o.max)
+    OpenAPI.validate_property(TimedZoneRange, Symbol("time"), o.time)
 end
 
 function OpenAPI.validate_property(::Type{ TimedZoneRange }, name::Symbol, val)
@@ -40,3 +45,4 @@ function OpenAPI.validate_property(::Type{ TimedZoneRange }, name::Symbol, val)
 
 
 end
+

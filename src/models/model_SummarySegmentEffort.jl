@@ -32,22 +32,27 @@ Base.@kwdef mutable struct SummarySegmentEffort <: OpenAPI.APIModel
     is_kom::Union{Nothing, Bool} = nothing
 
     function SummarySegmentEffort(id, activity_id, elapsed_time, start_date, start_date_local, distance, is_kom, )
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("id"), id)
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("activity_id"), activity_id)
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("start_date"), start_date)
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("start_date_local"), start_date_local)
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("distance"), distance)
-        OpenAPI.validate_property(SummarySegmentEffort, Symbol("is_kom"), is_kom)
-        return new(id, activity_id, elapsed_time, start_date, start_date_local, distance, is_kom, )
+        o = new(id, activity_id, elapsed_time, start_date, start_date_local, distance, is_kom, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummarySegmentEffort
 
 const _property_types_SummarySegmentEffort = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("activity_id")=>"Int64", Symbol("elapsed_time")=>"Int64", Symbol("start_date")=>"ZonedDateTime", Symbol("start_date_local")=>"ZonedDateTime", Symbol("distance")=>"Float32", Symbol("is_kom")=>"Bool", )
 OpenAPI.property_type(::Type{ SummarySegmentEffort }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummarySegmentEffort[name]))}
 
-function check_required(o::SummarySegmentEffort)
+function OpenAPI.check_required(o::SummarySegmentEffort)
     true
+end
+
+function OpenAPI.validate_properties(o::SummarySegmentEffort)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("id"), o.id)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("activity_id"), o.activity_id)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("start_date"), o.start_date)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("start_date_local"), o.start_date_local)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(SummarySegmentEffort, Symbol("is_kom"), o.is_kom)
 end
 
 function OpenAPI.validate_property(::Type{ SummarySegmentEffort }, name::Symbol, val)
@@ -74,3 +79,4 @@ function OpenAPI.validate_property(::Type{ SummarySegmentEffort }, name::Symbol,
     end
 
 end
+

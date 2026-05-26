@@ -20,18 +20,23 @@ Base.@kwdef mutable struct Error <: OpenAPI.APIModel
     resource::Union{Nothing, String} = nothing
 
     function Error(code, field, resource, )
-        OpenAPI.validate_property(Error, Symbol("code"), code)
-        OpenAPI.validate_property(Error, Symbol("field"), field)
-        OpenAPI.validate_property(Error, Symbol("resource"), resource)
-        return new(code, field, resource, )
+        o = new(code, field, resource, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Error
 
 const _property_types_Error = Dict{Symbol,String}(Symbol("code")=>"String", Symbol("field")=>"String", Symbol("resource")=>"String", )
 OpenAPI.property_type(::Type{ Error }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Error[name]))}
 
-function check_required(o::Error)
+function OpenAPI.check_required(o::Error)
     true
+end
+
+function OpenAPI.validate_properties(o::Error)
+    OpenAPI.validate_property(Error, Symbol("code"), o.code)
+    OpenAPI.validate_property(Error, Symbol("field"), o.field)
+    OpenAPI.validate_property(Error, Symbol("resource"), o.resource)
 end
 
 function OpenAPI.validate_property(::Type{ Error }, name::Symbol, val)
@@ -39,3 +44,4 @@ function OpenAPI.validate_property(::Type{ Error }, name::Symbol, val)
 
 
 end
+

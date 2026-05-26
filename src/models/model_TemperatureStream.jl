@@ -23,19 +23,24 @@ Base.@kwdef mutable struct TemperatureStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Int64}} = nothing
 
     function TemperatureStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(TemperatureStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(TemperatureStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(TemperatureStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(TemperatureStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type TemperatureStream
 
 const _property_types_TemperatureStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Int64}", )
 OpenAPI.property_type(::Type{ TemperatureStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_TemperatureStream[name]))}
 
-function check_required(o::TemperatureStream)
+function OpenAPI.check_required(o::TemperatureStream)
     true
+end
+
+function OpenAPI.validate_properties(o::TemperatureStream)
+    OpenAPI.validate_property(TemperatureStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(TemperatureStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(TemperatureStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(TemperatureStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ TemperatureStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ TemperatureStream }, name::Symbol, va
 
 
 end
+

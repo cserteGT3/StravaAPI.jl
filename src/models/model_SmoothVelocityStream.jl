@@ -23,19 +23,24 @@ Base.@kwdef mutable struct SmoothVelocityStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Float32}} = nothing
 
     function SmoothVelocityStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(SmoothVelocityStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(SmoothVelocityStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(SmoothVelocityStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(SmoothVelocityStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SmoothVelocityStream
 
 const _property_types_SmoothVelocityStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Float32}", )
 OpenAPI.property_type(::Type{ SmoothVelocityStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SmoothVelocityStream[name]))}
 
-function check_required(o::SmoothVelocityStream)
+function OpenAPI.check_required(o::SmoothVelocityStream)
     true
+end
+
+function OpenAPI.validate_properties(o::SmoothVelocityStream)
+    OpenAPI.validate_property(SmoothVelocityStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(SmoothVelocityStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(SmoothVelocityStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(SmoothVelocityStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ SmoothVelocityStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ SmoothVelocityStream }, name::Symbol,
 
 
 end
+

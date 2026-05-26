@@ -23,19 +23,24 @@ Base.@kwdef mutable struct CadenceStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Int64}} = nothing
 
     function CadenceStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(CadenceStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(CadenceStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(CadenceStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(CadenceStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type CadenceStream
 
 const _property_types_CadenceStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Int64}", )
 OpenAPI.property_type(::Type{ CadenceStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_CadenceStream[name]))}
 
-function check_required(o::CadenceStream)
+function OpenAPI.check_required(o::CadenceStream)
     true
+end
+
+function OpenAPI.validate_properties(o::CadenceStream)
+    OpenAPI.validate_property(CadenceStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(CadenceStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(CadenceStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(CadenceStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ CadenceStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ CadenceStream }, name::Symbol, val)
 
 
 end
+

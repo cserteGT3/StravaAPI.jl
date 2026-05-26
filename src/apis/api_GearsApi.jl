@@ -29,9 +29,9 @@ end
 Returns an equipment using its identifier.
 
 Params:
-- id::String (required)
+- `id`::`String` (required)
 
-Return: DetailedGear, OpenAPI.Clients.ApiResponse
+Return: `DetailedGear`, `OpenAPI.Clients.ApiResponse`
 """
 function get_gear_by_id(_api::GearsApi, id::String; _mediaType=nothing)
     _ctx = _oacinternal_get_gear_by_id(_api, id; _mediaType=_mediaType)

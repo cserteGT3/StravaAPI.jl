@@ -23,19 +23,24 @@ Base.@kwdef mutable struct HeartrateStream <: OpenAPI.APIModel
     data::Union{Nothing, Vector{Int64}} = nothing
 
     function HeartrateStream(original_size, resolution, series_type, data, )
-        OpenAPI.validate_property(HeartrateStream, Symbol("original_size"), original_size)
-        OpenAPI.validate_property(HeartrateStream, Symbol("resolution"), resolution)
-        OpenAPI.validate_property(HeartrateStream, Symbol("series_type"), series_type)
-        OpenAPI.validate_property(HeartrateStream, Symbol("data"), data)
-        return new(original_size, resolution, series_type, data, )
+        o = new(original_size, resolution, series_type, data, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type HeartrateStream
 
 const _property_types_HeartrateStream = Dict{Symbol,String}(Symbol("original_size")=>"Int64", Symbol("resolution")=>"String", Symbol("series_type")=>"String", Symbol("data")=>"Vector{Int64}", )
 OpenAPI.property_type(::Type{ HeartrateStream }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_HeartrateStream[name]))}
 
-function check_required(o::HeartrateStream)
+function OpenAPI.check_required(o::HeartrateStream)
     true
+end
+
+function OpenAPI.validate_properties(o::HeartrateStream)
+    OpenAPI.validate_property(HeartrateStream, Symbol("original_size"), o.original_size)
+    OpenAPI.validate_property(HeartrateStream, Symbol("resolution"), o.resolution)
+    OpenAPI.validate_property(HeartrateStream, Symbol("series_type"), o.series_type)
+    OpenAPI.validate_property(HeartrateStream, Symbol("data"), o.data)
 end
 
 function OpenAPI.validate_property(::Type{ HeartrateStream }, name::Symbol, val)
@@ -52,3 +57,4 @@ function OpenAPI.validate_property(::Type{ HeartrateStream }, name::Symbol, val)
 
 
 end
+

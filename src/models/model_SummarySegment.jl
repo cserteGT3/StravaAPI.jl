@@ -62,32 +62,37 @@ Base.@kwdef mutable struct SummarySegment <: OpenAPI.APIModel
     athlete_segment_stats = nothing # spec type: Union{ Nothing, SummarySegmentEffort }
 
     function SummarySegment(id, name, activity_type, distance, average_grade, maximum_grade, elevation_high, elevation_low, start_latlng, end_latlng, climb_category, city, state, country, private, athlete_pr_effort, athlete_segment_stats, )
-        OpenAPI.validate_property(SummarySegment, Symbol("id"), id)
-        OpenAPI.validate_property(SummarySegment, Symbol("name"), name)
-        OpenAPI.validate_property(SummarySegment, Symbol("activity_type"), activity_type)
-        OpenAPI.validate_property(SummarySegment, Symbol("distance"), distance)
-        OpenAPI.validate_property(SummarySegment, Symbol("average_grade"), average_grade)
-        OpenAPI.validate_property(SummarySegment, Symbol("maximum_grade"), maximum_grade)
-        OpenAPI.validate_property(SummarySegment, Symbol("elevation_high"), elevation_high)
-        OpenAPI.validate_property(SummarySegment, Symbol("elevation_low"), elevation_low)
-        OpenAPI.validate_property(SummarySegment, Symbol("start_latlng"), start_latlng)
-        OpenAPI.validate_property(SummarySegment, Symbol("end_latlng"), end_latlng)
-        OpenAPI.validate_property(SummarySegment, Symbol("climb_category"), climb_category)
-        OpenAPI.validate_property(SummarySegment, Symbol("city"), city)
-        OpenAPI.validate_property(SummarySegment, Symbol("state"), state)
-        OpenAPI.validate_property(SummarySegment, Symbol("country"), country)
-        OpenAPI.validate_property(SummarySegment, Symbol("private"), private)
-        OpenAPI.validate_property(SummarySegment, Symbol("athlete_pr_effort"), athlete_pr_effort)
-        OpenAPI.validate_property(SummarySegment, Symbol("athlete_segment_stats"), athlete_segment_stats)
-        return new(id, name, activity_type, distance, average_grade, maximum_grade, elevation_high, elevation_low, start_latlng, end_latlng, climb_category, city, state, country, private, athlete_pr_effort, athlete_segment_stats, )
+        o = new(id, name, activity_type, distance, average_grade, maximum_grade, elevation_high, elevation_low, start_latlng, end_latlng, climb_category, city, state, country, private, athlete_pr_effort, athlete_segment_stats, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummarySegment
 
 const _property_types_SummarySegment = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("name")=>"String", Symbol("activity_type")=>"String", Symbol("distance")=>"Float32", Symbol("average_grade")=>"Float32", Symbol("maximum_grade")=>"Float32", Symbol("elevation_high")=>"Float32", Symbol("elevation_low")=>"Float32", Symbol("start_latlng")=>"Vector{Float32}", Symbol("end_latlng")=>"Vector{Float32}", Symbol("climb_category")=>"Int64", Symbol("city")=>"String", Symbol("state")=>"String", Symbol("country")=>"String", Symbol("private")=>"Bool", Symbol("athlete_pr_effort")=>"SummaryPRSegmentEffort", Symbol("athlete_segment_stats")=>"SummarySegmentEffort", )
 OpenAPI.property_type(::Type{ SummarySegment }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummarySegment[name]))}
 
-function check_required(o::SummarySegment)
+function OpenAPI.check_required(o::SummarySegment)
     true
+end
+
+function OpenAPI.validate_properties(o::SummarySegment)
+    OpenAPI.validate_property(SummarySegment, Symbol("id"), o.id)
+    OpenAPI.validate_property(SummarySegment, Symbol("name"), o.name)
+    OpenAPI.validate_property(SummarySegment, Symbol("activity_type"), o.activity_type)
+    OpenAPI.validate_property(SummarySegment, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(SummarySegment, Symbol("average_grade"), o.average_grade)
+    OpenAPI.validate_property(SummarySegment, Symbol("maximum_grade"), o.maximum_grade)
+    OpenAPI.validate_property(SummarySegment, Symbol("elevation_high"), o.elevation_high)
+    OpenAPI.validate_property(SummarySegment, Symbol("elevation_low"), o.elevation_low)
+    OpenAPI.validate_property(SummarySegment, Symbol("start_latlng"), o.start_latlng)
+    OpenAPI.validate_property(SummarySegment, Symbol("end_latlng"), o.end_latlng)
+    OpenAPI.validate_property(SummarySegment, Symbol("climb_category"), o.climb_category)
+    OpenAPI.validate_property(SummarySegment, Symbol("city"), o.city)
+    OpenAPI.validate_property(SummarySegment, Symbol("state"), o.state)
+    OpenAPI.validate_property(SummarySegment, Symbol("country"), o.country)
+    OpenAPI.validate_property(SummarySegment, Symbol("private"), o.private)
+    OpenAPI.validate_property(SummarySegment, Symbol("athlete_pr_effort"), o.athlete_pr_effort)
+    OpenAPI.validate_property(SummarySegment, Symbol("athlete_segment_stats"), o.athlete_segment_stats)
 end
 
 function OpenAPI.validate_property(::Type{ SummarySegment }, name::Symbol, val)
@@ -139,3 +144,4 @@ function OpenAPI.validate_property(::Type{ SummarySegment }, name::Symbol, val)
 
 
 end
+

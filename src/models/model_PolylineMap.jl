@@ -20,18 +20,23 @@ Base.@kwdef mutable struct PolylineMap <: OpenAPI.APIModel
     summary_polyline::Union{Nothing, String} = nothing
 
     function PolylineMap(id, polyline, summary_polyline, )
-        OpenAPI.validate_property(PolylineMap, Symbol("id"), id)
-        OpenAPI.validate_property(PolylineMap, Symbol("polyline"), polyline)
-        OpenAPI.validate_property(PolylineMap, Symbol("summary_polyline"), summary_polyline)
-        return new(id, polyline, summary_polyline, )
+        o = new(id, polyline, summary_polyline, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type PolylineMap
 
 const _property_types_PolylineMap = Dict{Symbol,String}(Symbol("id")=>"String", Symbol("polyline")=>"String", Symbol("summary_polyline")=>"String", )
 OpenAPI.property_type(::Type{ PolylineMap }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_PolylineMap[name]))}
 
-function check_required(o::PolylineMap)
+function OpenAPI.check_required(o::PolylineMap)
     true
+end
+
+function OpenAPI.validate_properties(o::PolylineMap)
+    OpenAPI.validate_property(PolylineMap, Symbol("id"), o.id)
+    OpenAPI.validate_property(PolylineMap, Symbol("polyline"), o.polyline)
+    OpenAPI.validate_property(PolylineMap, Symbol("summary_polyline"), o.summary_polyline)
 end
 
 function OpenAPI.validate_property(::Type{ PolylineMap }, name::Symbol, val)
@@ -39,3 +44,4 @@ function OpenAPI.validate_property(::Type{ PolylineMap }, name::Symbol, val)
 
 
 end
+

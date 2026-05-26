@@ -59,31 +59,36 @@ Base.@kwdef mutable struct SummaryClub <: OpenAPI.APIModel
     url::Union{Nothing, String} = nothing
 
     function SummaryClub(id, resource_state, name, profile_medium, cover_photo, cover_photo_small, sport_type, activity_types, city, state, country, private, member_count, featured, verified, url, )
-        OpenAPI.validate_property(SummaryClub, Symbol("id"), id)
-        OpenAPI.validate_property(SummaryClub, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(SummaryClub, Symbol("name"), name)
-        OpenAPI.validate_property(SummaryClub, Symbol("profile_medium"), profile_medium)
-        OpenAPI.validate_property(SummaryClub, Symbol("cover_photo"), cover_photo)
-        OpenAPI.validate_property(SummaryClub, Symbol("cover_photo_small"), cover_photo_small)
-        OpenAPI.validate_property(SummaryClub, Symbol("sport_type"), sport_type)
-        OpenAPI.validate_property(SummaryClub, Symbol("activity_types"), activity_types)
-        OpenAPI.validate_property(SummaryClub, Symbol("city"), city)
-        OpenAPI.validate_property(SummaryClub, Symbol("state"), state)
-        OpenAPI.validate_property(SummaryClub, Symbol("country"), country)
-        OpenAPI.validate_property(SummaryClub, Symbol("private"), private)
-        OpenAPI.validate_property(SummaryClub, Symbol("member_count"), member_count)
-        OpenAPI.validate_property(SummaryClub, Symbol("featured"), featured)
-        OpenAPI.validate_property(SummaryClub, Symbol("verified"), verified)
-        OpenAPI.validate_property(SummaryClub, Symbol("url"), url)
-        return new(id, resource_state, name, profile_medium, cover_photo, cover_photo_small, sport_type, activity_types, city, state, country, private, member_count, featured, verified, url, )
+        o = new(id, resource_state, name, profile_medium, cover_photo, cover_photo_small, sport_type, activity_types, city, state, country, private, member_count, featured, verified, url, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummaryClub
 
 const _property_types_SummaryClub = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("resource_state")=>"Int64", Symbol("name")=>"String", Symbol("profile_medium")=>"String", Symbol("cover_photo")=>"String", Symbol("cover_photo_small")=>"String", Symbol("sport_type")=>"String", Symbol("activity_types")=>"Vector{ActivityType}", Symbol("city")=>"String", Symbol("state")=>"String", Symbol("country")=>"String", Symbol("private")=>"Bool", Symbol("member_count")=>"Int64", Symbol("featured")=>"Bool", Symbol("verified")=>"Bool", Symbol("url")=>"String", )
 OpenAPI.property_type(::Type{ SummaryClub }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummaryClub[name]))}
 
-function check_required(o::SummaryClub)
+function OpenAPI.check_required(o::SummaryClub)
     true
+end
+
+function OpenAPI.validate_properties(o::SummaryClub)
+    OpenAPI.validate_property(SummaryClub, Symbol("id"), o.id)
+    OpenAPI.validate_property(SummaryClub, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(SummaryClub, Symbol("name"), o.name)
+    OpenAPI.validate_property(SummaryClub, Symbol("profile_medium"), o.profile_medium)
+    OpenAPI.validate_property(SummaryClub, Symbol("cover_photo"), o.cover_photo)
+    OpenAPI.validate_property(SummaryClub, Symbol("cover_photo_small"), o.cover_photo_small)
+    OpenAPI.validate_property(SummaryClub, Symbol("sport_type"), o.sport_type)
+    OpenAPI.validate_property(SummaryClub, Symbol("activity_types"), o.activity_types)
+    OpenAPI.validate_property(SummaryClub, Symbol("city"), o.city)
+    OpenAPI.validate_property(SummaryClub, Symbol("state"), o.state)
+    OpenAPI.validate_property(SummaryClub, Symbol("country"), o.country)
+    OpenAPI.validate_property(SummaryClub, Symbol("private"), o.private)
+    OpenAPI.validate_property(SummaryClub, Symbol("member_count"), o.member_count)
+    OpenAPI.validate_property(SummaryClub, Symbol("featured"), o.featured)
+    OpenAPI.validate_property(SummaryClub, Symbol("verified"), o.verified)
+    OpenAPI.validate_property(SummaryClub, Symbol("url"), o.url)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryClub }, name::Symbol, val)
@@ -111,3 +116,4 @@ function OpenAPI.validate_property(::Type{ SummaryClub }, name::Symbol, val)
 
 
 end
+

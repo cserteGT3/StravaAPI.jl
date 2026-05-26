@@ -7,3 +7,4 @@ if !isdefined(@__MODULE__, :SportType)
 else
     @warn("Skipping redefinition of SportType to String")
 end
+

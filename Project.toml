@@ -1,6 +1,6 @@
 name = "StravaAPI"
 uuid = "71058383-8132-461f-b29a-bb8012bb1004"
-authors = ["Tamás Cserteg <csertegt@gmail.com> and contributors"]
+authors = ["Tamás Cserteg <csertegt@protonmail.com> and contributors"]
 version = "1.0.1"
 
 [deps]
@@ -10,5 +10,5 @@ TimeZones = "f269a46b-ccf7-5d73-abea-4c690281aa53"
 
 [compat]
 julia = "1.6.7"
-OpenAPI = "0.1"
+OpenAPI = "0.2"
 TimeZones = "1.0"

@@ -14,18 +14,24 @@ Base.@kwdef mutable struct ExplorerResponse <: OpenAPI.APIModel
     segments::Union{Nothing, Vector} = nothing # spec type: Union{ Nothing, Vector{ExplorerSegment} }
 
     function ExplorerResponse(segments, )
-        OpenAPI.validate_property(ExplorerResponse, Symbol("segments"), segments)
-        return new(segments, )
+        o = new(segments, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ExplorerResponse
 
 const _property_types_ExplorerResponse = Dict{Symbol,String}(Symbol("segments")=>"Vector{ExplorerSegment}", )
 OpenAPI.property_type(::Type{ ExplorerResponse }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ExplorerResponse[name]))}
 
-function check_required(o::ExplorerResponse)
+function OpenAPI.check_required(o::ExplorerResponse)
     true
+end
+
+function OpenAPI.validate_properties(o::ExplorerResponse)
+    OpenAPI.validate_property(ExplorerResponse, Symbol("segments"), o.segments)
 end
 
 function OpenAPI.validate_property(::Type{ ExplorerResponse }, name::Symbol, val)
 
 end
+

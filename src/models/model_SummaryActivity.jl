@@ -30,6 +30,7 @@
         photo_count=nothing,
         total_photo_count=nothing,
         map=nothing,
+        device_name=nothing,
         trainer=nothing,
         commute=nothing,
         manual=nothing,
@@ -74,6 +75,7 @@
     - photo_count::Int64 : The number of Instagram photos for this activity
     - total_photo_count::Int64 : The number of Instagram and Strava photos for this activity
     - map::PolylineMap
+    - device_name::String : The name of the device used to record the activity
     - trainer::Bool : Whether this activity was recorded on a training machine
     - commute::Bool : Whether this activity is a commute
     - manual::Bool : Whether this activity was created manually
@@ -118,6 +120,7 @@ Base.@kwdef mutable struct SummaryActivity <: OpenAPI.APIModel
     photo_count::Union{Nothing, Int64} = nothing
     total_photo_count::Union{Nothing, Int64} = nothing
     map = nothing # spec type: Union{ Nothing, PolylineMap }
+    device_name::Union{Nothing, String} = nothing
     trainer::Union{Nothing, Bool} = nothing
     commute::Union{Nothing, Bool} = nothing
     manual::Union{Nothing, Bool} = nothing
@@ -136,58 +139,64 @@ Base.@kwdef mutable struct SummaryActivity <: OpenAPI.APIModel
     max_watts::Union{Nothing, Int64} = nothing
     weighted_average_watts::Union{Nothing, Int64} = nothing
 
-    function SummaryActivity(id, external_id, upload_id, athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, elev_high, elev_low, type, sport_type, start_date, start_date_local, timezone, start_latlng, end_latlng, achievement_count, kudos_count, comment_count, athlete_count, photo_count, total_photo_count, map, trainer, commute, manual, private, flagged, workout_type, upload_id_str, average_speed, max_speed, has_kudoed, hide_from_home, gear_id, kilojoules, average_watts, device_watts, max_watts, weighted_average_watts, )
-        OpenAPI.validate_property(SummaryActivity, Symbol("id"), id)
-        OpenAPI.validate_property(SummaryActivity, Symbol("external_id"), external_id)
-        OpenAPI.validate_property(SummaryActivity, Symbol("upload_id"), upload_id)
-        OpenAPI.validate_property(SummaryActivity, Symbol("athlete"), athlete)
-        OpenAPI.validate_property(SummaryActivity, Symbol("name"), name)
-        OpenAPI.validate_property(SummaryActivity, Symbol("distance"), distance)
-        OpenAPI.validate_property(SummaryActivity, Symbol("moving_time"), moving_time)
-        OpenAPI.validate_property(SummaryActivity, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(SummaryActivity, Symbol("total_elevation_gain"), total_elevation_gain)
-        OpenAPI.validate_property(SummaryActivity, Symbol("elev_high"), elev_high)
-        OpenAPI.validate_property(SummaryActivity, Symbol("elev_low"), elev_low)
-        OpenAPI.validate_property(SummaryActivity, Symbol("type"), type)
-        OpenAPI.validate_property(SummaryActivity, Symbol("sport_type"), sport_type)
-        OpenAPI.validate_property(SummaryActivity, Symbol("start_date"), start_date)
-        OpenAPI.validate_property(SummaryActivity, Symbol("start_date_local"), start_date_local)
-        OpenAPI.validate_property(SummaryActivity, Symbol("timezone"), timezone)
-        OpenAPI.validate_property(SummaryActivity, Symbol("start_latlng"), start_latlng)
-        OpenAPI.validate_property(SummaryActivity, Symbol("end_latlng"), end_latlng)
-        OpenAPI.validate_property(SummaryActivity, Symbol("achievement_count"), achievement_count)
-        OpenAPI.validate_property(SummaryActivity, Symbol("kudos_count"), kudos_count)
-        OpenAPI.validate_property(SummaryActivity, Symbol("comment_count"), comment_count)
-        OpenAPI.validate_property(SummaryActivity, Symbol("athlete_count"), athlete_count)
-        OpenAPI.validate_property(SummaryActivity, Symbol("photo_count"), photo_count)
-        OpenAPI.validate_property(SummaryActivity, Symbol("total_photo_count"), total_photo_count)
-        OpenAPI.validate_property(SummaryActivity, Symbol("map"), map)
-        OpenAPI.validate_property(SummaryActivity, Symbol("trainer"), trainer)
-        OpenAPI.validate_property(SummaryActivity, Symbol("commute"), commute)
-        OpenAPI.validate_property(SummaryActivity, Symbol("manual"), manual)
-        OpenAPI.validate_property(SummaryActivity, Symbol("private"), private)
-        OpenAPI.validate_property(SummaryActivity, Symbol("flagged"), flagged)
-        OpenAPI.validate_property(SummaryActivity, Symbol("workout_type"), workout_type)
-        OpenAPI.validate_property(SummaryActivity, Symbol("upload_id_str"), upload_id_str)
-        OpenAPI.validate_property(SummaryActivity, Symbol("average_speed"), average_speed)
-        OpenAPI.validate_property(SummaryActivity, Symbol("max_speed"), max_speed)
-        OpenAPI.validate_property(SummaryActivity, Symbol("has_kudoed"), has_kudoed)
-        OpenAPI.validate_property(SummaryActivity, Symbol("hide_from_home"), hide_from_home)
-        OpenAPI.validate_property(SummaryActivity, Symbol("gear_id"), gear_id)
-        OpenAPI.validate_property(SummaryActivity, Symbol("kilojoules"), kilojoules)
-        OpenAPI.validate_property(SummaryActivity, Symbol("average_watts"), average_watts)
-        OpenAPI.validate_property(SummaryActivity, Symbol("device_watts"), device_watts)
-        OpenAPI.validate_property(SummaryActivity, Symbol("max_watts"), max_watts)
-        OpenAPI.validate_property(SummaryActivity, Symbol("weighted_average_watts"), weighted_average_watts)
-        return new(id, external_id, upload_id, athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, elev_high, elev_low, type, sport_type, start_date, start_date_local, timezone, start_latlng, end_latlng, achievement_count, kudos_count, comment_count, athlete_count, photo_count, total_photo_count, map, trainer, commute, manual, private, flagged, workout_type, upload_id_str, average_speed, max_speed, has_kudoed, hide_from_home, gear_id, kilojoules, average_watts, device_watts, max_watts, weighted_average_watts, )
+    function SummaryActivity(id, external_id, upload_id, athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, elev_high, elev_low, type, sport_type, start_date, start_date_local, timezone, start_latlng, end_latlng, achievement_count, kudos_count, comment_count, athlete_count, photo_count, total_photo_count, map, device_name, trainer, commute, manual, private, flagged, workout_type, upload_id_str, average_speed, max_speed, has_kudoed, hide_from_home, gear_id, kilojoules, average_watts, device_watts, max_watts, weighted_average_watts, )
+        o = new(id, external_id, upload_id, athlete, name, distance, moving_time, elapsed_time, total_elevation_gain, elev_high, elev_low, type, sport_type, start_date, start_date_local, timezone, start_latlng, end_latlng, achievement_count, kudos_count, comment_count, athlete_count, photo_count, total_photo_count, map, device_name, trainer, commute, manual, private, flagged, workout_type, upload_id_str, average_speed, max_speed, has_kudoed, hide_from_home, gear_id, kilojoules, average_watts, device_watts, max_watts, weighted_average_watts, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type SummaryActivity
 
-const _property_types_SummaryActivity = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("external_id")=>"String", Symbol("upload_id")=>"Int64", Symbol("athlete")=>"MetaAthlete", Symbol("name")=>"String", Symbol("distance")=>"Float32", Symbol("moving_time")=>"Int64", Symbol("elapsed_time")=>"Int64", Symbol("total_elevation_gain")=>"Float32", Symbol("elev_high")=>"Float32", Symbol("elev_low")=>"Float32", Symbol("type")=>"ActivityType", Symbol("sport_type")=>"SportType", Symbol("start_date")=>"ZonedDateTime", Symbol("start_date_local")=>"ZonedDateTime", Symbol("timezone")=>"String", Symbol("start_latlng")=>"Vector{Float32}", Symbol("end_latlng")=>"Vector{Float32}", Symbol("achievement_count")=>"Int64", Symbol("kudos_count")=>"Int64", Symbol("comment_count")=>"Int64", Symbol("athlete_count")=>"Int64", Symbol("photo_count")=>"Int64", Symbol("total_photo_count")=>"Int64", Symbol("map")=>"PolylineMap", Symbol("trainer")=>"Bool", Symbol("commute")=>"Bool", Symbol("manual")=>"Bool", Symbol("private")=>"Bool", Symbol("flagged")=>"Bool", Symbol("workout_type")=>"Int64", Symbol("upload_id_str")=>"String", Symbol("average_speed")=>"Float32", Symbol("max_speed")=>"Float32", Symbol("has_kudoed")=>"Bool", Symbol("hide_from_home")=>"Bool", Symbol("gear_id")=>"String", Symbol("kilojoules")=>"Float32", Symbol("average_watts")=>"Float32", Symbol("device_watts")=>"Bool", Symbol("max_watts")=>"Int64", Symbol("weighted_average_watts")=>"Int64", )
+const _property_types_SummaryActivity = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("external_id")=>"String", Symbol("upload_id")=>"Int64", Symbol("athlete")=>"MetaAthlete", Symbol("name")=>"String", Symbol("distance")=>"Float32", Symbol("moving_time")=>"Int64", Symbol("elapsed_time")=>"Int64", Symbol("total_elevation_gain")=>"Float32", Symbol("elev_high")=>"Float32", Symbol("elev_low")=>"Float32", Symbol("type")=>"ActivityType", Symbol("sport_type")=>"SportType", Symbol("start_date")=>"ZonedDateTime", Symbol("start_date_local")=>"ZonedDateTime", Symbol("timezone")=>"String", Symbol("start_latlng")=>"Vector{Float32}", Symbol("end_latlng")=>"Vector{Float32}", Symbol("achievement_count")=>"Int64", Symbol("kudos_count")=>"Int64", Symbol("comment_count")=>"Int64", Symbol("athlete_count")=>"Int64", Symbol("photo_count")=>"Int64", Symbol("total_photo_count")=>"Int64", Symbol("map")=>"PolylineMap", Symbol("device_name")=>"String", Symbol("trainer")=>"Bool", Symbol("commute")=>"Bool", Symbol("manual")=>"Bool", Symbol("private")=>"Bool", Symbol("flagged")=>"Bool", Symbol("workout_type")=>"Int64", Symbol("upload_id_str")=>"String", Symbol("average_speed")=>"Float32", Symbol("max_speed")=>"Float32", Symbol("has_kudoed")=>"Bool", Symbol("hide_from_home")=>"Bool", Symbol("gear_id")=>"String", Symbol("kilojoules")=>"Float32", Symbol("average_watts")=>"Float32", Symbol("device_watts")=>"Bool", Symbol("max_watts")=>"Int64", Symbol("weighted_average_watts")=>"Int64", )
 OpenAPI.property_type(::Type{ SummaryActivity }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_SummaryActivity[name]))}
 
-function check_required(o::SummaryActivity)
+function OpenAPI.check_required(o::SummaryActivity)
     true
+end
+
+function OpenAPI.validate_properties(o::SummaryActivity)
+    OpenAPI.validate_property(SummaryActivity, Symbol("id"), o.id)
+    OpenAPI.validate_property(SummaryActivity, Symbol("external_id"), o.external_id)
+    OpenAPI.validate_property(SummaryActivity, Symbol("upload_id"), o.upload_id)
+    OpenAPI.validate_property(SummaryActivity, Symbol("athlete"), o.athlete)
+    OpenAPI.validate_property(SummaryActivity, Symbol("name"), o.name)
+    OpenAPI.validate_property(SummaryActivity, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(SummaryActivity, Symbol("moving_time"), o.moving_time)
+    OpenAPI.validate_property(SummaryActivity, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(SummaryActivity, Symbol("total_elevation_gain"), o.total_elevation_gain)
+    OpenAPI.validate_property(SummaryActivity, Symbol("elev_high"), o.elev_high)
+    OpenAPI.validate_property(SummaryActivity, Symbol("elev_low"), o.elev_low)
+    OpenAPI.validate_property(SummaryActivity, Symbol("type"), o.type)
+    OpenAPI.validate_property(SummaryActivity, Symbol("sport_type"), o.sport_type)
+    OpenAPI.validate_property(SummaryActivity, Symbol("start_date"), o.start_date)
+    OpenAPI.validate_property(SummaryActivity, Symbol("start_date_local"), o.start_date_local)
+    OpenAPI.validate_property(SummaryActivity, Symbol("timezone"), o.timezone)
+    OpenAPI.validate_property(SummaryActivity, Symbol("start_latlng"), o.start_latlng)
+    OpenAPI.validate_property(SummaryActivity, Symbol("end_latlng"), o.end_latlng)
+    OpenAPI.validate_property(SummaryActivity, Symbol("achievement_count"), o.achievement_count)
+    OpenAPI.validate_property(SummaryActivity, Symbol("kudos_count"), o.kudos_count)
+    OpenAPI.validate_property(SummaryActivity, Symbol("comment_count"), o.comment_count)
+    OpenAPI.validate_property(SummaryActivity, Symbol("athlete_count"), o.athlete_count)
+    OpenAPI.validate_property(SummaryActivity, Symbol("photo_count"), o.photo_count)
+    OpenAPI.validate_property(SummaryActivity, Symbol("total_photo_count"), o.total_photo_count)
+    OpenAPI.validate_property(SummaryActivity, Symbol("map"), o.map)
+    OpenAPI.validate_property(SummaryActivity, Symbol("device_name"), o.device_name)
+    OpenAPI.validate_property(SummaryActivity, Symbol("trainer"), o.trainer)
+    OpenAPI.validate_property(SummaryActivity, Symbol("commute"), o.commute)
+    OpenAPI.validate_property(SummaryActivity, Symbol("manual"), o.manual)
+    OpenAPI.validate_property(SummaryActivity, Symbol("private"), o.private)
+    OpenAPI.validate_property(SummaryActivity, Symbol("flagged"), o.flagged)
+    OpenAPI.validate_property(SummaryActivity, Symbol("workout_type"), o.workout_type)
+    OpenAPI.validate_property(SummaryActivity, Symbol("upload_id_str"), o.upload_id_str)
+    OpenAPI.validate_property(SummaryActivity, Symbol("average_speed"), o.average_speed)
+    OpenAPI.validate_property(SummaryActivity, Symbol("max_speed"), o.max_speed)
+    OpenAPI.validate_property(SummaryActivity, Symbol("has_kudoed"), o.has_kudoed)
+    OpenAPI.validate_property(SummaryActivity, Symbol("hide_from_home"), o.hide_from_home)
+    OpenAPI.validate_property(SummaryActivity, Symbol("gear_id"), o.gear_id)
+    OpenAPI.validate_property(SummaryActivity, Symbol("kilojoules"), o.kilojoules)
+    OpenAPI.validate_property(SummaryActivity, Symbol("average_watts"), o.average_watts)
+    OpenAPI.validate_property(SummaryActivity, Symbol("device_watts"), o.device_watts)
+    OpenAPI.validate_property(SummaryActivity, Symbol("max_watts"), o.max_watts)
+    OpenAPI.validate_property(SummaryActivity, Symbol("weighted_average_watts"), o.weighted_average_watts)
 end
 
 function OpenAPI.validate_property(::Type{ SummaryActivity }, name::Symbol, val)
@@ -259,6 +268,7 @@ function OpenAPI.validate_property(::Type{ SummaryActivity }, name::Symbol, val)
 
 
 
+
     if name === Symbol("average_speed")
         OpenAPI.validate_param(name, "SummaryActivity", :format, val, "float")
     end
@@ -281,3 +291,4 @@ function OpenAPI.validate_property(::Type{ SummaryActivity }, name::Symbol, val)
 
 
 end
+

@@ -32,22 +32,27 @@ Base.@kwdef mutable struct Split <: OpenAPI.APIModel
     split::Union{Nothing, Int64} = nothing
 
     function Split(average_speed, distance, elapsed_time, elevation_difference, pace_zone, moving_time, split, )
-        OpenAPI.validate_property(Split, Symbol("average_speed"), average_speed)
-        OpenAPI.validate_property(Split, Symbol("distance"), distance)
-        OpenAPI.validate_property(Split, Symbol("elapsed_time"), elapsed_time)
-        OpenAPI.validate_property(Split, Symbol("elevation_difference"), elevation_difference)
-        OpenAPI.validate_property(Split, Symbol("pace_zone"), pace_zone)
-        OpenAPI.validate_property(Split, Symbol("moving_time"), moving_time)
-        OpenAPI.validate_property(Split, Symbol("split"), split)
-        return new(average_speed, distance, elapsed_time, elevation_difference, pace_zone, moving_time, split, )
+        o = new(average_speed, distance, elapsed_time, elevation_difference, pace_zone, moving_time, split, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type Split
 
 const _property_types_Split = Dict{Symbol,String}(Symbol("average_speed")=>"Float32", Symbol("distance")=>"Float32", Symbol("elapsed_time")=>"Int64", Symbol("elevation_difference")=>"Float32", Symbol("pace_zone")=>"Int64", Symbol("moving_time")=>"Int64", Symbol("split")=>"Int64", )
 OpenAPI.property_type(::Type{ Split }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_Split[name]))}
 
-function check_required(o::Split)
+function OpenAPI.check_required(o::Split)
     true
+end
+
+function OpenAPI.validate_properties(o::Split)
+    OpenAPI.validate_property(Split, Symbol("average_speed"), o.average_speed)
+    OpenAPI.validate_property(Split, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(Split, Symbol("elapsed_time"), o.elapsed_time)
+    OpenAPI.validate_property(Split, Symbol("elevation_difference"), o.elevation_difference)
+    OpenAPI.validate_property(Split, Symbol("pace_zone"), o.pace_zone)
+    OpenAPI.validate_property(Split, Symbol("moving_time"), o.moving_time)
+    OpenAPI.validate_property(Split, Symbol("split"), o.split)
 end
 
 function OpenAPI.validate_property(::Type{ Split }, name::Symbol, val)
@@ -68,3 +73,4 @@ function OpenAPI.validate_property(::Type{ Split }, name::Symbol, val)
 
 
 end
+

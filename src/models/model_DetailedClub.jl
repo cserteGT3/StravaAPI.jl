@@ -71,35 +71,40 @@ Base.@kwdef mutable struct DetailedClub <: OpenAPI.APIModel
     following_count::Union{Nothing, Int64} = nothing
 
     function DetailedClub(id, resource_state, name, profile_medium, cover_photo, cover_photo_small, sport_type, activity_types, city, state, country, private, member_count, featured, verified, url, membership, admin, owner, following_count, )
-        OpenAPI.validate_property(DetailedClub, Symbol("id"), id)
-        OpenAPI.validate_property(DetailedClub, Symbol("resource_state"), resource_state)
-        OpenAPI.validate_property(DetailedClub, Symbol("name"), name)
-        OpenAPI.validate_property(DetailedClub, Symbol("profile_medium"), profile_medium)
-        OpenAPI.validate_property(DetailedClub, Symbol("cover_photo"), cover_photo)
-        OpenAPI.validate_property(DetailedClub, Symbol("cover_photo_small"), cover_photo_small)
-        OpenAPI.validate_property(DetailedClub, Symbol("sport_type"), sport_type)
-        OpenAPI.validate_property(DetailedClub, Symbol("activity_types"), activity_types)
-        OpenAPI.validate_property(DetailedClub, Symbol("city"), city)
-        OpenAPI.validate_property(DetailedClub, Symbol("state"), state)
-        OpenAPI.validate_property(DetailedClub, Symbol("country"), country)
-        OpenAPI.validate_property(DetailedClub, Symbol("private"), private)
-        OpenAPI.validate_property(DetailedClub, Symbol("member_count"), member_count)
-        OpenAPI.validate_property(DetailedClub, Symbol("featured"), featured)
-        OpenAPI.validate_property(DetailedClub, Symbol("verified"), verified)
-        OpenAPI.validate_property(DetailedClub, Symbol("url"), url)
-        OpenAPI.validate_property(DetailedClub, Symbol("membership"), membership)
-        OpenAPI.validate_property(DetailedClub, Symbol("admin"), admin)
-        OpenAPI.validate_property(DetailedClub, Symbol("owner"), owner)
-        OpenAPI.validate_property(DetailedClub, Symbol("following_count"), following_count)
-        return new(id, resource_state, name, profile_medium, cover_photo, cover_photo_small, sport_type, activity_types, city, state, country, private, member_count, featured, verified, url, membership, admin, owner, following_count, )
+        o = new(id, resource_state, name, profile_medium, cover_photo, cover_photo_small, sport_type, activity_types, city, state, country, private, member_count, featured, verified, url, membership, admin, owner, following_count, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type DetailedClub
 
 const _property_types_DetailedClub = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("resource_state")=>"Int64", Symbol("name")=>"String", Symbol("profile_medium")=>"String", Symbol("cover_photo")=>"String", Symbol("cover_photo_small")=>"String", Symbol("sport_type")=>"String", Symbol("activity_types")=>"Vector{ActivityType}", Symbol("city")=>"String", Symbol("state")=>"String", Symbol("country")=>"String", Symbol("private")=>"Bool", Symbol("member_count")=>"Int64", Symbol("featured")=>"Bool", Symbol("verified")=>"Bool", Symbol("url")=>"String", Symbol("membership")=>"String", Symbol("admin")=>"Bool", Symbol("owner")=>"Bool", Symbol("following_count")=>"Int64", )
 OpenAPI.property_type(::Type{ DetailedClub }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_DetailedClub[name]))}
 
-function check_required(o::DetailedClub)
+function OpenAPI.check_required(o::DetailedClub)
     true
+end
+
+function OpenAPI.validate_properties(o::DetailedClub)
+    OpenAPI.validate_property(DetailedClub, Symbol("id"), o.id)
+    OpenAPI.validate_property(DetailedClub, Symbol("resource_state"), o.resource_state)
+    OpenAPI.validate_property(DetailedClub, Symbol("name"), o.name)
+    OpenAPI.validate_property(DetailedClub, Symbol("profile_medium"), o.profile_medium)
+    OpenAPI.validate_property(DetailedClub, Symbol("cover_photo"), o.cover_photo)
+    OpenAPI.validate_property(DetailedClub, Symbol("cover_photo_small"), o.cover_photo_small)
+    OpenAPI.validate_property(DetailedClub, Symbol("sport_type"), o.sport_type)
+    OpenAPI.validate_property(DetailedClub, Symbol("activity_types"), o.activity_types)
+    OpenAPI.validate_property(DetailedClub, Symbol("city"), o.city)
+    OpenAPI.validate_property(DetailedClub, Symbol("state"), o.state)
+    OpenAPI.validate_property(DetailedClub, Symbol("country"), o.country)
+    OpenAPI.validate_property(DetailedClub, Symbol("private"), o.private)
+    OpenAPI.validate_property(DetailedClub, Symbol("member_count"), o.member_count)
+    OpenAPI.validate_property(DetailedClub, Symbol("featured"), o.featured)
+    OpenAPI.validate_property(DetailedClub, Symbol("verified"), o.verified)
+    OpenAPI.validate_property(DetailedClub, Symbol("url"), o.url)
+    OpenAPI.validate_property(DetailedClub, Symbol("membership"), o.membership)
+    OpenAPI.validate_property(DetailedClub, Symbol("admin"), o.admin)
+    OpenAPI.validate_property(DetailedClub, Symbol("owner"), o.owner)
+    OpenAPI.validate_property(DetailedClub, Symbol("following_count"), o.following_count)
 end
 
 function OpenAPI.validate_property(::Type{ DetailedClub }, name::Symbol, val)
@@ -135,3 +140,4 @@ function OpenAPI.validate_property(::Type{ DetailedClub }, name::Symbol, val)
 
 
 end
+

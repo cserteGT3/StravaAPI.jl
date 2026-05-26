@@ -29,9 +29,9 @@ end
 Returns a GPX file of the route. Requires read_all scope for private routes.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: Nothing, OpenAPI.Clients.ApiResponse
+Return: `Nothing`, `OpenAPI.Clients.ApiResponse`
 """
 function get_route_as_g_p_x(_api::RoutesApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_route_as_g_p_x(_api, id; _mediaType=_mediaType)
@@ -61,9 +61,9 @@ end
 Returns a TCX file of the route. Requires read_all scope for private routes.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: Nothing, OpenAPI.Clients.ApiResponse
+Return: `Nothing`, `OpenAPI.Clients.ApiResponse`
 """
 function get_route_as_t_c_x(_api::RoutesApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_route_as_t_c_x(_api, id; _mediaType=_mediaType)
@@ -93,9 +93,9 @@ end
 Returns a route using its identifier. Requires read_all scope for private routes.
 
 Params:
-- id::Int64 (required)
+- `id`::`Int64` (required)
 
-Return: Route, OpenAPI.Clients.ApiResponse
+Return: `Route`, `OpenAPI.Clients.ApiResponse`
 """
 function get_route_by_id(_api::RoutesApi, id::Int64; _mediaType=nothing)
     _ctx = _oacinternal_get_route_by_id(_api, id; _mediaType=_mediaType)
@@ -126,10 +126,10 @@ end
 Returns a list of the routes created by the authenticated athlete. Private routes are filtered out unless requested by a token with read_all scope.
 
 Params:
-- page::Int64
-- per_page::Int64
+- `page`::`Int64`
+- `per_page`::`Int64`
 
-Return: Vector{Route}, OpenAPI.Clients.ApiResponse
+Return: `Vector{Route}`, `OpenAPI.Clients.ApiResponse`
 """
 function get_routes_by_athlete_id(_api::RoutesApi; page=nothing, per_page=nothing, _mediaType=nothing)
     _ctx = _oacinternal_get_routes_by_athlete_id(_api; page=page, per_page=per_page, _mediaType=_mediaType)

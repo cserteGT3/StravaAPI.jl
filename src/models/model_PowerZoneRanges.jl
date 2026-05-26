@@ -14,18 +14,24 @@ Base.@kwdef mutable struct PowerZoneRanges <: OpenAPI.APIModel
     zones::Union{Nothing, Vector} = nothing # spec type: Union{ Nothing, Vector{ZoneRange} }
 
     function PowerZoneRanges(zones, )
-        OpenAPI.validate_property(PowerZoneRanges, Symbol("zones"), zones)
-        return new(zones, )
+        o = new(zones, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type PowerZoneRanges
 
 const _property_types_PowerZoneRanges = Dict{Symbol,String}(Symbol("zones")=>"Vector{ZoneRange}", )
 OpenAPI.property_type(::Type{ PowerZoneRanges }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_PowerZoneRanges[name]))}
 
-function check_required(o::PowerZoneRanges)
+function OpenAPI.check_required(o::PowerZoneRanges)
     true
+end
+
+function OpenAPI.validate_properties(o::PowerZoneRanges)
+    OpenAPI.validate_property(PowerZoneRanges, Symbol("zones"), o.zones)
 end
 
 function OpenAPI.validate_property(::Type{ PowerZoneRanges }, name::Symbol, val)
 
 end
+

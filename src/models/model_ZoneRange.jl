@@ -17,20 +17,26 @@ Base.@kwdef mutable struct ZoneRange <: OpenAPI.APIModel
     max::Union{Nothing, Int64} = nothing
 
     function ZoneRange(min, max, )
-        OpenAPI.validate_property(ZoneRange, Symbol("min"), min)
-        OpenAPI.validate_property(ZoneRange, Symbol("max"), max)
-        return new(min, max, )
+        o = new(min, max, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type ZoneRange
 
 const _property_types_ZoneRange = Dict{Symbol,String}(Symbol("min")=>"Int64", Symbol("max")=>"Int64", )
 OpenAPI.property_type(::Type{ ZoneRange }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_ZoneRange[name]))}
 
-function check_required(o::ZoneRange)
+function OpenAPI.check_required(o::ZoneRange)
     true
+end
+
+function OpenAPI.validate_properties(o::ZoneRange)
+    OpenAPI.validate_property(ZoneRange, Symbol("min"), o.min)
+    OpenAPI.validate_property(ZoneRange, Symbol("max"), o.max)
 end
 
 function OpenAPI.validate_property(::Type{ ZoneRange }, name::Symbol, val)
 
 
 end
+

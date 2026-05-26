@@ -44,26 +44,31 @@ Base.@kwdef mutable struct StreamSet <: OpenAPI.APIModel
     grade_smooth = nothing # spec type: Union{ Nothing, SmoothGradeStream }
 
     function StreamSet(time, distance, latlng, altitude, velocity_smooth, heartrate, cadence, watts, temp, moving, grade_smooth, )
-        OpenAPI.validate_property(StreamSet, Symbol("time"), time)
-        OpenAPI.validate_property(StreamSet, Symbol("distance"), distance)
-        OpenAPI.validate_property(StreamSet, Symbol("latlng"), latlng)
-        OpenAPI.validate_property(StreamSet, Symbol("altitude"), altitude)
-        OpenAPI.validate_property(StreamSet, Symbol("velocity_smooth"), velocity_smooth)
-        OpenAPI.validate_property(StreamSet, Symbol("heartrate"), heartrate)
-        OpenAPI.validate_property(StreamSet, Symbol("cadence"), cadence)
-        OpenAPI.validate_property(StreamSet, Symbol("watts"), watts)
-        OpenAPI.validate_property(StreamSet, Symbol("temp"), temp)
-        OpenAPI.validate_property(StreamSet, Symbol("moving"), moving)
-        OpenAPI.validate_property(StreamSet, Symbol("grade_smooth"), grade_smooth)
-        return new(time, distance, latlng, altitude, velocity_smooth, heartrate, cadence, watts, temp, moving, grade_smooth, )
+        o = new(time, distance, latlng, altitude, velocity_smooth, heartrate, cadence, watts, temp, moving, grade_smooth, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type StreamSet
 
 const _property_types_StreamSet = Dict{Symbol,String}(Symbol("time")=>"TimeStream", Symbol("distance")=>"DistanceStream", Symbol("latlng")=>"LatLngStream", Symbol("altitude")=>"AltitudeStream", Symbol("velocity_smooth")=>"SmoothVelocityStream", Symbol("heartrate")=>"HeartrateStream", Symbol("cadence")=>"CadenceStream", Symbol("watts")=>"PowerStream", Symbol("temp")=>"TemperatureStream", Symbol("moving")=>"MovingStream", Symbol("grade_smooth")=>"SmoothGradeStream", )
 OpenAPI.property_type(::Type{ StreamSet }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_StreamSet[name]))}
 
-function check_required(o::StreamSet)
+function OpenAPI.check_required(o::StreamSet)
     true
+end
+
+function OpenAPI.validate_properties(o::StreamSet)
+    OpenAPI.validate_property(StreamSet, Symbol("time"), o.time)
+    OpenAPI.validate_property(StreamSet, Symbol("distance"), o.distance)
+    OpenAPI.validate_property(StreamSet, Symbol("latlng"), o.latlng)
+    OpenAPI.validate_property(StreamSet, Symbol("altitude"), o.altitude)
+    OpenAPI.validate_property(StreamSet, Symbol("velocity_smooth"), o.velocity_smooth)
+    OpenAPI.validate_property(StreamSet, Symbol("heartrate"), o.heartrate)
+    OpenAPI.validate_property(StreamSet, Symbol("cadence"), o.cadence)
+    OpenAPI.validate_property(StreamSet, Symbol("watts"), o.watts)
+    OpenAPI.validate_property(StreamSet, Symbol("temp"), o.temp)
+    OpenAPI.validate_property(StreamSet, Symbol("moving"), o.moving)
+    OpenAPI.validate_property(StreamSet, Symbol("grade_smooth"), o.grade_smooth)
 end
 
 function OpenAPI.validate_property(::Type{ StreamSet }, name::Symbol, val)
@@ -79,3 +84,4 @@ function OpenAPI.validate_property(::Type{ StreamSet }, name::Symbol, val)
 
 
 end
+

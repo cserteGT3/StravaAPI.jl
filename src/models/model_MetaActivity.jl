@@ -14,16 +14,21 @@ Base.@kwdef mutable struct MetaActivity <: OpenAPI.APIModel
     id::Union{Nothing, Int64} = nothing
 
     function MetaActivity(id, )
-        OpenAPI.validate_property(MetaActivity, Symbol("id"), id)
-        return new(id, )
+        o = new(id, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type MetaActivity
 
 const _property_types_MetaActivity = Dict{Symbol,String}(Symbol("id")=>"Int64", )
 OpenAPI.property_type(::Type{ MetaActivity }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_MetaActivity[name]))}
 
-function check_required(o::MetaActivity)
+function OpenAPI.check_required(o::MetaActivity)
     true
+end
+
+function OpenAPI.validate_properties(o::MetaActivity)
+    OpenAPI.validate_property(MetaActivity, Symbol("id"), o.id)
 end
 
 function OpenAPI.validate_property(::Type{ MetaActivity }, name::Symbol, val)
@@ -32,3 +37,4 @@ function OpenAPI.validate_property(::Type{ MetaActivity }, name::Symbol, val)
         OpenAPI.validate_param(name, "MetaActivity", :format, val, "int64")
     end
 end
+

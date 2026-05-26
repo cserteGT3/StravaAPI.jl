@@ -23,19 +23,24 @@ Base.@kwdef mutable struct PhotosSummaryPrimary <: OpenAPI.APIModel
     urls::Union{Nothing, Dict{String, String}} = nothing
 
     function PhotosSummaryPrimary(id, source, unique_id, urls, )
-        OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("id"), id)
-        OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("source"), source)
-        OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("unique_id"), unique_id)
-        OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("urls"), urls)
-        return new(id, source, unique_id, urls, )
+        o = new(id, source, unique_id, urls, )
+        OpenAPI.validate_properties(o)
+        return o
     end
 end # type PhotosSummaryPrimary
 
 const _property_types_PhotosSummaryPrimary = Dict{Symbol,String}(Symbol("id")=>"Int64", Symbol("source")=>"Int64", Symbol("unique_id")=>"String", Symbol("urls")=>"Dict{String, String}", )
 OpenAPI.property_type(::Type{ PhotosSummaryPrimary }, name::Symbol) = Union{Nothing,eval(Base.Meta.parse(_property_types_PhotosSummaryPrimary[name]))}
 
-function check_required(o::PhotosSummaryPrimary)
+function OpenAPI.check_required(o::PhotosSummaryPrimary)
     true
+end
+
+function OpenAPI.validate_properties(o::PhotosSummaryPrimary)
+    OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("id"), o.id)
+    OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("source"), o.source)
+    OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("unique_id"), o.unique_id)
+    OpenAPI.validate_property(PhotosSummaryPrimary, Symbol("urls"), o.urls)
 end
 
 function OpenAPI.validate_property(::Type{ PhotosSummaryPrimary }, name::Symbol, val)
@@ -47,3 +52,4 @@ function OpenAPI.validate_property(::Type{ PhotosSummaryPrimary }, name::Symbol,
 
 
 end
+
