@@ -35,6 +35,7 @@ function postprocess_docs(docsfolder)
         write(joinpath(docsfolder, f), newf)
     end
 
+    return docsfolder
 end
 
 function generatepackage()
@@ -47,15 +48,15 @@ function generatepackage()
     readme_file = read(joinpath(devdir, "README.md"), String)
 
     try
-        r = HTTP.get("https://developers.strava.com/swagger/swagger.json");
-        d = JSON.parse(String(r.body))
+        r = HTTP.get("https://developers.strava.com/swagger/swagger.json")
+        d = JSON.parse(String(r.body), dicttype = Dict{String, Any})
         @info "Downloaded and parsed API definition."
 
         OpenAPI.openapi_generator()
         @info "Started OpenAPI container, waiting little bit..."
         sleep(5) # sleeping, cause it helped a few times
-        OpenAPI.generate(d;package_name = "StravaAPI", output_dir = devdir)
-        OpenAPI.stop_openapi_generator()    
+        OpenAPI.generate(d; package_name = "StravaAPI", output_dir = devdir)
+        OpenAPI.stop_openapi_generator()
     catch e
         @error "Something failed horribly. Exiting..."
         println(e)
@@ -64,7 +65,7 @@ function generatepackage()
     @info "Package code generated with OpenAPI, continuing with postprocessing."
 
     cd(devdir)
-    mv("README.md", joinpath(docdir, "README.md"); force=true)
+    mv("README.md", joinpath(docdir, "README.md"); force = true)
     write("README.md", readme_file)
     @info "Moved generated readme to docs/"
 
@@ -88,7 +89,7 @@ function generatepackage()
     Pkg.develop("StravaAPI")
     Pkg.activate(aproj)
     @info "Developed StravaAPI in docs project environment for local build."
-    
+    return nothing
 end
 
 generatepackage()
